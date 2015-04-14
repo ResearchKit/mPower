@@ -1,0 +1,1243 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08F6D1B41AD6FA7200DFF268 /* PD_feedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 08F6D1B21AD6FA7200DFF268 /* PD_feedback.json */; };
+		08F6D1B51AD6FA7200DFF268 /* PD_mythoughts.json in Resources */ = {isa = PBXBuildFile; fileRef = 08F6D1B31AD6FA7200DFF268 /* PD_mythoughts.json */; };
+		21CBD9E51A9FE59900031635 /* APHTasksAndSchedules_NoM7.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CBD9E41A9FE59900031635 /* APHTasksAndSchedules_NoM7.json */; };
+		5A0F98FF1AA409FC00A2A7EB /* PDenrollment_survey.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */; };
+		5A0F99021AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */; };
+		5A0F99171AA426D900A2A7EB /* APHmythougths.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99161AA426D900A2A7EB /* APHmythougths.m */; };
+		5A0F991A1AA426F300A2A7EB /* APHfeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99191AA426F300A2A7EB /* APHfeedback.m */; };
+		5B1095B91A9F9BD5006631F5 /* consent.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5B1095B81A9F9BD5006631F5 /* consent.pdf */; };
+		5B18CED01A2CF2E5001A905E /* TermsAndConditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B18CECF1A2CF2E5001A905E /* TermsAndConditions.json */; };
+		5B18CEF71A2D3A57001A905E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B18CEF61A2D3A56001A905E /* MapKit.framework */; };
+		5B1D9D451A1BCC6B000F4AD6 /* APHDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1D9D401A1BCC6B000F4AD6 /* APHDashboard.storyboard */; };
+		5B1D9D461A1BCC6B000F4AD6 /* APHDashboardEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D9D421A1BCC6B000F4AD6 /* APHDashboardEditViewController.m */; };
+		5B1D9D471A1BCC6B000F4AD6 /* APHDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D9D441A1BCC6B000F4AD6 /* APHDashboardViewController.m */; };
+		5B29CE5419D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B29CE5319D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.m */; };
+		5B975A161A112E2C00A34E42 /* Learn.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B975A141A112E2C00A34E42 /* Learn.json */; };
+		5B975A171A112E2C00A34E42 /* WithdrawStudy.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B975A151A112E2C00A34E42 /* WithdrawStudy.json */; };
+		5BAC201019D5FEC600451AAE /* StudyOverview.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BAC200F19D5FEC600451AAE /* StudyOverview.json */; };
+		5BBDAEBF1A33DFDA0047DF87 /* HTMLContent in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDAEBE1A33DFDA0047DF87 /* HTMLContent */; };
+		5BBDAEF21A350FB40047DF87 /* LocationInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDAEF11A350FB40047DF87 /* LocationInfo.json */; };
+		743BFFFF1A90E12800438241 /* APHConsentSection.json in Resources */ = {isa = PBXBuildFile; fileRef = 743BFFFE1A90E12800438241 /* APHConsentSection.json */; };
+		745DB4391ADB0B380007C484 /* libPDScores.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 745DB4361ADB09F70007C484 /* libPDScores.a */; };
+		74B713EB1AC0722D00FE2553 /* BridgeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B713A41ABF04B900FE2553 /* BridgeSDK.framework */; };
+		74B713EC1AC0722D00FE2553 /* BridgeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74B713A41ABF04B900FE2553 /* BridgeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		74B713F21AC0722E00FE2553 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0D81ABE2DE40071C218 /* ResearchKit.framework */; };
+		74B713F31AC0722E00FE2553 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0D81ABE2DE40071C218 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		74B713F71AC0722E00FE2553 /* APCAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0CC1ABE2DE40071C218 /* APCAppCore.framework */; };
+		74B713F81AC0722E00FE2553 /* APCAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0CC1ABE2DE40071C218 /* APCAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7B9898CA1A926F36003B4181 /* APHProfileExtender.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9898C91A926F36003B4181 /* APHProfileExtender.m */; };
+		A74615B31A98077D00323AD1 /* ConverterForPDScores.m in Sources */ = {isa = PBXBuildFile; fileRef = A74615B21A98077D00323AD1 /* ConverterForPDScores.m */; };
+		A781166F1A96BC9400CEC822 /* 00_Blank_to_Activities@2x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116601A96BC9400CEC822 /* 00_Blank_to_Activities@2x.m4v */; };
+		A78116701A96BC9400CEC822 /* 01_Activities_to_SensorData@2x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116611A96BC9400CEC822 /* 01_Activities_to_SensorData@2x.m4v */; };
+		A78116711A96BC9400CEC822 /* 02_SensorData_to_DataGathering@2x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116621A96BC9400CEC822 /* 02_SensorData_to_DataGathering@2x.m4v */; };
+		A78116721A96BC9400CEC822 /* 10_PotentialBenifits@2x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116631A96BC9400CEC822 /* 10_PotentialBenifits@2x.m4v */; };
+		A78116731A96BC9400CEC822 /* 11_IssuesToConsider1@2x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116641A96BC9400CEC822 /* 11_IssuesToConsider1@2x.m4v */; };
+		A78116741A96BC9400CEC822 /* 12_IssuesToConside2@2x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116651A96BC9400CEC822 /* 12_IssuesToConside2@2x.m4v */; };
+		A78116751A96BC9400CEC822 /* 13_RiskToPrivacy@2x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116661A96BC9400CEC822 /* 13_RiskToPrivacy@2x.m4v */; };
+		A78116761A96BC9400CEC822 /* 00_Blank_to_Activities@3x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116681A96BC9400CEC822 /* 00_Blank_to_Activities@3x.m4v */; };
+		A78116771A96BC9400CEC822 /* 01_Activities_to_SensorData@3x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A78116691A96BC9400CEC822 /* 01_Activities_to_SensorData@3x.m4v */; };
+		A78116781A96BC9400CEC822 /* 02_SensorData_to_DataGathering@3x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A781166A1A96BC9400CEC822 /* 02_SensorData_to_DataGathering@3x.m4v */; };
+		A78116791A96BC9400CEC822 /* 10_PotentialBenifits@3x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A781166B1A96BC9400CEC822 /* 10_PotentialBenifits@3x.m4v */; };
+		A781167A1A96BC9400CEC822 /* 11_IssuesToConsider1@3x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A781166C1A96BC9400CEC822 /* 11_IssuesToConsider1@3x.m4v */; };
+		A781167B1A96BC9400CEC822 /* 12_IssuesToConside2@3x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A781166D1A96BC9400CEC822 /* 12_IssuesToConside2@3x.m4v */; };
+		A781167C1A96BC9400CEC822 /* 13_RiskToPrivacy@3x.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A781166E1A96BC9400CEC822 /* 13_RiskToPrivacy@3x.m4v */; };
+		CF2BF9931A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9921A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.m */; };
+		CFA2ABBC19A7C3A9000DB961 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA2ABBB19A7C3A9000DB961 /* CoreData.framework */; };
+		CFA2ABBE19A7C3C2000DB961 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA2ABBD19A7C3C2000DB961 /* Security.framework */; };
+		CFA2ABC019A7C3EB000DB961 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA2ABBF19A7C3EB000DB961 /* AVFoundation.framework */; };
+		CFC2D2DD19A5417D00170E69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC2D2DC19A5417D00170E69 /* main.m */; };
+		CFC2D2E819A5417D00170E69 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFC2D2E719A5417D00170E69 /* Images.xcassets */; };
+		CFDA47A81A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDA47A71A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.m */; };
+		CFF1A5101A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1A50F1A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.m */; };
+		F536B93E19F5747B005A2D1C /* sample.task in Resources */ = {isa = PBXBuildFile; fileRef = F536B93D19F5747B005A2D1C /* sample.task */; };
+		F584909A19E892700091A640 /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F584909919E892700091A640 /* Intro.mp4 */; };
+		F5C11A2F19DCBE95003278FF /* APCParameters.json in Resources */ = {isa = PBXBuildFile; fileRef = F5C11A2E19DCBE95003278FF /* APCParameters.json */; };
+		F5C1DC2019D22E6F006527EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C1DC1F19D22E6F006527EA /* Main.storyboard */; };
+		F5D14E4319CC991500650FBB /* APHTasksAndSchedules.json in Resources */ = {isa = PBXBuildFile; fileRef = F5D14E4019CC991500650FBB /* APHTasksAndSchedules.json */; };
+		F5D14EDC19CC9BA700650FBB /* NSString+CustomMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D14ED419CC9BA700650FBB /* NSString+CustomMethods.m */; };
+		F5D14F2319CC9BC900650FBB /* APHIntervalTappingTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D14EF419CC9BC900650FBB /* APHIntervalTappingTaskViewController.m */; };
+		F5D14F2719CC9BC900650FBB /* APHPhonationTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D14EFD19CC9BC900650FBB /* APHPhonationTaskViewController.m */; };
+		F5D14F3519CC9BC900650FBB /* APHWalkingTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D14F1819CC9BC900650FBB /* APHWalkingTaskViewController.m */; };
+		F5D14F3919CC9C0000650FBB /* APHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D14F3819CC9C0000650FBB /* APHAppDelegate.m */; };
+		F5DCAD3E19D088330096DEC0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5DCAD3D19D088330096DEC0 /* LaunchScreen.xib */; };
+		F5EFE0A019EC39B1008BAD56 /* APHOnboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EFE09F19EC39B1008BAD56 /* APHOnboarding.storyboard */; };
+		F5F32C7C19D0D4C1007F9015 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA2ABB519A7C229000DB961 /* HealthKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08F6D1B01AD6F94300DFF268 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		743AD0CB1ABE2DE40071C218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5179B2919D09128001DCCB7;
+			remoteInfo = APCAppCore;
+		};
+		743AD0CD1ABE2DE40071C218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5179B3419D09128001DCCB7;
+			remoteInfo = APCAppCoreTests;
+		};
+		743AD0D71ABE2DE40071C218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = OpenResearchKit;
+		};
+		743AD0DF1ABE2E880071C218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = OpenResearchKit;
+		};
+		743AD0E11ABE2E8E0071C218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F5179B2819D09128001DCCB7;
+			remoteInfo = APCAppCore;
+		};
+		745DB4351ADB09F70007C484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 745DB4301ADB09F70007C484 /* PDScores.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 801712D41A897DC200CB13EB;
+			remoteInfo = PDScores;
+		};
+		745DB4371ADB09F70007C484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 745DB4301ADB09F70007C484 /* PDScores.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 801712DF1A897DC200CB13EB;
+			remoteInfo = PDScoresTests;
+		};
+		74B713A31ABF04B900FE2553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 80855F5019BE258C006601C7;
+			remoteInfo = BridgeSDK;
+		};
+		74B713A51ABF04B900FE2553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 80855F5B19BE258C006601C7;
+			remoteInfo = BridgeSDKTests;
+		};
+		74B713AB1ABF04D400FE2553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 80855F4F19BE258C006601C7;
+			remoteInfo = BridgeSDK;
+		};
+		74B713ED1AC0722E00FE2553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 80855F4F19BE258C006601C7;
+			remoteInfo = BridgeSDK;
+		};
+		74B713F41AC0722E00FE2553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = OpenResearchKit;
+		};
+		74B713F91AC0722E00FE2553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F5179B2819D09128001DCCB7;
+			remoteInfo = APCAppCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5D1A91419D4C6FC00A03465 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				74B713F31AC0722E00FE2553 /* ResearchKit.framework in Embed Frameworks */,
+				74B713EC1AC0722D00FE2553 /* BridgeSDK.framework in Embed Frameworks */,
+				74B713F81AC0722E00FE2553 /* APCAppCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08F6D1B21AD6FA7200DFF268 /* PD_feedback.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_feedback.json; sourceTree = "<group>"; };
+		08F6D1B31AD6FA7200DFF268 /* PD_mythoughts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_mythoughts.json; sourceTree = "<group>"; };
+		21CBD9E41A9FE59900031635 /* APHTasksAndSchedules_NoM7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APHTasksAndSchedules_NoM7.json; sourceTree = "<group>"; };
+		36EF84D31A951327008C255F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36EF84D41A951327008C255F /* Parkinson_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parkinson_Tests.m; sourceTree = "<group>"; };
+		36EF84DE1A951364008C255F /* APCMedTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = APCMedTrackerTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PDenrollment_survey.json; sourceTree = "<group>"; };
+		5A0F99001AA40E9100A2A7EB /* APHenrollmentsurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHenrollmentsurveyViewController.h; sourceTree = "<group>"; };
+		5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHenrollmentsurveyViewController.m; sourceTree = "<group>"; };
+		5A0F99151AA426D900A2A7EB /* APHmythougths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHmythougths.h; sourceTree = "<group>"; };
+		5A0F99161AA426D900A2A7EB /* APHmythougths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHmythougths.m; sourceTree = "<group>"; };
+		5A0F99181AA426F300A2A7EB /* APHfeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHfeedback.h; sourceTree = "<group>"; };
+		5A0F99191AA426F300A2A7EB /* APHfeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHfeedback.m; sourceTree = "<group>"; };
+		5B1095B81A9F9BD5006631F5 /* consent.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = consent.pdf; sourceTree = "<group>"; };
+		5B18CECF1A2CF2E5001A905E /* TermsAndConditions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TermsAndConditions.json; sourceTree = "<group>"; };
+		5B18CEF61A2D3A56001A905E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5B1D9D401A1BCC6B000F4AD6 /* APHDashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = APHDashboard.storyboard; sourceTree = "<group>"; };
+		5B1D9D411A1BCC6B000F4AD6 /* APHDashboardEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHDashboardEditViewController.h; sourceTree = "<group>"; };
+		5B1D9D421A1BCC6B000F4AD6 /* APHDashboardEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHDashboardEditViewController.m; sourceTree = "<group>"; };
+		5B1D9D431A1BCC6B000F4AD6 /* APHDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHDashboardViewController.h; sourceTree = "<group>"; };
+		5B1D9D441A1BCC6B000F4AD6 /* APHDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHDashboardViewController.m; sourceTree = "<group>"; };
+		5B29CE5219D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHInclusionCriteriaViewController.h; sourceTree = "<group>"; };
+		5B29CE5319D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHInclusionCriteriaViewController.m; sourceTree = "<group>"; };
+		5B975A141A112E2C00A34E42 /* Learn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Learn.json; sourceTree = "<group>"; };
+		5B975A151A112E2C00A34E42 /* WithdrawStudy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WithdrawStudy.json; sourceTree = "<group>"; };
+		5BAC200F19D5FEC600451AAE /* StudyOverview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StudyOverview.json; sourceTree = "<group>"; };
+		5BBDAEBE1A33DFDA0047DF87 /* HTMLContent */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTMLContent; sourceTree = "<group>"; };
+		5BBDAEF11A350FB40047DF87 /* LocationInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationInfo.json; sourceTree = "<group>"; };
+		743BFFFE1A90E12800438241 /* APHConsentSection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APHConsentSection.json; sourceTree = "<group>"; };
+		745DB4301ADB09F70007C484 /* PDScores.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PDScores.xcodeproj; path = PDScores/PDScores/PDScores.xcodeproj; sourceTree = SOURCE_ROOT; };
+		747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = APCAppCore.xcodeproj; path = ../AppCore/APCAppCore/APCAppCore.xcodeproj; sourceTree = "<group>"; };
+		747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../researchkit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BridgeSDK.xcodeproj; path = BridgeSDK/BridgeSDK.xcodeproj; sourceTree = SOURCE_ROOT; };
+		7B9898C81A926F36003B4181 /* APHProfileExtender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHProfileExtender.h; sourceTree = "<group>"; };
+		7B9898C91A926F36003B4181 /* APHProfileExtender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHProfileExtender.m; sourceTree = "<group>"; };
+		A74615B11A98077D00323AD1 /* ConverterForPDScores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConverterForPDScores.h; sourceTree = "<group>"; };
+		A74615B21A98077D00323AD1 /* ConverterForPDScores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverterForPDScores.m; sourceTree = "<group>"; };
+		A78116601A96BC9400CEC822 /* 00_Blank_to_Activities@2x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "00_Blank_to_Activities@2x.m4v"; sourceTree = "<group>"; };
+		A78116611A96BC9400CEC822 /* 01_Activities_to_SensorData@2x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01_Activities_to_SensorData@2x.m4v"; sourceTree = "<group>"; };
+		A78116621A96BC9400CEC822 /* 02_SensorData_to_DataGathering@2x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "02_SensorData_to_DataGathering@2x.m4v"; sourceTree = "<group>"; };
+		A78116631A96BC9400CEC822 /* 10_PotentialBenifits@2x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "10_PotentialBenifits@2x.m4v"; sourceTree = "<group>"; };
+		A78116641A96BC9400CEC822 /* 11_IssuesToConsider1@2x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "11_IssuesToConsider1@2x.m4v"; sourceTree = "<group>"; };
+		A78116651A96BC9400CEC822 /* 12_IssuesToConside2@2x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "12_IssuesToConside2@2x.m4v"; sourceTree = "<group>"; };
+		A78116661A96BC9400CEC822 /* 13_RiskToPrivacy@2x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "13_RiskToPrivacy@2x.m4v"; sourceTree = "<group>"; };
+		A78116681A96BC9400CEC822 /* 00_Blank_to_Activities@3x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "00_Blank_to_Activities@3x.m4v"; sourceTree = "<group>"; };
+		A78116691A96BC9400CEC822 /* 01_Activities_to_SensorData@3x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01_Activities_to_SensorData@3x.m4v"; sourceTree = "<group>"; };
+		A781166A1A96BC9400CEC822 /* 02_SensorData_to_DataGathering@3x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "02_SensorData_to_DataGathering@3x.m4v"; sourceTree = "<group>"; };
+		A781166B1A96BC9400CEC822 /* 10_PotentialBenifits@3x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "10_PotentialBenifits@3x.m4v"; sourceTree = "<group>"; };
+		A781166C1A96BC9400CEC822 /* 11_IssuesToConsider1@3x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "11_IssuesToConsider1@3x.m4v"; sourceTree = "<group>"; };
+		A781166D1A96BC9400CEC822 /* 12_IssuesToConside2@3x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "12_IssuesToConside2@3x.m4v"; sourceTree = "<group>"; };
+		A781166E1A96BC9400CEC822 /* 13_RiskToPrivacy@3x.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "13_RiskToPrivacy@3x.m4v"; sourceTree = "<group>"; };
+		CF2BF9911A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHIntervalTappingRecorderDataKeys.h; sourceTree = "<group>"; };
+		CF2BF9921A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHIntervalTappingRecorderDataKeys.m; sourceTree = "<group>"; };
+		CFA2ABB519A7C229000DB961 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		CFA2ABBB19A7C3A9000DB961 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CFA2ABBD19A7C3C2000DB961 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CFA2ABBF19A7C3EB000DB961 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CFC2D2D719A5417D00170E69 /* Parkinson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkinson.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFC2D2DB19A5417D00170E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFC2D2DC19A5417D00170E69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFC2D2E719A5417D00170E69 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Parkinson/Images.xcassets; sourceTree = "<group>"; };
+		CFDA47A61A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APHMedicationTrackerTaskViewController.h; path = MedicationTracking/APHMedicationTrackerTaskViewController.h; sourceTree = "<group>"; };
+		CFDA47A71A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APHMedicationTrackerTaskViewController.m; path = MedicationTracking/APHMedicationTrackerTaskViewController.m; sourceTree = "<group>"; };
+		CFF1A50E1A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APHSpatialSpanMemoryGameViewController.h; path = SpatialSpanMemoryControllers/APHSpatialSpanMemoryGameViewController.h; sourceTree = "<group>"; };
+		CFF1A50F1A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APHSpatialSpanMemoryGameViewController.m; path = SpatialSpanMemoryControllers/APHSpatialSpanMemoryGameViewController.m; sourceTree = "<group>"; };
+		F5241CA819AEA5110098A4DF /* Parkinson.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Parkinson.entitlements; sourceTree = "<group>"; };
+		F536B93D19F5747B005A2D1C /* sample.task */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sample.task; sourceTree = "<group>"; };
+		F584909919E892700091A640 /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
+		F5C11A2E19DCBE95003278FF /* APCParameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APCParameters.json; sourceTree = "<group>"; };
+		F5C1DC1F19D22E6F006527EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F5D14E4019CC991500650FBB /* APHTasksAndSchedules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APHTasksAndSchedules.json; sourceTree = "<group>"; };
+		F5D14ED319CC9BA700650FBB /* NSString+CustomMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CustomMethods.h"; sourceTree = "<group>"; };
+		F5D14ED419CC9BA700650FBB /* NSString+CustomMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CustomMethods.m"; sourceTree = "<group>"; };
+		F5D14EF319CC9BC900650FBB /* APHIntervalTappingTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHIntervalTappingTaskViewController.h; sourceTree = "<group>"; };
+		F5D14EF419CC9BC900650FBB /* APHIntervalTappingTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHIntervalTappingTaskViewController.m; sourceTree = "<group>"; };
+		F5D14EFC19CC9BC900650FBB /* APHPhonationTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHPhonationTaskViewController.h; sourceTree = "<group>"; };
+		F5D14EFD19CC9BC900650FBB /* APHPhonationTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHPhonationTaskViewController.m; sourceTree = "<group>"; };
+		F5D14F1719CC9BC900650FBB /* APHWalkingTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHWalkingTaskViewController.h; sourceTree = "<group>"; };
+		F5D14F1819CC9BC900650FBB /* APHWalkingTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHWalkingTaskViewController.m; sourceTree = "<group>"; };
+		F5D14F3719CC9C0000650FBB /* APHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHAppDelegate.h; sourceTree = "<group>"; };
+		F5D14F3819CC9C0000650FBB /* APHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHAppDelegate.m; sourceTree = "<group>"; };
+		F5DCAD3D19D088330096DEC0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		F5EFE09F19EC39B1008BAD56 /* APHOnboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = APHOnboarding.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFC2D2D419A5417D00170E69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				745DB4391ADB0B380007C484 /* libPDScores.a in Frameworks */,
+				5B18CEF71A2D3A57001A905E /* MapKit.framework in Frameworks */,
+				74B713F71AC0722E00FE2553 /* APCAppCore.framework in Frameworks */,
+				74B713EB1AC0722D00FE2553 /* BridgeSDK.framework in Frameworks */,
+				F5F32C7C19D0D4C1007F9015 /* HealthKit.framework in Frameworks */,
+				CFA2ABC019A7C3EB000DB961 /* AVFoundation.framework in Frameworks */,
+				CFA2ABBE19A7C3C2000DB961 /* Security.framework in Frameworks */,
+				74B713F21AC0722E00FE2553 /* ResearchKit.framework in Frameworks */,
+				CFA2ABBC19A7C3A9000DB961 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		255D2F4619C40F25002137F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B1095B71A9F9BD5006631F5 /* PDF */,
+				5BBDAEBE1A33DFDA0047DF87 /* HTMLContent */,
+				F5D14E3F19CC991500650FBB /* JSONs */,
+				F536B93C19F5747B005A2D1C /* Tasks */,
+				F584909819E892700091A640 /* Videos */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		36EF84D11A951327008C255F /* Parkinson Tests */ = {
+			isa = PBXGroup;
+			children = (
+				36EF84D41A951327008C255F /* Parkinson_Tests.m */,
+				36EF84DE1A951364008C255F /* APCMedTrackerTests.m */,
+				36EF84D21A951327008C255F /* Supporting Files */,
+			);
+			path = "Parkinson Tests";
+			sourceTree = "<group>";
+		};
+		36EF84D21A951327008C255F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36EF84D31A951327008C255F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A0F98FA1AA409EF00A2A7EB /* surveys */ = {
+			isa = PBXGroup;
+			children = (
+				08F6D1B21AD6FA7200DFF268 /* PD_feedback.json */,
+				08F6D1B31AD6FA7200DFF268 /* PD_mythoughts.json */,
+				5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */,
+			);
+			path = surveys;
+			sourceTree = "<group>";
+		};
+		5A0F99101AA4267A00A2A7EB /* Surveys_files */ = {
+			isa = PBXGroup;
+			children = (
+				5A0F99001AA40E9100A2A7EB /* APHenrollmentsurveyViewController.h */,
+				5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */,
+				5A0F99151AA426D900A2A7EB /* APHmythougths.h */,
+				5A0F99161AA426D900A2A7EB /* APHmythougths.m */,
+				5A0F99181AA426F300A2A7EB /* APHfeedback.h */,
+				5A0F99191AA426F300A2A7EB /* APHfeedback.m */,
+			);
+			name = Surveys_files;
+			sourceTree = "<group>";
+		};
+		5B1095B71A9F9BD5006631F5 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				5B1095B81A9F9BD5006631F5 /* consent.pdf */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		5B1D9D3F1A1BCC6B000F4AD6 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				5B1D9D401A1BCC6B000F4AD6 /* APHDashboard.storyboard */,
+				5B1D9D431A1BCC6B000F4AD6 /* APHDashboardViewController.h */,
+				5B1D9D441A1BCC6B000F4AD6 /* APHDashboardViewController.m */,
+				5B1D9D411A1BCC6B000F4AD6 /* APHDashboardEditViewController.h */,
+				5B1D9D421A1BCC6B000F4AD6 /* APHDashboardEditViewController.m */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		743AD0C71ABE2DE40071C218 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				743AD0CC1ABE2DE40071C218 /* APCAppCore.framework */,
+				743AD0CE1ABE2DE40071C218 /* APCAppCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		743AD0D11ABE2DE40071C218 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				743AD0D81ABE2DE40071C218 /* ResearchKit.framework */,
+				08F6D1B11AD6F94300DFF268 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		745DB4311ADB09F70007C484 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				745DB4361ADB09F70007C484 /* libPDScores.a */,
+				745DB4381ADB09F70007C484 /* PDScoresTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74B713991ABF04B900FE2553 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74B713A41ABF04B900FE2553 /* BridgeSDK.framework */,
+				74B713A61ABF04B900FE2553 /* BridgeSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A781165E1A96BC9400CEC822 /* Consent */ = {
+			isa = PBXGroup;
+			children = (
+				A781165F1A96BC9400CEC822 /* 2x */,
+				A78116671A96BC9400CEC822 /* 3x */,
+			);
+			path = Consent;
+			sourceTree = "<group>";
+		};
+		A781165F1A96BC9400CEC822 /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				A78116601A96BC9400CEC822 /* 00_Blank_to_Activities@2x.m4v */,
+				A78116611A96BC9400CEC822 /* 01_Activities_to_SensorData@2x.m4v */,
+				A78116621A96BC9400CEC822 /* 02_SensorData_to_DataGathering@2x.m4v */,
+				A78116631A96BC9400CEC822 /* 10_PotentialBenifits@2x.m4v */,
+				A78116641A96BC9400CEC822 /* 11_IssuesToConsider1@2x.m4v */,
+				A78116651A96BC9400CEC822 /* 12_IssuesToConside2@2x.m4v */,
+				A78116661A96BC9400CEC822 /* 13_RiskToPrivacy@2x.m4v */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		A78116671A96BC9400CEC822 /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				A78116681A96BC9400CEC822 /* 00_Blank_to_Activities@3x.m4v */,
+				A78116691A96BC9400CEC822 /* 01_Activities_to_SensorData@3x.m4v */,
+				A781166A1A96BC9400CEC822 /* 02_SensorData_to_DataGathering@3x.m4v */,
+				A781166B1A96BC9400CEC822 /* 10_PotentialBenifits@3x.m4v */,
+				A781166C1A96BC9400CEC822 /* 11_IssuesToConsider1@3x.m4v */,
+				A781166D1A96BC9400CEC822 /* 12_IssuesToConside2@3x.m4v */,
+				A781166E1A96BC9400CEC822 /* 13_RiskToPrivacy@3x.m4v */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		CFA2ABB419A7C1C1000DB961 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				745DB4301ADB09F70007C484 /* PDScores.xcodeproj */,
+				74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */,
+				747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */,
+				747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */,
+				5B18CEF61A2D3A56001A905E /* MapKit.framework */,
+				CFA2ABBF19A7C3EB000DB961 /* AVFoundation.framework */,
+				CFA2ABBD19A7C3C2000DB961 /* Security.framework */,
+				CFA2ABBB19A7C3A9000DB961 /* CoreData.framework */,
+				CFA2ABB519A7C229000DB961 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			path = Parkinson;
+			sourceTree = "<group>";
+		};
+		CFC2D2CE19A5417D00170E69 = {
+			isa = PBXGroup;
+			children = (
+				CFC2D2D919A5417D00170E69 /* Parkinson */,
+				CFC2D2E719A5417D00170E69 /* Images.xcassets */,
+				36EF84D11A951327008C255F /* Parkinson Tests */,
+				CFA2ABB419A7C1C1000DB961 /* Frameworks */,
+				CFC2D2D819A5417D00170E69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFC2D2D819A5417D00170E69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFC2D2D719A5417D00170E69 /* Parkinson.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFC2D2D919A5417D00170E69 /* Parkinson */ = {
+			isa = PBXGroup;
+			children = (
+				F5D14F3619CC9C0000650FBB /* Startup */,
+				F5D14E7719CC9B8100650FBB /* Onboarding */,
+				F5D14E8F19CC9B9100650FBB /* TabBarControllers */,
+				F5D14EE019CC9BC900650FBB /* TasksAndSteps */,
+				F5D14ED119CC9BA700650FBB /* Library */,
+				255D2F4619C40F25002137F1 /* Resources */,
+				CFC2D2DA19A5417D00170E69 /* Supporting Files */,
+			);
+			path = Parkinson;
+			sourceTree = "<group>";
+		};
+		CFC2D2DA19A5417D00170E69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5241CA819AEA5110098A4DF /* Parkinson.entitlements */,
+				CFC2D2DB19A5417D00170E69 /* Info.plist */,
+				CFC2D2DC19A5417D00170E69 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFDA47A41A97BF7400B32C34 /* MedicationTracking */ = {
+			isa = PBXGroup;
+			children = (
+				CFDA47A61A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.h */,
+				CFDA47A71A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.m */,
+			);
+			name = MedicationTracking;
+			sourceTree = "<group>";
+		};
+		CFF1A50C1A81969300EAEE0E /* SpatialSpanMemoryGameControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFF1A50E1A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.h */,
+				CFF1A50F1A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.m */,
+			);
+			name = SpatialSpanMemoryGameControllers;
+			sourceTree = "<group>";
+		};
+		F536B93C19F5747B005A2D1C /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				F536B93D19F5747B005A2D1C /* sample.task */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		F584909819E892700091A640 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				A781165E1A96BC9400CEC822 /* Consent */,
+				F584909919E892700091A640 /* Intro.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		F5D14E3F19CC991500650FBB /* JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				5A0F98FA1AA409EF00A2A7EB /* surveys */,
+				743BFFFE1A90E12800438241 /* APHConsentSection.json */,
+				5BBDAEF11A350FB40047DF87 /* LocationInfo.json */,
+				5B18CECF1A2CF2E5001A905E /* TermsAndConditions.json */,
+				5B975A141A112E2C00A34E42 /* Learn.json */,
+				5B975A151A112E2C00A34E42 /* WithdrawStudy.json */,
+				F5C11A2E19DCBE95003278FF /* APCParameters.json */,
+				5BAC200F19D5FEC600451AAE /* StudyOverview.json */,
+				F5D14E4019CC991500650FBB /* APHTasksAndSchedules.json */,
+				21CBD9E41A9FE59900031635 /* APHTasksAndSchedules_NoM7.json */,
+			);
+			path = JSONs;
+			sourceTree = "<group>";
+		};
+		F5D14E7719CC9B8100650FBB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F5EFE09F19EC39B1008BAD56 /* APHOnboarding.storyboard */,
+				5B29CE5219D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.h */,
+				5B29CE5319D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.m */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F5D14E8F19CC9B9100650FBB /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B1D9D3F1A1BCC6B000F4AD6 /* Dashboard */,
+			);
+			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		F5D14ED119CC9BA700650FBB /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				F5D14ED219CC9BA700650FBB /* Categories */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		F5D14ED219CC9BA700650FBB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F5D14ED319CC9BA700650FBB /* NSString+CustomMethods.h */,
+				F5D14ED419CC9BA700650FBB /* NSString+CustomMethods.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		F5D14EE019CC9BC900650FBB /* TasksAndSteps */ = {
+			isa = PBXGroup;
+			children = (
+				A74615B11A98077D00323AD1 /* ConverterForPDScores.h */,
+				A74615B21A98077D00323AD1 /* ConverterForPDScores.m */,
+				CFDA47A41A97BF7400B32C34 /* MedicationTracking */,
+				F5D14EE519CC9BC900650FBB /* IntervalTappingControllers */,
+				F5D14EFB19CC9BC900650FBB /* PhonationControllers */,
+				CFF1A50C1A81969300EAEE0E /* SpatialSpanMemoryGameControllers */,
+				F5D14F0D19CC9BC900650FBB /* WalkingControllers */,
+				5A0F99101AA4267A00A2A7EB /* Surveys_files */,
+			);
+			path = TasksAndSteps;
+			sourceTree = "<group>";
+		};
+		F5D14EE519CC9BC900650FBB /* IntervalTappingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5D14EF319CC9BC900650FBB /* APHIntervalTappingTaskViewController.h */,
+				F5D14EF419CC9BC900650FBB /* APHIntervalTappingTaskViewController.m */,
+				CF2BF9911A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.h */,
+				CF2BF9921A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.m */,
+			);
+			path = IntervalTappingControllers;
+			sourceTree = "<group>";
+		};
+		F5D14EFB19CC9BC900650FBB /* PhonationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5D14EFC19CC9BC900650FBB /* APHPhonationTaskViewController.h */,
+				F5D14EFD19CC9BC900650FBB /* APHPhonationTaskViewController.m */,
+			);
+			path = PhonationControllers;
+			sourceTree = "<group>";
+		};
+		F5D14F0D19CC9BC900650FBB /* WalkingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5D14F1719CC9BC900650FBB /* APHWalkingTaskViewController.h */,
+				F5D14F1819CC9BC900650FBB /* APHWalkingTaskViewController.m */,
+			);
+			path = WalkingControllers;
+			sourceTree = "<group>";
+		};
+		F5D14F3619CC9C0000650FBB /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				F5C1DC1F19D22E6F006527EA /* Main.storyboard */,
+				F5DCAD3D19D088330096DEC0 /* LaunchScreen.xib */,
+				F5D14F3719CC9C0000650FBB /* APHAppDelegate.h */,
+				F5D14F3819CC9C0000650FBB /* APHAppDelegate.m */,
+				7B9898C81A926F36003B4181 /* APHProfileExtender.h */,
+				7B9898C91A926F36003B4181 /* APHProfileExtender.m */,
+			);
+			path = Startup;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFC2D2D619A5417D00170E69 /* Parkinson */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFC2D2F719A5417D00170E69 /* Build configuration list for PBXNativeTarget "Parkinson" */;
+			buildPhases = (
+				CFC2D2D319A5417D00170E69 /* Sources */,
+				CFC2D2D419A5417D00170E69 /* Frameworks */,
+				CFC2D2D519A5417D00170E69 /* Resources */,
+				F5D1A91419D4C6FC00A03465 /* Embed Frameworks */,
+				F53F27B91A2D383E00A1D725 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74B713AC1ABF04D400FE2553 /* PBXTargetDependency */,
+				743AD0E21ABE2E8E0071C218 /* PBXTargetDependency */,
+				743AD0E01ABE2E880071C218 /* PBXTargetDependency */,
+				74B713EE1AC0722E00FE2553 /* PBXTargetDependency */,
+				74B713F51AC0722E00FE2553 /* PBXTargetDependency */,
+				74B713FA1AC0722E00FE2553 /* PBXTargetDependency */,
+			);
+			name = Parkinson;
+			productName = Parkinson;
+			productReference = CFC2D2D719A5417D00170E69 /* Parkinson.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFC2D2CF19A5417D00170E69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = APH;
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Apple, Inc.";
+				TargetAttributes = {
+					CFC2D2D619A5417D00170E69 = {
+						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = CFC2D2D219A5417D00170E69 /* Build configuration list for PBXProject "Parkinson" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFC2D2CE19A5417D00170E69;
+			productRefGroup = CFC2D2D819A5417D00170E69 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 743AD0C71ABE2DE40071C218 /* Products */;
+					ProjectRef = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
+				},
+				{
+					ProductGroup = 74B713991ABF04B900FE2553 /* Products */;
+					ProjectRef = 74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */;
+				},
+				{
+					ProductGroup = 745DB4311ADB09F70007C484 /* Products */;
+					ProjectRef = 745DB4301ADB09F70007C484 /* PDScores.xcodeproj */;
+				},
+				{
+					ProductGroup = 743AD0D11ABE2DE40071C218 /* Products */;
+					ProjectRef = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CFC2D2D619A5417D00170E69 /* Parkinson */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		08F6D1B11AD6F94300DFF268 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 08F6D1B01AD6F94300DFF268 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		743AD0CC1ABE2DE40071C218 /* APCAppCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = APCAppCore.framework;
+			remoteRef = 743AD0CB1ABE2DE40071C218 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		743AD0CE1ABE2DE40071C218 /* APCAppCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = APCAppCoreTests.xctest;
+			remoteRef = 743AD0CD1ABE2DE40071C218 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		743AD0D81ABE2DE40071C218 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 743AD0D71ABE2DE40071C218 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		745DB4361ADB09F70007C484 /* libPDScores.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPDScores.a;
+			remoteRef = 745DB4351ADB09F70007C484 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		745DB4381ADB09F70007C484 /* PDScoresTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PDScoresTests.xctest;
+			remoteRef = 745DB4371ADB09F70007C484 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		74B713A41ABF04B900FE2553 /* BridgeSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BridgeSDK.framework;
+			remoteRef = 74B713A31ABF04B900FE2553 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		74B713A61ABF04B900FE2553 /* BridgeSDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BridgeSDKTests.xctest;
+			remoteRef = 74B713A51ABF04B900FE2553 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFC2D2D519A5417D00170E69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5D14E4319CC991500650FBB /* APHTasksAndSchedules.json in Resources */,
+				5BBDAEBF1A33DFDA0047DF87 /* HTMLContent in Resources */,
+				A78116791A96BC9400CEC822 /* 10_PotentialBenifits@3x.m4v in Resources */,
+				F5C1DC2019D22E6F006527EA /* Main.storyboard in Resources */,
+				A781167C1A96BC9400CEC822 /* 13_RiskToPrivacy@3x.m4v in Resources */,
+				743BFFFF1A90E12800438241 /* APHConsentSection.json in Resources */,
+				5BAC201019D5FEC600451AAE /* StudyOverview.json in Resources */,
+				F5EFE0A019EC39B1008BAD56 /* APHOnboarding.storyboard in Resources */,
+				A78116701A96BC9400CEC822 /* 01_Activities_to_SensorData@2x.m4v in Resources */,
+				08F6D1B41AD6FA7200DFF268 /* PD_feedback.json in Resources */,
+				A78116721A96BC9400CEC822 /* 10_PotentialBenifits@2x.m4v in Resources */,
+				A78116741A96BC9400CEC822 /* 12_IssuesToConside2@2x.m4v in Resources */,
+				A78116711A96BC9400CEC822 /* 02_SensorData_to_DataGathering@2x.m4v in Resources */,
+				F584909A19E892700091A640 /* Intro.mp4 in Resources */,
+				5B18CED01A2CF2E5001A905E /* TermsAndConditions.json in Resources */,
+				A781167B1A96BC9400CEC822 /* 12_IssuesToConside2@3x.m4v in Resources */,
+				A78116781A96BC9400CEC822 /* 02_SensorData_to_DataGathering@3x.m4v in Resources */,
+				21CBD9E51A9FE59900031635 /* APHTasksAndSchedules_NoM7.json in Resources */,
+				5B1095B91A9F9BD5006631F5 /* consent.pdf in Resources */,
+				08F6D1B51AD6FA7200DFF268 /* PD_mythoughts.json in Resources */,
+				A78116751A96BC9400CEC822 /* 13_RiskToPrivacy@2x.m4v in Resources */,
+				F536B93E19F5747B005A2D1C /* sample.task in Resources */,
+				5B975A161A112E2C00A34E42 /* Learn.json in Resources */,
+				F5C11A2F19DCBE95003278FF /* APCParameters.json in Resources */,
+				F5DCAD3E19D088330096DEC0 /* LaunchScreen.xib in Resources */,
+				5B1D9D451A1BCC6B000F4AD6 /* APHDashboard.storyboard in Resources */,
+				A78116761A96BC9400CEC822 /* 00_Blank_to_Activities@3x.m4v in Resources */,
+				5B975A171A112E2C00A34E42 /* WithdrawStudy.json in Resources */,
+				A781166F1A96BC9400CEC822 /* 00_Blank_to_Activities@2x.m4v in Resources */,
+				A78116771A96BC9400CEC822 /* 01_Activities_to_SensorData@3x.m4v in Resources */,
+				5BBDAEF21A350FB40047DF87 /* LocationInfo.json in Resources */,
+				A781167A1A96BC9400CEC822 /* 11_IssuesToConsider1@3x.m4v in Resources */,
+				A78116731A96BC9400CEC822 /* 11_IssuesToConsider1@2x.m4v in Resources */,
+				5A0F98FF1AA409FC00A2A7EB /* PDenrollment_survey.json in Resources */,
+				CFC2D2E819A5417D00170E69 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F53F27B91A2D383E00A1D725 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/AppCore/APCAppCore/APCAppCore/Resources/get_debug_ip_address.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFC2D2D319A5417D00170E69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2BF9931A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.m in Sources */,
+				F5D14F2719CC9BC900650FBB /* APHPhonationTaskViewController.m in Sources */,
+				5B1D9D461A1BCC6B000F4AD6 /* APHDashboardEditViewController.m in Sources */,
+				5B1D9D471A1BCC6B000F4AD6 /* APHDashboardViewController.m in Sources */,
+				F5D14F3919CC9C0000650FBB /* APHAppDelegate.m in Sources */,
+				A74615B31A98077D00323AD1 /* ConverterForPDScores.m in Sources */,
+				5B29CE5419D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.m in Sources */,
+				5A0F991A1AA426F300A2A7EB /* APHfeedback.m in Sources */,
+				5A0F99171AA426D900A2A7EB /* APHmythougths.m in Sources */,
+				F5D14F2319CC9BC900650FBB /* APHIntervalTappingTaskViewController.m in Sources */,
+				CFF1A5101A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.m in Sources */,
+				7B9898CA1A926F36003B4181 /* APHProfileExtender.m in Sources */,
+				CFDA47A81A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.m in Sources */,
+				5A0F99021AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m in Sources */,
+				F5D14F3519CC9BC900650FBB /* APHWalkingTaskViewController.m in Sources */,
+				F5D14EDC19CC9BA700650FBB /* NSString+CustomMethods.m in Sources */,
+				CFC2D2DD19A5417D00170E69 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		743AD0E01ABE2E880071C218 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenResearchKit;
+			targetProxy = 743AD0DF1ABE2E880071C218 /* PBXContainerItemProxy */;
+		};
+		743AD0E21ABE2E8E0071C218 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = APCAppCore;
+			targetProxy = 743AD0E11ABE2E8E0071C218 /* PBXContainerItemProxy */;
+		};
+		74B713AC1ABF04D400FE2553 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BridgeSDK;
+			targetProxy = 74B713AB1ABF04D400FE2553 /* PBXContainerItemProxy */;
+		};
+		74B713EE1AC0722E00FE2553 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BridgeSDK;
+			targetProxy = 74B713ED1AC0722E00FE2553 /* PBXContainerItemProxy */;
+		};
+		74B713F51AC0722E00FE2553 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenResearchKit;
+			targetProxy = 74B713F41AC0722E00FE2553 /* PBXContainerItemProxy */;
+		};
+		74B713FA1AC0722E00FE2553 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = APCAppCore;
+			targetProxy = 74B713F91AC0722E00FE2553 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		362454EE1A7FE267007BA94B /* DebugAndSendToDataVerificationServer */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"USE_DATA_VERIFICATION_CLIENT=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = DebugAndSendToDataVerificationServer;
+		};
+		362454EF1A7FE267007BA94B /* DebugAndSendToDataVerificationServer */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Parkinson/Parkinson.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/PDScores/PDScores/**",
+				);
+				INFOPLIST_FILE = Parkinson/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = DebugAndSendToDataVerificationServer;
+		};
+		CFC2D2F519A5417D00170E69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CFC2D2F619A5417D00170E69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFC2D2F819A5417D00170E69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Parkinson/Parkinson.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/PDScores/PDScores/**",
+				);
+				INFOPLIST_FILE = Parkinson/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		CFC2D2F919A5417D00170E69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Parkinson/Parkinson.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/PDScores/PDScores/**",
+				);
+				INFOPLIST_FILE = Parkinson/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		F5BB3C5F19E4A0C700088499 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"DEVELOPMENT=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Development;
+		};
+		F5BB3C6019E4A0C700088499 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Parkinson/Parkinson.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/PDScores/PDScores/**",
+				);
+				INFOPLIST_FILE = Parkinson/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Development;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFC2D2D219A5417D00170E69 /* Build configuration list for PBXProject "Parkinson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFC2D2F519A5417D00170E69 /* Debug */,
+				362454EE1A7FE267007BA94B /* DebugAndSendToDataVerificationServer */,
+				F5BB3C5F19E4A0C700088499 /* Development */,
+				CFC2D2F619A5417D00170E69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFC2D2F719A5417D00170E69 /* Build configuration list for PBXNativeTarget "Parkinson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFC2D2F819A5417D00170E69 /* Debug */,
+				362454EF1A7FE267007BA94B /* DebugAndSendToDataVerificationServer */,
+				F5BB3C6019E4A0C700088499 /* Development */,
+				CFC2D2F919A5417D00170E69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFC2D2CF19A5417D00170E69 /* Project object */;
+}

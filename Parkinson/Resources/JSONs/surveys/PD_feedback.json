@@ -1,0 +1,26 @@
+{
+    "name":"Study Feedback",
+    "identifier":"study_feedback",
+    "questions":
+    [
+         {
+         "guid": "454afd00-3d2b-41c2-9b16-17c72223819b",
+         "identifier": "feedback",
+         "prompt": "In what ways would you improve or change the mPower study?",
+         "detail" : "We depend on you as our partners in this research study.  Please provide us anonymous feedback on ways we can enhance the study and reflect the interests of the Parkinson Disease community in improvements to come in June, 2015.",
+     
+         "constraints":
+         {
+         "dataType":"string",
+         "type":"StringConstraints"
+         },
+         "uiHint":"multilinetext",
+         "type":"SurveyQuestion"
+         }
+
+     ],
+    "type":"Survey"
+}
+
+
+

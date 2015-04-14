@@ -1,0 +1,172 @@
+{
+    "documentProperties" :
+    {
+        "htmlDocument" : "PD_fullconsent",
+        "investigatorShortDescription": "Sage Bionetworks",
+        "investigatorLongDescription": "Sage Bionetworks and its partners",
+        "htmlContent": "15sharing_rsch"
+    },
+    "quiz":
+    {
+        "questions":
+        [
+            {
+                "identifier": "instruction",
+                "prompt": "Comprehension",
+                "text": "Let's do a quick and simple test of your understanding of this study.",
+                "type": "instruction"
+            },
+            {
+                "identifier": "purpose",
+                "prompt": "What is the purpose of this study?",
+                "type": "singleChoiceText",
+                "textChoices":
+                [
+                 "Understand the fluctuations of Parkinson disease symptoms",
+                 "Treating Parkinson disease"
+                ],
+                "expectedAnswer": "0"
+            },
+            {
+                "identifier": "deidentified",
+                "prompt": "My name will be stored with my study data.",
+                "type": "boolean",
+                "expectedAnswer": "false"
+            },
+            {
+                "identifier": "access",
+                "prompt": "I can choose to share my coded study data sparsely or more broadly.",
+                "type": "boolean",
+                "expectedAnswer": "true"
+            },
+            {
+                "identifier": "skipSurvey",
+                "prompt": "I will be able to skip any survey question.",
+                "type": "boolean",
+                "expectedAnswer": "true"
+            },
+            {
+                "identifier": "stopParticipating",
+                "prompt": "I will be able to stop participating at any time.",
+                "type": "boolean",
+                "expectedAnswer": "true"
+            }
+        ],
+        "failureTitle": "Try again",
+        "failureMessage": "Unfortunately you answered one or more questions incorrectly. You can return to the beginning of the walkthrough to get more information about the study.",
+        "successTitle": "Great Job!",
+        "successMessage": "You answered all of the questions correctly. \nTap Next to continue.",
+        "allowedFailures": "0"
+
+    },
+    "sections":
+    [
+     {
+         "sectionType" : "onlyInDocument",
+         "sectionHtmlContent" : "PD_fullconsent"
+     },
+     {
+         "sectionType" : "overview",
+         "sectionSummary" : "This simple walkthrough will explain the research study, the impact it may have on your life and will allow you to provide your consent to participate.",
+         "sectionHtmlContent" : "1welcome"
+     },
+     {
+         "sectionType" : "custom",
+         "sectionTitle": "We'll Test Your Understanding",
+         "sectionSummary": "At the end of this walkthrough, we will ask you a few questions about the details of the study.",
+        "sectionImage": "quiz_image",
+        "sectionHtmlContent" : "2quiz_headsup"
+     },
+     {
+         "sectionType" : "custom",
+         "sectionTitle": "Activities",
+         "sectionSummary": "To better understand your evolving health, we will ask you to perform simple activities and respond to surveys.",
+         "sectionHtmlContent" : "3activities",
+         "sectionImage": "00_Blank_to_Activities",
+         "sectionAnimationUrl": "00_Blank_to_Activities"
+     },
+     {
+         "sectionType" : "custom",
+         "sectionTitle": "Sensor Data",
+         "sectionSummary": "This study will also gather sensor data from your iPhone and personal devices with your permission.",
+         "sectionHtmlContent" : "4sensordata",
+         "sectionImage": "01_Activities_to_SensorData",
+         "sectionAnimationUrl":"01_Activities_to_SensorData"
+     },
+     {
+         "sectionType" : "dataGathering",
+         "sectionTitle": "Data Processing",
+         "sectionSummary" : "Your study data (survey, activities and sensors) will be combined with similar data from other participants.",
+         "sectionHtmlContent" : "5dataprocessing",
+         "sectionAnimationUrl":"02_SensorData_to_DataGathering"
+     },
+     {
+         "sectionType" : "privacy",
+         "sectionTitle": "Protecting your Data",
+         "sectionSummary": "We will replace your name with a random code. The coded data will be encrypted and stored on a secure Cloud server under the control of Sage Bionetworks to prevent improper access.",
+         "sectionHtmlContent" : "6protectingdata"
+     },
+     {
+         "sectionType" : "dataUse",
+         "sectionTitle": "Data Use",
+         "sectionSummary": "Your coded data will be used for research and may be shared with other researchers worldwide.",
+         "sectionHtmlContent" : "7datause"
+     },
+     {
+         "sectionType" : "timeCommitment",
+         "sectionTitle" : "Issues to Consider",
+         "sectionSummary": "This study will take about 20 minutes per day.",
+         "sectionHtmlContent" : "8time"
+     },
+     {
+         "sectionType" : "studySurvey",
+         "sectionTitle" : "Study Survey",
+         "sectionSummary": "We will also ask you to answer brief weekly and monthly surveys about your symptoms to track any changes.",
+         "sectionHtmlContent" : "9study_survey"
+     },
+     {
+         "sectionType" : "studyTasks",
+         "sectionTitle" : "Study Activities",
+         "sectionSummary": "We will ask you to perform specific activities, like walking a few steps while holding or using your iPhone.",
+         "sectionHtmlContent" : "10study_task"
+     },
+     {
+         "sectionType" : "withdrawing",
+         "sectionTitle" : "Withdrawing",
+         "sectionSummary" : "Your participation is voluntary. You may withdraw your consent and discontinue participation at any time.",
+         "sectionHtmlContent" : "11withdrawing"
+     },
+     {
+         "sectionType" : "custom",
+         "sectionTitle": "Potential Benefits",
+         "sectionSummary": "You will be able to visualize your data and potentially learn more about trends in your health.",
+         "sectionHtmlContent" : "12potentialbenefits1",
+         "sectionImage": "10_PotentialBenifits",
+         "sectionAnimationUrl":"10_PotentialBenifits"
+     },
+     {
+         "sectionType" : "custom",
+         "sectionTitle": "Issues to Consider",
+         "sectionSummary": "This research is not a treatment study.  Some questions may make you feel uncomfortable. Simply do not respond.",
+         "sectionHtmlContent" : "13issues_survey",
+         "sectionImage": "11_IssuesToConsider1",
+         "sectionAnimationUrl":"11_IssuesToConsider1"
+     },
+     {
+         "sectionType" : "custom",
+         "sectionTitle": "Issues to Consider",
+         "sectionSummary": "Participating in this study could generate a wide range of emotions.",
+         "sectionHtmlContent" : "14issues_mood",
+         "sectionImage": "12_IssuesToConsider2",
+         "sectionAnimationUrl":"12_IssuesToConside2"
+     },
+     {
+         "sectionType" : "custom",
+         "sectionTitle": "Risk to Privacy",
+         "sectionSummary": "We will make every effort to protect your information, but total anonymity cannot be guaranteed.",
+         "sectionHtmlContent" : "15privacy_risk",
+         "sectionImage": "13_RiskToPrivacy",
+         "sectionAnimationUrl":"13_RiskToPrivacy"
+     }
+ ]
+}

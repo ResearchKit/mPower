@@ -1,0 +1,55 @@
+{
+    "items": [
+        {
+            "section_title": "",
+            "row_items": [
+                          
+                          {
+                          "title":"About This Study",
+                          "details":"AboutStudy",
+                          "icon_image":"paperplus_icon",
+                          "tint_color" : "blue"
+                          },
+                          
+                          {
+                          "title":"How This Study Works",
+                          "details":"howstudyworks",
+                          "icon_image":"rulerpencil_icon",
+                          "tint_color" : "purple"
+                          },
+                          
+                          {
+                          "title":"Who Can Participate",
+                          "details":"EligibleToParticipate",
+                          "icon_image":"clipboard_icon",
+                          "tint_color" : "green"
+                          },
+                          {
+                          "title":"Who Is Running This Study",
+                          "details":"whoisrunning",
+                          "icon_image":"stethescope_icon",
+                          "tint_color" : "yellow"
+                          },
+                          
+                        {
+                            "title": "Life with Parkinson Disease",
+                            "details": "lifewithPD",
+                            "icon_image": "disease_icon",
+                            "tint_color": "appColor"
+                        },
+                        {
+                            "title": "Symptoms",
+                            "details": "symptoms",
+                            "icon_image": "diagnostics_icon",
+                            "tint_color": "green"
+                        },
+                        {
+                            "title": "Online Resources",
+                            "details": "online_resources",
+                            "icon_image": "globe_icon",
+                            "tint_color": "gray"
+                        }
+            ]
+        }
+    ]
+}

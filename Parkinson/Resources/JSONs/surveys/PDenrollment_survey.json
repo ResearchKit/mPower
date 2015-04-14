@@ -1,0 +1,1148 @@
+{
+    "identifier": "EnrollmentSurvey",
+    "type": "Survey",
+    "name": "Enrollment Survey",
+    "questions": [
+         {  
+           
+         "guid":"538d9b7e-6548-4bf8-8a4d-fb111411e684",
+         "identifier":"age",
+         "type":"SurveyQuestion",
+         "detail":"How old are you?",
+         "constraints":{  
+            "dataType":"integer",
+            "rules":[  
+
+            ],
+            "dataType":"integer",
+            "minValue":18.0,
+            "type":"IntegerConstraints"
+         },
+         "uiHint":"numberfield"
+      },
+      {  
+         "guid":"06f5bce0-0380-4f3d-a044-853950292ac9",
+         "identifier":"gender",
+         "type":"SurveyQuestion",
+         "detail":"What is your sex?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Male",
+                  "value":"Male",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Female",
+                  "value":"Female",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Prefer not to answer",
+                  "value":"Prefer not to answer",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"e3e89592-2ef0-44e4-8433-186c872f161b",
+         "identifier":"race",
+         "type":"SurveyQuestion",
+         "detail":"Which race do you identify with?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Black or African",
+                  "value":"Black or African",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Latino/Hispanic",
+                  "value":"Latino/Hispanic",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Native American",
+                  "value":"Native American",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Pacific Islander",
+                  "value":"Pacific Islander",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Middle Eastern",
+                  "value":"Middle Eastern",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Caribbean",
+                  "value":"Caribbean",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"South Asian",
+                  "value":"South Asian",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"East Asian",
+                  "value":"East Asian",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"White or Caucasian",
+                  "value":"White or Caucasian",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Mixed",
+                  "value":"Mixed",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":true,
+            "allowMultiple":true,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"checkbox"
+      },
+     
+      {
+      "guid":"12fee175-6213-4c0b-89b5-5cac34f7783f",
+      "identifier":"Enter_State",
+      "detail":"In which state do you reside? (Enter your state's 2 letter code).",
+      "constraints":{
+      "rules":[
+      
+      ],
+      "dataType":"string",
+      "minLength":0,
+      "maxLength":2,
+      "type":"StringConstraints"
+      },
+      "uiHint":"textfield",
+      "type":"SurveyQuestion"
+      },
+                  
+                  
+      {  
+         "guid":"84dbf77d-dfa4-4c52-ae4b-bdae40007926",
+         "identifier":"education",
+         "type":"SurveyQuestion",
+         "detail":"What is the highest level of education that you have completed?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Doctoral Degree",
+                  "value":"Doctoral Degree",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Master's Degree",
+                  "value":"Master's Degree",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Some graduate school",
+                  "value":"Some graduate school",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"4-year college degree",
+                  "value":"4-year college degree",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"2-year college degree",
+                  "value":"2-year college degree",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Some college",
+                  "value":"Some college",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"High School Diploma/GED",
+                  "value":"High School Diploma/GED",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Some high school",
+                  "value":"Some high school",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"select"
+      },
+      {  
+         "guid":"3cb3483c-682d-4289-b001-2b3e8a84fc1f",
+         "identifier":"employment",
+         "type":"SurveyQuestion",
+         "detail":"What is your current employment status?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Employment for wages",
+                  "value":"Employment for wages",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Self-employed",
+                  "value":"Self-employed",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Out of work and looking for work",
+                  "value":"Out of work and looking for work",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Out of work but not currently looking for work",
+                  "value":"Out of work but not currently looking for work",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"A homemaker",
+                  "value":"A homemaker",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"A student",
+                  "value":"A student",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Military",
+                  "value":"Military",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Retired",
+                  "value":"Retired",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Unable to work",
+                  "value":"Unable to work",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"select"
+      },
+      {  
+         "guid":"bdca343f-6931-4268-9307-02297689aa37",
+         "identifier":"maritalStatus",
+         "type":"SurveyQuestion",
+         "detail":"What is your current marital status?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Single, never married",
+                  "value":"Single, never married",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Married or domestic partnership",
+                  "value":"Married or domestic partnership",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Widowed",
+                  "value":"Widowed",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Divorced",
+                  "value":"Divorced",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Separated",
+                  "value":"Separated",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":true,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"0bd41ad0-ffd5-4875-ad15-ffc21680b812",
+         "identifier":"are-caretaker",
+         "type":"SurveyQuestion",
+         "detail":"Are you a spouse, partner or care-partner of someone who has Parkinson disease?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"c7a5a13d-a8ba-4b0a-9acd-7abbb12fbd9e",
+         "identifier":"past-participation",
+         "type":"SurveyQuestion",
+         "detail":"Have you ever participated in a research study or clinical trial on Parkinson disease before?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"d24a61ea-e41a-4c3d-8874-791e55aac2e4",
+         "identifier":"smartphone",
+         "type":"SurveyQuestion",
+         "detail":"How easy is it for you to use your smartphone?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Very easy",
+                  "value":"Very easy",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Easy",
+                  "value":"Easy",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Neither easy nor difficult",
+                  "value":"Neither easy nor difficult",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Difficult",
+                  "value":"Difficult",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Very Difficult",
+                  "value":"Very Difficult",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"1f5a3faa-25fe-44c1-819b-c94cb2afca0d",
+         "identifier":"phone-usage",
+         "type":"SurveyQuestion",
+         "detail":"Do you ever use your smartphone to look for health or medical information online?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"Yes",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"No",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Not sure",
+                  "value":"Not sure",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"8c610ffd-f533-4d11-9396-43611ab7b9ce",
+         "identifier":"home-usage",
+         "type":"SurveyQuestion",
+         "detail":"Do you use the Internet or email at home?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"5dff3238-18f0-4eb6-b024-7b70c1334698",
+         "identifier":"medical-usage",
+         "type":"SurveyQuestion",
+         "detail":"Do you ever use the Internet to look for health or medical information online?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+               {  
+                  "operator":"eq",
+                  "value":"yes",
+                  "skipTo":"medical-usage-yesterday",
+                  "type":"SurveyRule"
+               },
+               {  
+                  "operator":"de",
+                  "skipTo":"video-usage",
+                  "type":"SurveyRule"
+               },
+               {  
+                  "operator":"ne",
+                  "value":"yes",
+                  "skipTo":"video-usage",
+                  "type":"SurveyRule"
+               }
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Yes, I have done this",
+                  "value":"yes",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No, I have never done this",
+                  "value":"no",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"e57cbdd9-8432-497c-9877-d67a91fd7d38",
+         "identifier":"medical-usage-yesterday",
+         "type":"SurveyQuestion",
+         "detail":"Did you happen to do this yesterday, or not?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Did this yesterday",
+                  "value":"yes",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Did not do this yesterday",
+                  "value":"no",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Don't know",
+                  "value":"dont-know",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"3c087d38-a7d3-4d36-a8d5-0426035945e5",
+         "identifier":"video-usage",
+         "type":"SurveyQuestion",
+         "detail":"Do you ever use your smartphone to participate in a video call or video chat?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"97540e59-0e30-4870-b3b4-9dbb4f596258",
+         "identifier":"professional-diagnosis",
+         "type":"SurveyQuestion",
+         "detail":"Have you been diagnosed by a medical professional with Parkinson disease?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"4c6325b9-f3d5-4752-bac9-d2dca90d70f9",
+         "identifier":"onset-year",
+         "type":"SurveyQuestion",
+         "detail":"In what year did your movement symptoms begin?",
+         "constraints":{  
+            "dataType":"integer",
+            "rules":[  
+
+            ],
+                  "minValue": 1900,
+                  "maxValue": 2015,
+            "dataType":"integer",
+            "type":"IntegerConstraints"
+         },
+         "uiHint":"numberfield"
+      },
+      {  
+         "guid":"32293df8-1d1b-4f39-9b22-aff2175aebc5",
+         "identifier":"diagnosis-year",
+         "type":"SurveyQuestion",
+         "detail":"In what year were you diagnosed with Parkinson disease?",
+         "constraints":{  
+            "dataType":"integer",
+            "rules":[  
+
+            ],
+              "minValue": 1900,
+              "maxValue": 2015,
+            "dataType":"integer",
+            "type":"IntegerConstraints"
+         },
+         "uiHint":"numberfield"
+      },
+      {  
+         "guid":"55bc5412-5b44-45af-a982-ba2147a2f435",
+         "identifier":"medication-start-year",
+         "type":"SurveyQuestion",
+         "detail":"In what year did you begin taking Parkinson disease medication? Type in 0 if you have not started to take Parkinson medication.",
+         "constraints":{  
+            "dataType":"integer",
+            "rules":[  
+
+            ],
+                  "minValue": 0,
+                  "maxValue": 2015,
+            "dataType":"integer",
+            "type":"IntegerConstraints"
+         },
+         "uiHint":"numberfield"
+      },
+      {  
+         "guid":"6bf5a57a-9e59-4a33-b424-e67454bd5a83",
+         "identifier":"healthcare-provider",
+         "type":"SurveyQuestion",
+         "detail":"What kind of health care provider currently cares for your Parkinson disease?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Parkinson Disease/Movement Disorder Specialist",
+                  "value":"Parkinson Disease/Movement Disorder Specialist",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"General Neurologist (non-Parkinson Disease specialist)",
+                  "value":"General Neurologist (non-Parkinson Disease specialist)",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Primary Care Doctor",
+                  "value":"Primary Care Doctor",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Nurse Practitioner or Physician's Assistant",
+                  "value":"Nurse Practitioner or Physician's Assistant",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Don't know",
+                  "value":"Don't know",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":true,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"2019a3ec-300a-4be9-95c6-7bdcca387a15",
+         "identifier":"deep-brain-stimulation",
+         "type":"SurveyQuestion",
+         "detail":"Have you ever had Deep Brain Stimulation?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+               {  
+                  "operator":"eq",
+                  "value":"true",
+                  "skipTo":"when-dbs",
+                  "type":"SurveyRule"
+               },
+               {  
+                  "operator":"ne",
+                  "value":"true",
+                  "skipTo":"surgery",
+                  "type":"SurveyRule"
+               },
+               {  
+                  "operator":"de",
+                  "skipTo":"surgery",
+                  "type":"SurveyRule"
+               }
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"d5e550c1-a819-4620-a872-b78366d1f28b",
+         "identifier":"when-dbs",
+         "type":"SurveyQuestion",
+         "detail":"When did you last have DBS?",
+         "constraints":{  
+            "dataType":"date",
+            "rules":[  
+
+            ],
+            "dataType":"date",
+            "allowFuture":false,
+            "type":"DateConstraints"
+         },
+         "uiHint":"datepicker"
+      },
+      {  
+         "guid":"68634d64-86f8-4f3a-bd8c-3576ddd5c115",
+         "identifier":"surgery",
+         "type":"SurveyQuestion",
+         "detail":"Have you ever had any surgery for Parkinson disease, other than DBS?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {  
+         "guid":"631344ee-18ab-40b6-9760-1cca637d6baf",
+         "identifier":"smoked",
+         "type":"SurveyQuestion",
+         "detail":"Have you ever smoked?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+               {  
+                  "operator":"eq",
+                  "value":"true",
+                  "skipTo":"years-smoking",
+                  "type":"SurveyRule"
+               },
+               {  
+                  "operator":"ne",
+                  "value":"true",
+                  "skipTo":"health-history",
+                  "type":"SurveyRule"
+               },
+               {  
+                  "operator":"de",
+                  "skipTo":"health-history",
+                  "type":"SurveyRule"
+               }
+            ],
+            "dataType":"boolean",
+            "enumeration":[  
+               {  
+                  "label":"Yes",
+                  "value":"true",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"No",
+                  "value":"false",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"radiobutton"
+      },
+      {
+          "guid":"a450199e-e422-4bbb-aeaa-aabbd354d22d",
+          "identifier":"years-smoking",
+          "type":"SurveyQuestion",
+          "detail":"How many years have you smoked?",
+          "constraints":{
+          "dataType":"integer",
+          "rules":[
+          
+          ],
+          "minValue": 0,
+          "maxValue": 75,
+          "dataType":"integer",
+          "type":"IntegerConstraints"
+          },
+          "uiHint":"numberfield"
+      },
+            
+                  
+      {
+         "guid":"80d1eff9-701f-4f6a-931c-9318db252b72",
+         "identifier":"packs-per-day",
+         "type":"SurveyQuestion",
+         "detail":"On average, how many packs did you smoke each day?",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"integer",
+            "enumeration":[  
+               {  
+                  "label":"1",
+                  "value":"1",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"2",
+                  "value":"2",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"3",
+                  "value":"3",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"4",
+                  "value":"4",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"5",
+                  "value":"5",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":false,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"select"
+      },
+      {  
+         "guid":"a81120a5-715c-441f-9300-4b22379d1b00",
+         "identifier":"last-smoked",
+         "type":"SurveyQuestion",
+         "detail":"When is the last time you smoked (put todays date if you are still smoking)?",
+         "constraints":{  
+            "dataType":"date",
+            "rules":[  
+
+            ],
+            "dataType":"date",
+            "allowFuture":false,
+            "type":"DateConstraints"
+         },
+         "uiHint":"datepicker"
+      },
+      {  
+         "guid":"1777e9e8-aaa1-44db-a818-4d6d06697fdb",
+         "identifier":"health-history",
+         "type":"SurveyQuestion",
+         "detail":"Has a doctor ever told you that you have, or have you ever taken medication for any of the following conditions? Please check all that apply.",
+         "constraints":{  
+            "dataType":"multivalue",
+            "rules":[  
+
+            ],
+            "dataType":"string",
+            "enumeration":[  
+               {  
+                  "label":"Acute Myocardial Infarction/Heart Attack",
+                  "value":"Acute Myocardial Infarction/Heart Attack",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Alzheimer Disease or Alzheimer dementia",
+                  "value":"Alzheimer Disease or Alzheimer dementia",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Atrial Fibrillation",
+                  "value":"Atrial Fibrillation",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Anxiety",
+                  "value":"Anxiety",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Cataract",
+                  "value":"Cataract",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Kidney Disease",
+                  "value":"Kidney Disease",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Chronic Obstructive Pulmonary Disease (COPD) or Asthma",
+                  "value":"Chronic Obstructive Pulmonary Disease (COPD) or Asthma",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Heart Failure/Congestive Heart Failure",
+                  "value":"Heart Failure/Congestive Heart Failure",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Diabetes or Pre-diabetes or High Blood Sugar",
+                  "value":"Diabetes or Pre-diabetes or High Blood Sugar",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Glaucoma",
+                  "value":"Glaucoma",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Hip/Pelvic Fracture",
+                  "value":"Hip/Pelvic Fracture",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Ischemic Heart Disease",
+                  "value":"Ischemic Heart Disease",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Depression",
+                  "value":"Depression",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Osteoporosis",
+                  "value":"Osteoporosis",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Rheumatoid Arthritis",
+                  "value":"Rheumatoid Arthritis",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Dementia",
+                  "value":"Dementia",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Stroke/Transient Ischemic Attack (TIA)",
+                  "value":"Stroke/Transient Ischemic Attack (TIA)",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Breast Cancer",
+                  "value":"Breast Cancer",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Colorectal Cancer",
+                  "value":"Colorectal Cancer",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Prostate Cancer",
+                  "value":"Prostate Cancer",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Lung Cancer",
+                  "value":"Lung Cancer",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Endometrial/Uterine Cancer",
+                  "value":"Endometrial/Uterine Cancer",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Head Injury with Loss of Consciousness/Concussion",
+                  "value":"Head Injury with Loss of Consciousness/Concussion",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Any other kind of cancer OR tumor",
+                  "value":"Any other kind of cancer OR tumor",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Urinary Tract infections",
+                  "value":"Urinary Tract infections",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Obstructive Sleep Apnea",
+                  "value":"Obstructive Sleep Apnea",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Schizophrenia or Bipolar Disorder",
+                  "value":"Schizophrenia or Bipolar Disorder",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Peripheral Vascular Disease",
+                  "value":"Peripheral Vascular Disease",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"High Blood Pressure/Hypertension",
+                  "value":"High Blood Pressure/Hypertension",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Fainting/Syncope",
+                  "value":"Fainting/Syncope",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Alcoholism",
+                  "value":"Alcoholism",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Multiple Sclerosis",
+                  "value":"Multiple Sclerosis",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Impulse control disorder",
+                  "value":"Impulse control disorder",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"AIDS or HIV",
+                  "value":"AIDS or HIV",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Liver Disease",
+                  "value":"Liver Disease",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Leukemia or Lymphoma",
+                  "value":"Leukemia or Lymphoma",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Ulcer Disease",
+                  "value":"Ulcer Disease",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Connective Tissue Disease",
+                  "value":"Connective Tissue Disease",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Coronary Artery Disease",
+                  "value":"Coronary Artery Disease",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Anemia",
+                  "value":"Anemia",
+                  "type":"SurveyQuestionOption"
+               },
+               {  
+                  "label":"Asthma",
+                  "value":"Asthma",
+                  "type":"SurveyQuestionOption"
+               }
+            ],
+            "allowOther":false,
+            "allowMultiple":true,
+            "type":"MultiValueConstraints"
+         },
+         "uiHint":"list"
+      }
+   ]
+}

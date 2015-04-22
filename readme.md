@@ -89,3 +89,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ```
 
+This application uses Sage Bionetworks' PDScores task analysis library, which is a
+derivative work (Objective-C port) of MATLAB code created by Max Little and provided 
+under a [Creative Commons Attribution-ShareAlike 3.0](http://creativecommons.org/licenses/by-sa/3.0/legalcode) license.
+

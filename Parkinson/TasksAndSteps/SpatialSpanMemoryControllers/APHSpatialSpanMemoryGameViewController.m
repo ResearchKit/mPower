@@ -2,33 +2,33 @@
 //  APHSpatialSpanMemoryGameViewController.m 
 //  mPower 
 // 
-// Copyright (c) 2015, Sage Bionetworks, Inc.
-// All rights reserved.
-//
-// Redistribution and use in source and binary forms, with or without modification, 
+// Copyright (c) 2015, Sage Bionetworks. All rights reserved. 
+// 
+// Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this 
+// 
+// 1.  Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
-//
-// 2. Redistributions in binary form must reproduce the above copyright notice,
-// this list of conditions and the following disclaimer in the documentation and/or
-// other materials provided with the distribution.
-//
-// 3. Neither the name of the copyright holder nor the names of its contributors 
+// 
+// 2.  Redistributions in binary form must reproduce the above copyright notice, 
+// this list of conditions and the following disclaimer in the documentation and/or 
+// other materials provided with the distribution. 
+// 
+// 3.  Neither the name of the copyright holder(s) nor the names of any contributors 
 // may be used to endorse or promote products derived from this software without 
-// specific prior written permission.
-//
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// specific prior written permission. No license is granted to the trademarks of 
+// the copyright holders even if such marks are included in this software. 
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 // 
  
 #import "APHSpatialSpanMemoryGameViewController.h"
@@ -47,14 +47,17 @@ static  NSInteger       kMinimumSpan                  =  2;
 static  NSInteger       kMaximumSpan                  =  15;
 static  NSTimeInterval  kPlaySpeed                    = 1.0;
 static  NSInteger       kMaximumTests                 = 5;
-static  NSInteger       kMaxConsecutiveFailures       =  3;
+static  NSInteger       kMaxConsecutiveFailures       = 3;
 static  NSString       *kCustomTargetPluralName       = nil;
 static  BOOL            kRequiresReversal             = NO;
 
 static NSString *const kMomentInDay                             = @"momentInDay";
+
 static NSString *const kMomentInDayFormat                       = @"momentInDayFormat";
+
 static NSString *const kMomentInDayFormatTitle                  = @"We would like to understand how your performance on"
                                                                 " this activity could be affected by the timing of your medication.";
+
 static NSString *const kInstruction1                            = @"instruction1";
 static NSString *const kMomentInDayFormatItemText               = @"When are you performing this Activity?";
 static NSString *const kMomentInDayFormatChoiceJustWokeUp       = @"Immediately before Parkinson medication";
@@ -136,7 +139,6 @@ static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
         task = [[ORKOrderedTask alloc] initWithIdentifier:kTaskViewControllerTitle
                                                     steps:spatialSteps];
     }
-    
     return  task;
 }
 
@@ -157,22 +159,22 @@ static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
 }
 
 - (void) taskViewController: (ORKTaskViewController *) taskViewController
-        didFinishWithReason: (ORKTaskViewControllerFinishReason) result
+        didFinishWithReason: (ORKTaskViewControllerFinishReason)reason
                       error: (NSError *) error
 {
     [[UIView appearance] setTintColor: [UIColor appPrimaryColor]];
 
-    if (result == ORKTaskViewControllerFinishReasonFailed && error != nil)
+    if (reason == ORKTaskViewControllerFinishReasonFailed && error != nil)
     {
         APCLogError2 (error);
-    } else if (result == ORKTaskViewControllerFinishReasonCompleted) {
+    } else if (reason == ORKTaskViewControllerFinishReasonCompleted) {
         APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
         appDelegate.dataSubstrate.currentUser.taskCompletion = [NSDate date];
         [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
     }
     
     [super taskViewController: taskViewController
-          didFinishWithReason: result
+          didFinishWithReason: reason
                         error: error];
 }
 

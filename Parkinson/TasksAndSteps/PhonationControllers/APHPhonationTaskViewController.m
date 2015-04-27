@@ -2,33 +2,33 @@
 //  APHPhonationTaskViewController.m 
 //  mPower 
 // 
-// Copyright (c) 2015, Sage Bionetworks, Inc.
-// All rights reserved.
-//
-// Redistribution and use in source and binary forms, with or without modification, 
+// Copyright (c) 2015, Sage Bionetworks. All rights reserved. 
+// 
+// Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this 
+// 
+// 1.  Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
-//
-// 2. Redistributions in binary form must reproduce the above copyright notice,
-// this list of conditions and the following disclaimer in the documentation and/or
-// other materials provided with the distribution.
-//
-// 3. Neither the name of the copyright holder nor the names of its contributors 
+// 
+// 2.  Redistributions in binary form must reproduce the above copyright notice, 
+// this list of conditions and the following disclaimer in the documentation and/or 
+// other materials provided with the distribution. 
+// 
+// 3.  Neither the name of the copyright holder(s) nor the names of any contributors 
 // may be used to endorse or promote products derived from this software without 
-// specific prior written permission.
-//
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// specific prior written permission. No license is granted to the trademarks of 
+// the copyright holders even if such marks are included in this software. 
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 // 
  
 #import "APHPhonationTaskViewController.h"
@@ -38,40 +38,37 @@
 #import "APHIntervalTappingRecorderDataKeys.h"
 #import "APHAppDelegate.h"
 
-static NSString *const kTaskName                                = @"Voice";
-static NSString *const kInstruction                             = @"instruction";
-static NSString *const kInstruction1                            = @"instruction1";
-static NSString *const kMomentInDay                             = @"momentInDay";
-static NSString *const kMomentInDayFormat                       = @"momentInDayFormat";
-static NSString *const kMomentInDayFormatTitle                  = @"We would like to understand how your performance on"
-                                                                " this activity could be affected by the timing of your medication.";
-static NSString *const kMomentInDayFormatItemText               = @"When are you performing this Activity?";
-static NSString *const kMomentInDayFormatChoiceJustWokeUp       = @"Immediately before Parkinson medication";
-static NSString *const kMomentInDayFormatChoiceTookMyMedicine   = @"Just after Parkinson medication (at your best)";
-static NSString *const kMomentInDayFormatChoiceEvening          = @"Another time";
-static NSString *const kMomentInDayFormatChoiceNone             = @"I don't take Parkinson medications";
-static NSString *      kEnableMicrophoneMessage                 = @"You need to enable access to microphone.";
+static NSString *const kTaskName                              = @"Voice";
 
-static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
+    //
+    //        Step Identifiers
+    //
+static  NSString *const kInstructionStepIdentifier            = @"instruction";
+static  NSString *const kInstruction1StepIdentifier           = @"instruction1";
+static  NSString *const kCountdownStepIdentifier              = @"countdown";
+static  NSString *const kAudioStepIdentifier                  = @"audio";
+static  NSString *const kConclusionStepIdentifier             = @"conclusion";
 
+static NSString *const kMomentInDayStepIdentifier             = @"momentInDay";
 
-typedef  enum  _PhonationStepOrdinals
-{
-    PhonationStepOrdinalsIntroductionStep = 0,
-    PhonationStepOrdinalsInstructionStep,
-    PhonationStepOrdinalsCountdownStep,
-    PhonationStepOrdinalsVoiceRecordingStep,
-    PhonationStepOrdinalsConclusionStep,
-}  PhonationStepOrdinals;
+static NSString *const kMomentInDayFormat                     = @"momentInDayFormat";
 
+static NSString *const kMomentInDayFormatTitle                = @"We would like to understand how your performance on"
+                                                                 " this activity could be affected by the timing of your medication.";
 
+static NSString *const kMomentInDayFormatItemText             = @"When are you performing this Activity?";
+static NSString *const kMomentInDayFormatChoiceJustWokeUp     = @"Immediately before Parkinson medication";
+static NSString *const kMomentInDayFormatChoiceTookMyMedicine = @"Just after Parkinson medication (at your best)";
+static NSString *const kMomentInDayFormatChoiceEvening        = @"Another time";
+static NSString *const kMomentInDayFormatChoiceNone           = @"I don't take Parkinson medications";
 
-static  NSString       *kTaskViewControllerTitle   = @"Voice Activity";
+static NSString *      kEnableMicrophoneMessage               = @"You need to enable access to microphone.";
 
-static  NSTimeInterval  kGetSoundingAaahhhInterval = 10.0;
+static double kMinimumAmountOfTimeToShowSurvey                = 20.0 * 60.0;
 
-static  NSString       *kConclusionStepIdentifier  = @"conclusion";
-static  NSString       *kAudioStepIdentifier  = @"audio";
+static  NSString       *kTaskViewControllerTitle              = @"Voice Activity";
+
+static  NSTimeInterval  kGetSoundingAaahhhInterval            = 10.0;
 
 @interface APHPhonationTaskViewController ( )  <ORKTaskViewControllerDelegate>
 
@@ -98,6 +95,11 @@ static  NSString       *kAudioStepIdentifier  = @"audio";
     
     //  Adjust apperance and text for the task
     [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
+        //
+        //    set up initial steps, which may have an extra step injected
+        //    after the first if the user needs to say where they are in
+        //    their medication schedule
+        //
     [task.steps[0] setTitle:NSLocalizedString(kTaskName, nil)];
 
     [task.steps[1] setTitle:NSLocalizedString(kTaskName, nil)];
@@ -113,15 +115,10 @@ static  NSString       *kAudioStepIdentifier  = @"audio";
     
     if (numberOfSecondsSinceTaskCompletion > kMinimumAmountOfTimeToShowSurvey || lastCompletionDate == nil) {
         
-        
         NSMutableArray *stepQuestions = [NSMutableArray array];
         
-        
-        ORKFormStep *step = [[ORKFormStep alloc] initWithIdentifier:kMomentInDay title:nil text:NSLocalizedString(kMomentInDayFormatTitle, nil)];
-        
+        ORKFormStep *step = [[ORKFormStep alloc] initWithIdentifier:kMomentInDayStepIdentifier title:nil text:NSLocalizedString(kMomentInDayFormatTitle, nil)];
         step.optional = NO;
-        
-        
         {
             NSArray *choices = @[
                                  NSLocalizedString(kMomentInDayFormatChoiceJustWokeUp,
@@ -142,19 +139,15 @@ static  NSString       *kAudioStepIdentifier  = @"audio";
                                                            answerFormat:format];
             [stepQuestions addObject:item];
         }
-        
         [step setFormItems:stepQuestions];
         
-        NSMutableArray *twoFingerSteps = [task.steps mutableCopy];
+        NSMutableArray  *phonationSteps = [task.steps mutableCopy];
+        if ([phonationSteps count] >= 1) {
+            [phonationSteps insertObject:step atIndex:1];
+        }
         
-        [twoFingerSteps insertObject:step
-                             atIndex:1];
-        
-        task = [[ORKOrderedTask alloc] initWithIdentifier:kTaskViewControllerTitle
-                                                    steps:twoFingerSteps];
+        task = [[ORKOrderedTask alloc] initWithIdentifier:kTaskViewControllerTitle steps:phonationSteps];
     }
-    
-    
     return  task;
 }
 
@@ -162,7 +155,7 @@ static  NSString       *kAudioStepIdentifier  = @"audio";
 
 - (void)taskViewController:(ORKTaskViewController *) __unused taskViewController stepViewControllerWillAppear:(ORKStepViewController *)stepViewController
 {
-    ORKStep*    step = stepViewController.step;
+    ORKStep  *step = stepViewController.step;
     
     if ([step.identifier isEqualToString: kAudioStepIdentifier])
     {
@@ -176,22 +169,23 @@ static  NSString       *kAudioStepIdentifier  = @"audio";
 }
 
 - (void) taskViewController: (ORKTaskViewController *) taskViewController
-        didFinishWithReason: (ORKTaskViewControllerFinishReason) result
+        didFinishWithReason: (ORKTaskViewControllerFinishReason)reason
                       error: (NSError *) error
 {
     [[UIView appearance] setTintColor: [UIColor appPrimaryColor]];
     
-    if (result == ORKTaskViewControllerFinishReasonFailed && error != nil)
+    if (reason  == ORKTaskViewControllerFinishReasonFailed && error != nil)
     {
         APCLogError2 (error);
-    } else if (result == ORKTaskViewControllerFinishReasonCompleted) {
+    } else if (reason  == ORKTaskViewControllerFinishReasonDiscarded) {
+    } else if (reason  == ORKTaskViewControllerFinishReasonCompleted) {
         APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
         appDelegate.dataSubstrate.currentUser.taskCompletion = [NSDate date];
         [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
     }
     
     [super taskViewController: taskViewController
-          didFinishWithReason: result
+          didFinishWithReason: reason
                         error: error];
 }
 
@@ -243,6 +237,15 @@ static  NSString       *kAudioStepIdentifier  = @"audio";
 
 #pragma  mark  - View Controller methods
 
+- (void)willResignActiveNotificationWasReceived:(NSNotification *) __unused notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if ([self.delegate respondsToSelector:@selector(taskViewController:didFinishWithReason:error:)] == YES) {
+        [self.delegate taskViewController:self didFinishWithReason:ORKTaskViewControllerFinishReasonDiscarded error:NULL];
+    }
+}
+
+#pragma  mark  - View Controller methods
 
 - (void)viewDidLoad
 {
@@ -265,10 +268,17 @@ static  NSString       *kAudioStepIdentifier  = @"audio";
    
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    NSNotificationCenter  *centre = [NSNotificationCenter defaultCenter];
+    [centre addObserver:self selector:@selector(willResignActiveNotificationWasReceived:) name:UIApplicationWillResignActiveNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

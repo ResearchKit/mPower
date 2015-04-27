@@ -1,5 +1,10 @@
+# Created by http://www.gitignore.io
+
+### Objective-C ###
+# OS X
+.DS_Store
+
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -9,13 +14,11 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+!default.xcworkspace
 xcuserdata
 *.xccheckout
 *.moved-aside
-DerivedData
+DerivedData/
 *.hmap
 *.ipa
 *.xcuserstate
-
-.DS_Store
-*.pyc

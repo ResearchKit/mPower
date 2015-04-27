@@ -2,33 +2,33 @@
 //  APHWalkingTaskViewController.m 
 //  mPower 
 // 
-// Copyright (c) 2015, Sage Bionetworks, Inc.
-// All rights reserved.
-//
-// Redistribution and use in source and binary forms, with or without modification, 
+// Copyright (c) 2015, Sage Bionetworks. All rights reserved. 
+// 
+// Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this 
+// 
+// 1.  Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
-//
-// 2. Redistributions in binary form must reproduce the above copyright notice,
-// this list of conditions and the following disclaimer in the documentation and/or
-// other materials provided with the distribution.
-//
-// 3. Neither the name of the copyright holder nor the names of its contributors 
+// 
+// 2.  Redistributions in binary form must reproduce the above copyright notice, 
+// this list of conditions and the following disclaimer in the documentation and/or 
+// other materials provided with the distribution. 
+// 
+// 3.  Neither the name of the copyright holder(s) nor the names of any contributors 
 // may be used to endorse or promote products derived from this software without 
-// specific prior written permission.
-//
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// specific prior written permission. No license is granted to the trademarks of 
+// the copyright holders even if such marks are included in this software. 
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 // 
  
 #import "APHWalkingTaskViewController.h"
@@ -38,57 +38,52 @@
 #import "PDScores.h"
 #import "APHAppDelegate.h"
 
-typedef  enum  _WalkingStepOrdinals
-{
-    WalkingStepOrdinalsInstructionStep = 0,
-    WalkingStepOrdinalsCountdownStep,
-    WalkingStepOrdinalsWalkOutStep,
-    WalkingStepOrdinalsWalkBackStep,
-    WalkingStepOrdinalsStandStillStep,
-    WalkingStepOrdinalsConclusionStep,
-}  WalkingStepOrdinals;
+    //
+    //    keys for questions asking patient when they took their medicines
+    //
+static NSString *const kMomentInDay                           = @"momentInDay";
 
-static NSString *const kMomentInDay                             = @"momentInDay";
-static NSString *const kMomentInDayFormat                       = @"momentInDayFormat";
-static NSString *const kMomentInDayFormatTitle                  = @"We would like to understand how your performance on"
+static NSString *const kMomentInDayFormat                     = @"momentInDayFormat";
+
+static NSString *const kMomentInDayFormatTitle                = @"We would like to understand how your performance on"
                                                                 " this activity could be affected by the timing of your medication.";
-static NSString *const kMomentInDayFormatItemText               = @"When are you performing this Activity?";
-static NSString *const kMomentInDayFormatChoiceJustWokeUp       = @"Immediately before Parkinson medication";
-static NSString *const kMomentInDayFormatChoiceTookMyMedicine   = @"Just after Parkinson medication (at your best)";
-static NSString *const kMomentInDayFormatChoiceEvening          = @"Another time";
-static NSString *const kMomentInDayFormatChoiceNone             = @"I don't take Parkinson medications";
 
-static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
+static NSString *const kMomentInDayFormatItemText             = @"When are you performing this Activity?";
+static NSString *const kMomentInDayFormatChoiceJustWokeUp     = @"Immediately before Parkinson medication";
+static NSString *const kMomentInDayFormatChoiceTookMyMedicine = @"Just after Parkinson medication (at your best)";
+static NSString *const kMomentInDayFormatChoiceEvening        = @"Another time";
+static NSString *const kMomentInDayFormatChoiceNone           = @"I don't take Parkinson medications";
 
-static NSString* const  kFileResultsKey             = @"items";
-static NSString* const  kNumberOfStepsTotalOnReturn = @"numberOfSteps";
-static NSString* const  kNumberOfStepsTotalOnReturnKey = @"numberOfSteps";
-static NSString* const  kPedometerPrefixFileIdentifier = @"pedometer";
+static double          kMinimumAmountOfTimeToShowSurvey       = 20.0 * 60.0;
 
-static  NSString       *kWalkingActivityTitle     = @"Walking Activity";
+static NSString* const  kFileResultsKey                       = @"items";
+static NSString* const  kNumberOfStepsTotalOnReturn           = @"numberOfSteps";
+static NSString* const  kNumberOfStepsTotalOnReturnKey        = @"numberOfSteps";
+static NSString* const  kPedometerPrefixFileIdentifier        = @"pedometer";
 
-static  NSUInteger      kNumberOfStepsPerLeg      = 20;
-static  NSTimeInterval  kStandStillDuration       = 30.0;
+static  NSString       *kWalkingActivityTitle                 = @"Walking Activity";
 
-static  NSString       *kConclusionStepIdentifier = @"conclusion";
-static  NSString       *kCountdownStepIdentifier = @"countdown";
-static  NSString       *kWalkingOutboundStepIdentifier = @"walking.outbound";
-static  NSString       *kWalkingReturnStepIdentifier = @"walking.return";
-static  NSString       *kWalkingRestStepIdentifier = @"walking.rest";
+static  NSUInteger      kNumberOfStepsPerLeg                  = 20;
+static  NSTimeInterval  kStandStillDuration                   = 30.0;
 
-NSString  *kScoreForwardGainRecordsKey = @"ScoreForwardGainRecords";
-NSString  *kScoreBackwardGainRecordsKey = @"ScoreBackwardGainRecords";
-NSString  *kScorePostureRecordsKey = @"ScorePostureRecords";
-NSString * const kGaitScoreKey = @"GaitScoreKey";
+    //
+    //    Walking Activity Step Identifier Keys
+    //        depending on Research Kit not to change the Identifier Keys
+    //
+static  NSString * const kInformationalStepIdentifier         = @"instruction";
+static  NSString * const kInstructionalStepIdentifier         = @"instruction1";
+static  NSString * const kCountdownStepIdentifier             = @"countdown";
+static  NSString * const kWalkingOutboundStepIdentifier       = @"walking.outbound";
+static  NSString * const kWalkingReturnStepIdentifier         = @"walking.return";
+static  NSString * const kWalkingRestStepIdentifier           = @"walking.rest";
+static  NSString * const kConclusionStepIdentifier            = @"conclusion";
+
+static  NSString       *kScoreForwardGainRecordsKey           = @"ScoreForwardGainRecords";
+static  NSString       *kScorePostureRecordsKey               = @"ScorePostureRecords";
+
+        NSString * const kGaitScoreKey                        = @"GaitScoreKey";
 
 @interface APHWalkingTaskViewController  ( )
-
-@property  (nonatomic, assign)  WalkingStepOrdinals  walkingStepOrdinal;
-
-@property  (nonatomic, strong)  NSDate              *startCollectionDate;
-@property  (nonatomic, strong)  NSDate              *endCollectionDate;
-
-@property  (nonatomic, assign)  NSInteger  __block   collectedNumberOfSteps;
 
 @end
 
@@ -103,26 +98,55 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
                                                     numberOfStepsPerLeg:kNumberOfStepsPerLeg
                                                            restDuration:kStandStillDuration
                                                                 options:ORKPredefinedTaskOptionNone];
+    
+        //
+        //    replace various step titles and details with our own verbiage
+        //
     [task.steps[0] setText:@"This activity measures your gait (walk) and balance, which can be affected by Parkinson disease."];
     [task.steps[0] setDetailText:@"Please do not continue if you cannot safely walk unassisted."];
-
+    
+    NSString  *titleString = [NSString stringWithFormat:@"Turn around and stand still for %.0f seconds", kStandStillDuration];
+    NSString  *spokenInstructionString = [NSString stringWithFormat:@"Turn around and stand still for %.0f seconds", kStandStillDuration];
+    
+    [task.steps[5] setTitle:NSLocalizedString(titleString, nil)];
+    [task.steps[5] setSpokenInstruction:NSLocalizedString(spokenInstructionString, nil)];
+    
     [task.steps[6] setTitle:NSLocalizedString(@"Thank You!", nil)];
     [task.steps[6] setText:NSLocalizedString(@"The results of this activity can be viewed on the dashboard", nil)];
-
-    APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
-    NSDate *lastCompletionDate = appDelegate.dataSubstrate.currentUser.taskCompletion;
-    NSTimeInterval numberOfSecondsSinceTaskCompletion = [[NSDate date] timeIntervalSinceDate: lastCompletionDate];
+    
+        //
+        //    remove the return walking step
+        //
+    BOOL        foundReturnStepIdentifier = NO;
+    NSUInteger  indexOfReturnStep = 0;
+    
+    for (ORKStep *step  in  task.steps) {
+        if ([step.identifier isEqualToString:kWalkingReturnStepIdentifier] == YES) {
+            foundReturnStepIdentifier = YES;
+            break;
+        }
+        indexOfReturnStep = indexOfReturnStep + 1;
+    }
+    NSMutableArray  *copyOfTaskSteps = [task.steps mutableCopy];
+    if (foundReturnStepIdentifier == YES) {
+        [copyOfTaskSteps removeObjectAtIndex:indexOfReturnStep];
+    }
+        //
+        //   if we have not pinged the user for whether they have
+        //    taken their medicines in the past while, we inject another step
+        //    into the steps array.
+        //
+    APHAppDelegate  *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
+    NSDate  *lastCompletionDate = appDelegate.dataSubstrate.currentUser.taskCompletion;
+    NSTimeInterval  numberOfSecondsSinceTaskCompletion = [[NSDate date] timeIntervalSinceDate: lastCompletionDate];
     
     if (numberOfSecondsSinceTaskCompletion > kMinimumAmountOfTimeToShowSurvey || lastCompletionDate == nil) {
         
         NSMutableArray *stepQuestions = [NSMutableArray array];
         
-        
         ORKFormStep *step = [[ORKFormStep alloc] initWithIdentifier:kMomentInDay title:nil text:NSLocalizedString(kMomentInDayFormatTitle, nil)];
         
         step.optional = NO;
-        
-        
         {
             NSArray *choices = @[
                                  NSLocalizedString(kMomentInDayFormatChoiceJustWokeUp,
@@ -143,18 +167,13 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
                                                            answerFormat:format];
             [stepQuestions addObject:item];
         }
-        
         [step setFormItems:stepQuestions];
         
-        NSMutableArray *twoFingerSteps = [task.steps mutableCopy];
-        
-        [twoFingerSteps insertObject:step
-                             atIndex:1];
-        
-        task = [[ORKOrderedTask alloc] initWithIdentifier:kWalkingActivityTitle
-                                                    steps:twoFingerSteps];
+        if ([copyOfTaskSteps count] >= 1) {
+            [copyOfTaskSteps insertObject:step atIndex:1];
+        }
     }
-    
+    task = [[ORKOrderedTask alloc] initWithIdentifier:kWalkingActivityTitle steps:copyOfTaskSteps];
     return  task;
 }
 
@@ -164,22 +183,19 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
 {
     ORKTaskResult  *taskResults = self.result;
     
-    APHWalkingTaskViewController* weakSelf = self;
+    APHWalkingTaskViewController  *weakSelf = self;
     
     self.createResultSummaryBlock = ^(NSManagedObjectContext * context) {
         BOOL  found = NO;
-        NSURL * urlGaitForward = nil;
-        NSURL * urlGaitBackward = nil;
-        NSURL * urlPosture = nil;
+        NSURL  *urlGaitForward = nil;
+        NSURL  *urlPosture     = nil;
         for (ORKStepResult  *stepResult  in  taskResults.results) {
             if (stepResult.results.count > 0) {
                 for (id  object  in  stepResult.results) {
                     if ([object isKindOfClass:[ORKFileResult class]] == YES) {
-                        ORKFileResult * fileResult = object;
+                        ORKFileResult  *fileResult = object;
                         if ([fileResult.fileURL.absoluteString.lastPathComponent hasPrefix: @"accel_walking.outbound"]) {
                             urlGaitForward = fileResult.fileURL;
-                        } else if ([fileResult.fileURL.absoluteString.lastPathComponent hasPrefix: @"accel_walking.return"]) {
-                            urlGaitBackward = fileResult.fileURL;
                         } else if ([fileResult.fileURL.absoluteString.lastPathComponent hasPrefix: @"accel_walking.rest"]) {
                             urlPosture = fileResult.fileURL;
                         }
@@ -190,45 +206,41 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
             }
         }
         
+        NSArray  *forwardSteps = [ConverterForPDScores convertPostureOrGain:urlGaitForward];
+        double  forwardScores = 0.0;
+        if (forwardSteps != nil) {
+            forwardScores = [PDScores scoreFromGaitTest: forwardSteps];
+        }
+        forwardScores = isnan(forwardScores) ? 0.0 : forwardScores;
         
-        NSArray * forwardSteps = [ConverterForPDScores convertPostureOrGain:urlGaitForward];
-        NSArray * backwardSteps = [ConverterForPDScores convertPostureOrGain:urlGaitBackward];
-        NSArray * posture = [ConverterForPDScores convertPostureOrGain:urlPosture];
+        NSArray  *posture = [ConverterForPDScores convertPostureOrGain:urlPosture];
+        double  postureScores = 0.0;
+        if (posture != nil) {
+            postureScores = [PDScores scoreFromPostureTest: posture];
+        }
+        postureScores = isnan(postureScores) ? 0.0 : postureScores;
         
-        double forwardScores = [PDScores scoreFromGaitTest: forwardSteps];
-        double backwardScores = [PDScores scoreFromGaitTest: backwardSteps];
-        double postureScores = [PDScores scoreFromPostureTest: posture];
-        
-        forwardScores = isnan(forwardScores) ? 0 : forwardScores;
-        backwardScores = isnan(backwardScores) ? 0 : backwardScores;
-        postureScores = isnan(postureScores) ? 0 : postureScores;
-        
-        double avgScores = (forwardScores + backwardScores + postureScores) / 3;
+        double  avgScores = (forwardScores + postureScores) / 2.0;
         
         /************/
         
-        NSDictionary* walkingResults = nil;
+        NSDictionary   *walkingResults = nil;
+        ORKStepResult  *stepResult = (ORKStepResult *)[weakSelf.result resultForIdentifier:kWalkingOutboundStepIdentifier];
         
-        ORKStepResult* stepResult = (ORKStepResult *)[weakSelf.result resultForIdentifier:kWalkingReturnStepIdentifier];
-        
-        for (ORKFileResult* fileResult in stepResult.results) {
-            NSString* fileString = [fileResult.fileURL lastPathComponent];
-            NSArray* nameComponents = [fileString componentsSeparatedByString:@"_"];
-            
-            if ([[nameComponents objectAtIndex:0] isEqualToString:kPedometerPrefixFileIdentifier])
-            {
+        for (ORKFileResult *fileResult in stepResult.results) {
+            NSString  *fileString = [fileResult.fileURL lastPathComponent];
+            NSArray   *nameComponents = [fileString componentsSeparatedByString:@"_"];
+            if ([[nameComponents objectAtIndex:0] isEqualToString:kPedometerPrefixFileIdentifier]) {
                 walkingResults = [weakSelf computeTotalDistanceForDashboardItem:fileResult.fileURL];
-                
             }
         }
 
         /***********/
         
         NSDictionary  *summary = @{
-                                   kGaitScoreKey: @(avgScores),
-                                   kScoreForwardGainRecordsKey: @(forwardScores),
-                                   kScoreBackwardGainRecordsKey: @(backwardScores),
-                                   kScorePostureRecordsKey: @(postureScores),
+                                   kGaitScoreKey : @(avgScores),
+                                   kScoreForwardGainRecordsKey : @(forwardScores),
+                                   kScorePostureRecordsKey : @(postureScores),
                                    kNumberOfStepsTotalOnReturnKey : walkingResults == nil ? @0 : [walkingResults objectForKey:kNumberOfStepsTotalOnReturn]
                                   };
         
@@ -240,9 +252,7 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
         } else {
             contentString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         }
-        
-        if (contentString.length > 0)
-        {
+        if (contentString.length > 0) {
             [APCResult updateResultSummary:contentString forTaskResult:taskResults inContext:context];
         }
     };
@@ -257,10 +267,6 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
         
         [[UIView appearance] setTintColor:[UIColor appTertiaryColor1]];
     }
-    
-    if ([stepViewController.step.identifier isEqualToString: kCountdownStepIdentifier]) {
-        self.startCollectionDate = [NSDate date];
-    }
     if ([stepViewController.step.identifier isEqualToString: kConclusionStepIdentifier]) {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         AVSpeechUtterance  *talk = [AVSpeechUtterance
@@ -269,26 +275,23 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
         talk.rate = 0.1;
         [synthesiser speakUtterance:talk];
     }
-    self.walkingStepOrdinal = self.walkingStepOrdinal + 1;
 }
 
 - (void) taskViewController: (ORKTaskViewController *) taskViewController
-        didFinishWithReason: (ORKTaskViewControllerFinishReason) result
+        didFinishWithReason: (ORKTaskViewControllerFinishReason)reason
                       error: (NSError *) error
 {
     [[UIView appearance] setTintColor: [UIColor appPrimaryColor]];
 
-    if (result == ORKTaskViewControllerFinishReasonFailed && error != nil)
-    {
+    if (reason == ORKTaskViewControllerFinishReasonFailed && error != nil) {
         APCLogError2 (error);
-    } else if (result == ORKTaskViewControllerFinishReasonCompleted) {
+    } else if (reason == ORKTaskViewControllerFinishReasonCompleted) {
         APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
         appDelegate.dataSubstrate.currentUser.taskCompletion = [NSDate date];
         [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
     }
-
     [super taskViewController: taskViewController
-          didFinishWithReason: result
+          didFinishWithReason: reason
                         error: error];
 }
 
@@ -298,8 +301,6 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
 {
     [super viewDidLoad];
     
-    self.walkingStepOrdinal = WalkingStepOrdinalsInstructionStep;
-    
     self.navigationBar.topItem.title = NSLocalizedString(kWalkingActivityTitle, nil);
 }
 
@@ -308,19 +309,17 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
     [super viewWillAppear:animated];
 }
 
-
 #pragma mark - Helper methods
 
 - (NSDictionary *) computeTotalDistanceForDashboardItem:(NSURL *)fileURL{
     
-    NSDictionary*   distanceResults     = [self readFileResultsFor:fileURL];
-    NSArray*        locations           = [distanceResults objectForKey:kFileResultsKey];
+    NSDictionary  *distanceResults = [self readFileResultsFor:fileURL];
+    NSArray       *locations       = [distanceResults objectForKey:kFileResultsKey];
     
     int lastTotalNumberOfSteps = (int) [[[locations lastObject] objectForKey:kNumberOfStepsTotalOnReturn] integerValue];
     
-    return @{@"numberOfSteps" : @(lastTotalNumberOfSteps)};
+    return  @{ @"numberOfSteps" : @(lastTotalNumberOfSteps) };
 }
-
 
 - (NSDictionary *) readFileResultsFor:(NSURL *)fileURL {
     
@@ -331,15 +330,14 @@ NSString * const kGaitScoreKey = @"GaitScoreKey";
     APCLogError2(error);
     
     if (!error) {
-        NSError*    error = nil;
-        NSData*     data  = [contents dataUsingEncoding:NSUTF8StringEncoding];
+        NSError  *error = nil;
+        NSData   *data  = [contents dataUsingEncoding:NSUTF8StringEncoding];
         
         results = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         
         APCLogError2(error);
     }
-    
-    return results;
+    return  results;
 }
 
 @end

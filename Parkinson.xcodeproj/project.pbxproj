@@ -194,9 +194,6 @@
 		08F6D1B21AD6FA7200DFF268 /* PD_feedback.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_feedback.json; sourceTree = "<group>"; };
 		08F6D1B31AD6FA7200DFF268 /* PD_mythoughts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_mythoughts.json; sourceTree = "<group>"; };
 		21CBD9E41A9FE59900031635 /* APHTasksAndSchedules_NoM7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APHTasksAndSchedules_NoM7.json; sourceTree = "<group>"; };
-		36EF84D31A951327008C255F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36EF84D41A951327008C255F /* Parkinson_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parkinson_Tests.m; sourceTree = "<group>"; };
-		36EF84DE1A951364008C255F /* APCMedTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = APCMedTrackerTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PDenrollment_survey.json; sourceTree = "<group>"; };
 		5A0F99001AA40E9100A2A7EB /* APHenrollmentsurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHenrollmentsurveyViewController.h; sourceTree = "<group>"; };
 		5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHenrollmentsurveyViewController.m; sourceTree = "<group>"; };
@@ -306,24 +303,6 @@
 				F584909819E892700091A640 /* Videos */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		36EF84D11A951327008C255F /* Parkinson Tests */ = {
-			isa = PBXGroup;
-			children = (
-				36EF84D41A951327008C255F /* Parkinson_Tests.m */,
-				36EF84DE1A951364008C255F /* APCMedTrackerTests.m */,
-				36EF84D21A951327008C255F /* Supporting Files */,
-			);
-			path = "Parkinson Tests";
-			sourceTree = "<group>";
-		};
-		36EF84D21A951327008C255F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				36EF84D31A951327008C255F /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5A0F98FA1AA409EF00A2A7EB /* surveys */ = {
@@ -464,7 +443,6 @@
 			children = (
 				CFC2D2D919A5417D00170E69 /* Parkinson */,
 				CFC2D2E719A5417D00170E69 /* Images.xcassets */,
-				36EF84D11A951327008C255F /* Parkinson Tests */,
 				CFA2ABB419A7C1C1000DB961 /* Frameworks */,
 				CFC2D2D819A5417D00170E69 /* Products */,
 			);

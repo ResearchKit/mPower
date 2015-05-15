@@ -38,6 +38,22 @@
               
                    },
                    {
+                       "taskTitle" : "PD Questionnaire",
+                       "taskID": "6-PDQ8-20EF83D2-E461-4C20-9024-F43FCAAAF4C8",
+                       "taskFileName" : "PDQ8",
+                       "taskClassName" : "APHPDQ8ViewController",
+                       "taskCompletionTimeString" : "8 Questions"
+                   
+                   },
+                   {
+                       "taskTitle" : "PD Rating Scale",
+                       "taskID": "5-MDSUPDRS-20EF82D1-E461-4C20-9024-F43FCAAAF4C8",
+                       "taskFileName" : "PD_MDRUPDRS",
+                       "taskClassName" : "APHMDRUPDRS",
+                       "taskCompletionTimeString" : "21 Questions"
+                   
+                   },
+                   {
                        "taskTitle" : "My Thoughts",
                        "taskID": "8-MyThoughts-12ffde40-1551-4b48-aae2-8fef38d61b61",
                        "taskFileName" : "PD_mythoughts",
@@ -85,7 +101,17 @@
                       "scheduleString": "0 5 * * *",
                       "taskID": "1-EnrollmentSurvey-20EF83D2-E461-4C20-9024-F43FCAAAF4C3"
                   },
+                  {
+                      "scheduleType": "recurring",
+                      "scheduleString": "0 5 * * *",
+                      "taskID": "6-PDQ8-20EF83D2-E461-4C20-9024-F43FCAAAF4C8"
+                  },
               
+                  {
+                      "scheduleType": "recurring",
+                      "scheduleString": "0 5 * * *",
+                      "taskID": "5-MDSUPDRS-20EF82D1-E461-4C20-9024-F43FCAAAF4C8"
+                  },
                   {
                       "scheduleType": "recurring",
                       "scheduleString": "0 5 * * *",

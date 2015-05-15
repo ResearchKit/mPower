@@ -1,91 +1,124 @@
 {
-    "tasks":  [
-               {
-               "taskTitle" : "Voice Activity",
-               "taskID": "3-APHPhonation-C614A231-A7B7-4173-BDC8-098309354292",
-               "taskClassName" : "APHPhonationTaskViewController",
-               "taskCompletionTimeString" : "20 Seconds"
-               },
-               {
-               "taskTitle" : "Tapping Activity",
-               "taskID": "2-APHIntervalTapping-7259AC18-D711-47A6-ADBD-6CFCECDED1DF",
-               "taskClassName" : "APHIntervalTappingTaskViewController",
-               "taskCompletionTimeString" : "30 Seconds"
-               },
-               {
-               "taskTitle" : "Memory Activity",
-               "taskID": "7-APHSpatialSpanMemory-4A04F3D0-AC05-11E4-AB27-0800200C9A66",
-               "taskClassName" : "APHSpatialSpanMemoryGameViewController",
-               "taskCompletionTimeString" : "2 Minutes"
-               },
-               {
-               "taskTitle" : "Medication Tracker",
-               "taskID": "a-APHMedicationTracker-20EF8ED2-E461-4C20-9024-F43FCAAAF4C3",
-               "taskClassName" : "APHMedicationTrackerTaskViewController"
-               },
-               {
-               "taskTitle" : "Background Survey",
-               "taskID": "1-EnrollmentSurvey-20EF83D2-E461-4C20-9024-F43FCAAAF4C3",
-               "taskFileName" : "PDenrollment_survey",
-               "taskClassName" : "APHenrollmentsurveyViewController",
-               "taskCompletionTimeString" : "(One Time) 28 Questions"
-               
-               },
-               {
-               "taskTitle" : "My Thoughts",
-               "taskID": "8-MyThoughts-12ffde40-1551-4b48-aae2-8fef38d61b61",
-               "taskFileName" : "PD_mythoughts",
-               "taskClassName" : "APHmythougths",
-               "taskCompletionTimeString" : "(Anytime) 2 Questions"
-               },
-               {
-               "taskTitle" : "Study Feedback",
-               "taskID": "9-Feedback-394348ce-ca4f-4abe-b97e-fedbfd7ffb8e",
-               "taskFileName" : "PD_feedback",
-               "taskClassName" : "APHfeedback",
-               "taskCompletionTimeString" : "(Anytime) 1 Question"
-               }
-
-              ],
-"schedules": [
-              {
-              "scheduleType": "recurring",
-              "scheduleString": "0 5,11,17 * * *",
-              "taskID": "3-APHPhonation-C614A231-A7B7-4173-BDC8-098309354292"
-              },
-              {
-              "scheduleType": "recurring",
-              "scheduleString": "0 5,11,17 * * *",
-              "taskID": "2-APHIntervalTapping-7259AC18-D711-47A6-ADBD-6CFCECDED1DF"
-              },
-              {
-              "scheduleType": "recurring",
-              "scheduleString": "0 5 * * *",
-              "taskID": "7-APHSpatialSpanMemory-4A04F3D0-AC05-11E4-AB27-0800200C9A66"
-              },
-              {
-              "scheduleType": "recurring",
-              "scheduleString": "0 5 * * *",
-              "taskID": "a-APHMedicationTracker-20EF8ED2-E461-4C20-9024-F43FCAAAF4C3"
-              },
+    "tasks" : [
+        { 
+            "taskTitle" : "Walking Activity",
+            "taskID" : "4-APHTimedWalking-80F09109-265A-49C6-9C5D-765E49AAF5D9",
+            "taskClassName" : "APHWalkingTaskViewController",
+            "taskCompletionTimeString" : "1.5 Minutes"
+        },
+        {
+            "taskTitle" : "Voice Activity",
+            "taskID" : "3-APHPhonation-C614A231-A7B7-4173-BDC8-098309354292",
+            "taskClassName" : "APHPhonationTaskViewController",
+            "taskCompletionTimeString" : "20 Seconds"
+        },
+        {
+            "taskTitle" : "Tapping Activity",
+            "taskID" : "2-APHIntervalTapping-7259AC18-D711-47A6-ADBD-6CFCECDED1DF",
+            "taskClassName" : "APHIntervalTappingTaskViewController",
+            "taskCompletionTimeString" : "30 Seconds"
+        },
+        {
+            "taskTitle" : "Memory Activity",
+            "taskID" : "7-APHSpatialSpanMemory-4A04F3D0-AC05-11E4-AB27-0800200C9A66",
+            "taskClassName" : "APHSpatialSpanMemoryGameViewController",
+            "taskCompletionTimeString" : "2 Minutes"
+        },
+        {
+            "taskTitle" : "Medication Tracker",
+            "taskID" : "a-APHMedicationTracker-20EF8ED2-E461-4C20-9024-F43FCAAAF4C3",
+            "taskClassName" : "APHMedicationTrackerTaskViewController"
+        },
+        {
+            "taskTitle" : "Background Survey",
+            "taskID" : "1-EnrollmentSurvey-20EF83D2-E461-4C20-9024-F43FCAAAF4C3",
+            "taskFileName" : "PDenrollment_survey",
+            "taskClassName" : "APHenrollmentsurveyViewController",
+            "taskCompletionTimeString" : "(One Time) 28 Questions"
               
-              {
-              "scheduleType": "once",
-              "scheduleString": "0 5 * * *",
-              "taskID": "1-EnrollmentSurvey-20EF83D2-E461-4C20-9024-F43FCAAAF4C3"
-              },
-              
-              {
-              "scheduleType": "recurring",
-              "scheduleString": "0 5 * * *",
-              "taskID": "8-MyThoughts-12ffde40-1551-4b48-aae2-8fef38d61b61"
-              },
-              {
-              "scheduleType": "recurring",
-              "scheduleString": "0 5 * * *",
-              "taskID": "9-Feedback-394348ce-ca4f-4abe-b97e-fedbfd7ffb8e"
-              }
-
-
-              ]
+        },
+        {
+            "taskTitle" : "PD Questionnaire",
+            "taskID" : "6-PDQ8-20EF83D2-E461-4C20-9024-F43FCAAAF4C8",
+            "taskFileName" : "PDQ8",
+            "taskClassName" : "APHPDQ8ViewController",
+            "taskCompletionTimeString" : "8 Questions"
+         
+        },
+        {
+            "taskTitle" : "PD Rating Scale",
+            "taskID" : "5-MDSUPDRS-20EF82D1-E461-4C20-9024-F43FCAAAF4C8",
+            "taskFileName" : "PD_MDRUPDRS",
+            "taskClassName" : "APHMDRUPDRS",
+            "taskCompletionTimeString" : "21 Questions"
+         
+        },
+        {
+            "taskTitle" : "My Thoughts",
+            "taskID" : "8-MyThoughts-12ffde40-1551-4b48-aae2-8fef38d61b61",
+            "taskFileName" : "PD_mythoughts",
+            "taskClassName" : "APHmythougths",
+            "taskCompletionTimeString" : "(Anytime) 2 Questions"
+        },
+        {
+            "taskTitle" : "Study Feedback",
+            "taskID" : "9-Feedback-394348ce-ca4f-4abe-b97e-fedbfd7ffb8e",
+            "taskFileName" : "PD_feedback",
+            "taskClassName" : "APHfeedback",
+            "taskCompletionTimeString" : "(Anytime) 1 Question"
+        }
+    ],
+    
+"schedules" : [
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5,11,17 * * *",
+            "taskID" : "4-APHTimedWalking-80F09109-265A-49C6-9C5D-765E49AAF5D9"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5,11,17 * * *",
+            "taskID" : "3-APHPhonation-C614A231-A7B7-4173-BDC8-098309354292"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5,11,17 * * *",
+            "taskID" : "2-APHIntervalTapping-7259AC18-D711-47A6-ADBD-6CFCECDED1DF"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5 * * *",
+            "taskID" : "7-APHSpatialSpanMemory-4A04F3D0-AC05-11E4-AB27-0800200C9A66"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5 * * *",
+            "taskID" : "a-APHMedicationTracker-20EF8ED2-E461-4C20-9024-F43FCAAAF4C3"
+        },
+        {
+            "scheduleType" : "once",
+            "scheduleString" : "0 5 * * *",
+            "taskID" : "1-EnrollmentSurvey-20EF83D2-E461-4C20-9024-F43FCAAAF4C3"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5 * * *",
+            "taskID" : "6-PDQ8-20EF83D2-E461-4C20-9024-F43FCAAAF4C8"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5 * * *",
+            "taskID" : "5-MDSUPDRS-20EF82D1-E461-4C20-9024-F43FCAAAF4C8"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5 * * *",
+            "taskID" : "8-MyThoughts-12ffde40-1551-4b48-aae2-8fef38d61b61"
+        },
+        {
+            "scheduleType" : "recurring",
+            "scheduleString" : "0 5 * * *",
+            "taskID" : "9-Feedback-394348ce-ca4f-4abe-b97e-fedbfd7ffb8e"
+        }
+    ]
 }

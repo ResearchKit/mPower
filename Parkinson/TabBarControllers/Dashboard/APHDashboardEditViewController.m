@@ -102,6 +102,18 @@
                     [self.items addObject:item];
                 }
                     break;
+                    
+                case kAPHDashboardItemTypeCorrelation:
+                {
+                    APCTableViewDashboardItem *item = [APCTableViewDashboardItem new];
+                    item.caption = NSLocalizedString(@"Data Correlations", @"");
+                    item.tintColor = [UIColor appTertiaryPurpleColor];
+                    
+                    [self.items addObject:item];
+                    
+                }
+                    break;
+                    
                 default:
                     break;
             }

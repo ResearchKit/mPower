@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y3q-0i-ptk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y3q-0i-ptk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -331,6 +331,19 @@
                                                 <action selector="infoTapped:" destination="OUW-5s-xaN" eventType="touchUpInside" id="E45-iB-3RZ"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-fV-7qu">
+                                            <rect key="frame" x="16" y="34" width="300" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="300" id="jgo-zi-fs9"/>
+                                                <constraint firstAttribute="height" constant="25" id="oeL-1L-kXC"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="legendLabelTapped:" destination="OUW-5s-xaN" eventType="touchUpInside" id="RLq-jW-O1I"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -350,6 +363,7 @@
                                         <constraint firstAttribute="trailing" secondItem="E1Y-YK-KgF" secondAttribute="trailing" id="XXt-45-xmK"/>
                                         <constraint firstItem="LId-bA-iho" firstAttribute="leading" secondItem="w4R-X7-ZrR" secondAttribute="trailing" id="a1V-uO-BPg"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="KPG-zg-X34" secondAttribute="bottom" constant="-8" id="c2c-Z7-cvR"/>
+                                        <constraint firstItem="2TV-fV-7qu" firstAttribute="leading" secondItem="eWR-yG-kck" secondAttribute="leading" constant="16" id="cBe-GD-qyY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="eb9-Pe-RMI" secondAttribute="trailing" constant="48" id="cx9-V2-Fdz"/>
                                         <constraint firstItem="xYh-De-1bo" firstAttribute="bottom" secondItem="eWR-yG-kck" secondAttribute="bottomMargin" id="drb-fT-EFC"/>
                                         <constraint firstItem="E1Y-YK-KgF" firstAttribute="leading" secondItem="eWR-yG-kck" secondAttribute="leading" constant="4" id="ebY-8d-s7o"/>
@@ -359,6 +373,7 @@
                                         <constraint firstItem="xYh-De-1bo" firstAttribute="leading" secondItem="eWR-yG-kck" secondAttribute="leading" constant="4" id="jgG-Tl-cu1"/>
                                         <constraint firstAttribute="trailing" secondItem="coc-6R-uBN" secondAttribute="trailing" id="oe2-Au-nDW"/>
                                         <constraint firstItem="GHq-65-A53" firstAttribute="top" secondItem="eWR-yG-kck" secondAttribute="topMargin" constant="-8" id="rb5-ns-a2d"/>
+                                        <constraint firstItem="2TV-fV-7qu" firstAttribute="top" secondItem="w4R-X7-ZrR" secondAttribute="bottom" id="tWe-C4-Q6f"/>
                                         <constraint firstItem="KPG-zg-X34" firstAttribute="leading" secondItem="eWR-yG-kck" secondAttribute="leading" id="twI-71-fqe"/>
                                         <constraint firstItem="E1Y-YK-KgF" firstAttribute="bottom" secondItem="eWR-yG-kck" secondAttribute="bottomMargin" id="w1Y-tl-yYa"/>
                                         <constraint firstItem="UL8-Fp-vIw" firstAttribute="leading" secondItem="eWR-yG-kck" secondAttribute="leading" id="wpu-DZ-kNy"/>
@@ -368,6 +383,7 @@
                                 <connections>
                                     <outlet property="discreteGraphView" destination="xYh-De-1bo" id="fOT-pr-CKG"/>
                                     <outlet property="infoButton" destination="LId-bA-iho" id="sR6-PO-W1j"/>
+                                    <outlet property="legendButton" destination="2TV-fV-7qu" id="aIg-Og-aUA"/>
                                     <outlet property="lineGraphView" destination="E1Y-YK-KgF" id="brs-Re-87X"/>
                                     <outlet property="resizeButton" destination="IG5-hN-Jl5" id="ATp-zY-AIq"/>
                                     <outlet property="subTitleLabel" destination="eb9-Pe-RMI" id="mtT-21-brm"/>
@@ -393,7 +409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUN-DI-wFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="186"/>
+            <point key="canvasLocation" x="673.5" y="185.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CnD-K4-dOw">

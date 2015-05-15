@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08F6D1B41AD6FA7200DFF268 /* PD_feedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 08F6D1B21AD6FA7200DFF268 /* PD_feedback.json */; };
-		08F6D1B51AD6FA7200DFF268 /* PD_mythoughts.json in Resources */ = {isa = PBXBuildFile; fileRef = 08F6D1B31AD6FA7200DFF268 /* PD_mythoughts.json */; };
-		21CBD9E51A9FE59900031635 /* APHTasksAndSchedules_NoM7.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CBD9E41A9FE59900031635 /* APHTasksAndSchedules_NoM7.json */; };
 		5A0F98FF1AA409FC00A2A7EB /* PDenrollment_survey.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */; };
 		5A0F99021AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */; };
+		5A0F99131AA4269C00A2A7EB /* PD_feedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F99111AA4269C00A2A7EB /* PD_feedback.json */; };
+		5A0F99141AA4269C00A2A7EB /* PD_mythoughts.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F99121AA4269C00A2A7EB /* PD_mythoughts.json */; };
 		5A0F99171AA426D900A2A7EB /* APHmythougths.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99161AA426D900A2A7EB /* APHmythougths.m */; };
 		5A0F991A1AA426F300A2A7EB /* APHfeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99191AA426F300A2A7EB /* APHfeedback.m */; };
 		5B1095B91A9F9BD5006631F5 /* consent.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5B1095B81A9F9BD5006631F5 /* consent.pdf */; };
@@ -26,12 +25,12 @@
 		5BAC201019D5FEC600451AAE /* StudyOverview.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BAC200F19D5FEC600451AAE /* StudyOverview.json */; };
 		5BBDAEBF1A33DFDA0047DF87 /* HTMLContent in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDAEBE1A33DFDA0047DF87 /* HTMLContent */; };
 		5BBDAEF21A350FB40047DF87 /* LocationInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDAEF11A350FB40047DF87 /* LocationInfo.json */; };
+		6C86453C1AF3FD9000B46C49 /* APHAppDelegate+APHMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C86453B1AF3FD9000B46C49 /* APHAppDelegate+APHMigration.m */; };
+		6CA576FD1B065DD90074FF16 /* APHTasksAndSchedules_NoM7.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA576FC1B065DD90074FF16 /* APHTasksAndSchedules_NoM7.json */; };
 		743BFFFF1A90E12800438241 /* APHConsentSection.json in Resources */ = {isa = PBXBuildFile; fileRef = 743BFFFE1A90E12800438241 /* APHConsentSection.json */; };
-		745DB4391ADB0B380007C484 /* libPDScores.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 745DB4361ADB09F70007C484 /* libPDScores.a */; };
+		744996AD1AF000D800E0D7E7 /* libPDScores.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 744996A91AF0009000E0D7E7 /* libPDScores.a */; };
 		74B713EB1AC0722D00FE2553 /* BridgeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B713A41ABF04B900FE2553 /* BridgeSDK.framework */; };
 		74B713EC1AC0722D00FE2553 /* BridgeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74B713A41ABF04B900FE2553 /* BridgeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		74B713F21AC0722E00FE2553 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0D81ABE2DE40071C218 /* ResearchKit.framework */; };
-		74B713F31AC0722E00FE2553 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0D81ABE2DE40071C218 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		74B713F71AC0722E00FE2553 /* APCAppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0CC1ABE2DE40071C218 /* APCAppCore.framework */; };
 		74B713F81AC0722E00FE2553 /* APCAppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 743AD0CC1ABE2DE40071C218 /* APCAppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B9898CA1A926F36003B4181 /* APHProfileExtender.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9898C91A926F36003B4181 /* APHProfileExtender.m */; };
@@ -74,13 +73,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		08F6D1B01AD6F94300DFF268 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
-			remoteInfo = ResearchKitTests;
-		};
 		743AD0CB1ABE2DE40071C218 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
@@ -95,20 +87,6 @@
 			remoteGlobalIDString = F5179B3419D09128001DCCB7;
 			remoteInfo = APCAppCoreTests;
 		};
-		743AD0D71ABE2DE40071C218 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B183A5951A8535D100C76870;
-			remoteInfo = OpenResearchKit;
-		};
-		743AD0DF1ABE2E880071C218 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B183A4731A8535D100C76870;
-			remoteInfo = OpenResearchKit;
-		};
 		743AD0E11ABE2E8E0071C218 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
@@ -116,19 +94,26 @@
 			remoteGlobalIDString = F5179B2819D09128001DCCB7;
 			remoteInfo = APCAppCore;
 		};
-		745DB4351ADB09F70007C484 /* PBXContainerItemProxy */ = {
+		744996A81AF0009000E0D7E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 745DB4301ADB09F70007C484 /* PDScores.xcodeproj */;
+			containerPortal = 744996A31AF0009000E0D7E7 /* PDScores.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 801712D41A897DC200CB13EB;
 			remoteInfo = PDScores;
 		};
-		745DB4371ADB09F70007C484 /* PBXContainerItemProxy */ = {
+		744996AA1AF0009000E0D7E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 745DB4301ADB09F70007C484 /* PDScores.xcodeproj */;
+			containerPortal = 744996A31AF0009000E0D7E7 /* PDScores.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 801712DF1A897DC200CB13EB;
 			remoteInfo = PDScoresTests;
+		};
+		744996AE1AF000EF00E0D7E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 744996A31AF0009000E0D7E7 /* PDScores.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 801712D31A897DC200CB13EB;
+			remoteInfo = PDScores;
 		};
 		74B713A31ABF04B900FE2553 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -158,19 +143,26 @@
 			remoteGlobalIDString = 80855F4F19BE258C006601C7;
 			remoteInfo = BridgeSDK;
 		};
-		74B713F41AC0722E00FE2553 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B183A4731A8535D100C76870;
-			remoteInfo = OpenResearchKit;
-		};
 		74B713F91AC0722E00FE2553 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F5179B2819D09128001DCCB7;
 			remoteInfo = APCAppCore;
+		};
+		74ED555E1B06AF3100163F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74ED55581B06AF3100163F2B /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		74ED55601B06AF3100163F2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74ED55581B06AF3100163F2B /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -181,7 +173,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				74B713F31AC0722E00FE2553 /* ResearchKit.framework in Embed Frameworks */,
 				74B713EC1AC0722D00FE2553 /* BridgeSDK.framework in Embed Frameworks */,
 				74B713F81AC0722E00FE2553 /* APCAppCore.framework in Embed Frameworks */,
 			);
@@ -191,12 +182,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08F6D1B21AD6FA7200DFF268 /* PD_feedback.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_feedback.json; sourceTree = "<group>"; };
-		08F6D1B31AD6FA7200DFF268 /* PD_mythoughts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_mythoughts.json; sourceTree = "<group>"; };
-		21CBD9E41A9FE59900031635 /* APHTasksAndSchedules_NoM7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APHTasksAndSchedules_NoM7.json; sourceTree = "<group>"; };
+		36EF84D31A951327008C255F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36EF84D41A951327008C255F /* Parkinson_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parkinson_Tests.m; sourceTree = "<group>"; };
+		36EF84DE1A951364008C255F /* APCMedTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = APCMedTrackerTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PDenrollment_survey.json; sourceTree = "<group>"; };
 		5A0F99001AA40E9100A2A7EB /* APHenrollmentsurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHenrollmentsurveyViewController.h; sourceTree = "<group>"; };
 		5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHenrollmentsurveyViewController.m; sourceTree = "<group>"; };
+		5A0F99111AA4269C00A2A7EB /* PD_feedback.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_feedback.json; sourceTree = "<group>"; };
+		5A0F99121AA4269C00A2A7EB /* PD_mythoughts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_mythoughts.json; sourceTree = "<group>"; };
 		5A0F99151AA426D900A2A7EB /* APHmythougths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHmythougths.h; sourceTree = "<group>"; };
 		5A0F99161AA426D900A2A7EB /* APHmythougths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHmythougths.m; sourceTree = "<group>"; };
 		5A0F99181AA426F300A2A7EB /* APHfeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHfeedback.h; sourceTree = "<group>"; };
@@ -216,11 +209,14 @@
 		5BAC200F19D5FEC600451AAE /* StudyOverview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StudyOverview.json; sourceTree = "<group>"; };
 		5BBDAEBE1A33DFDA0047DF87 /* HTMLContent */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTMLContent; sourceTree = "<group>"; };
 		5BBDAEF11A350FB40047DF87 /* LocationInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationInfo.json; sourceTree = "<group>"; };
+		6C86453A1AF3FD9000B46C49 /* APHAppDelegate+APHMigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APHAppDelegate+APHMigration.h"; sourceTree = "<group>"; };
+		6C86453B1AF3FD9000B46C49 /* APHAppDelegate+APHMigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APHAppDelegate+APHMigration.m"; sourceTree = "<group>"; };
+		6CA576FC1B065DD90074FF16 /* APHTasksAndSchedules_NoM7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APHTasksAndSchedules_NoM7.json; sourceTree = "<group>"; };
 		743BFFFE1A90E12800438241 /* APHConsentSection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = APHConsentSection.json; sourceTree = "<group>"; };
-		745DB4301ADB09F70007C484 /* PDScores.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PDScores.xcodeproj; path = PDScores/PDScores/PDScores.xcodeproj; sourceTree = SOURCE_ROOT; };
+		744996A31AF0009000E0D7E7 /* PDScores.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PDScores.xcodeproj; path = PDScores/PDScores/PDScores.xcodeproj; sourceTree = SOURCE_ROOT; };
 		747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = APCAppCore.xcodeproj; path = ../AppCore/APCAppCore/APCAppCore.xcodeproj; sourceTree = "<group>"; };
-		747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../researchkit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BridgeSDK.xcodeproj; path = BridgeSDK/BridgeSDK.xcodeproj; sourceTree = SOURCE_ROOT; };
+		74ED55581B06AF3100163F2B /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ResearchKit/ResearchKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		7B9898C81A926F36003B4181 /* APHProfileExtender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHProfileExtender.h; sourceTree = "<group>"; };
 		7B9898C91A926F36003B4181 /* APHProfileExtender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHProfileExtender.m; sourceTree = "<group>"; };
 		A74615B11A98077D00323AD1 /* ConverterForPDScores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConverterForPDScores.h; sourceTree = "<group>"; };
@@ -278,14 +274,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				745DB4391ADB0B380007C484 /* libPDScores.a in Frameworks */,
+				744996AD1AF000D800E0D7E7 /* libPDScores.a in Frameworks */,
 				5B18CEF71A2D3A57001A905E /* MapKit.framework in Frameworks */,
 				74B713F71AC0722E00FE2553 /* APCAppCore.framework in Frameworks */,
 				74B713EB1AC0722D00FE2553 /* BridgeSDK.framework in Frameworks */,
 				F5F32C7C19D0D4C1007F9015 /* HealthKit.framework in Frameworks */,
 				CFA2ABC019A7C3EB000DB961 /* AVFoundation.framework in Frameworks */,
 				CFA2ABBE19A7C3C2000DB961 /* Security.framework in Frameworks */,
-				74B713F21AC0722E00FE2553 /* ResearchKit.framework in Frameworks */,
 				CFA2ABBC19A7C3A9000DB961 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +293,7 @@
 			children = (
 				5B1095B71A9F9BD5006631F5 /* PDF */,
 				5BBDAEBE1A33DFDA0047DF87 /* HTMLContent */,
+				BA50EA3A1A37B1AA0049B835 /* Certificates */,
 				F5D14E3F19CC991500650FBB /* JSONs */,
 				F536B93C19F5747B005A2D1C /* Tasks */,
 				F584909819E892700091A640 /* Videos */,
@@ -305,11 +301,29 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		36EF84D11A951327008C255F /* Parkinson Tests */ = {
+			isa = PBXGroup;
+			children = (
+				36EF84D41A951327008C255F /* Parkinson_Tests.m */,
+				36EF84DE1A951364008C255F /* APCMedTrackerTests.m */,
+				36EF84D21A951327008C255F /* Supporting Files */,
+			);
+			path = "Parkinson Tests";
+			sourceTree = "<group>";
+		};
+		36EF84D21A951327008C255F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36EF84D31A951327008C255F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5A0F98FA1AA409EF00A2A7EB /* surveys */ = {
 			isa = PBXGroup;
 			children = (
-				08F6D1B21AD6FA7200DFF268 /* PD_feedback.json */,
-				08F6D1B31AD6FA7200DFF268 /* PD_mythoughts.json */,
+				5A0F99111AA4269C00A2A7EB /* PD_feedback.json */,
+				5A0F99121AA4269C00A2A7EB /* PD_mythoughts.json */,
 				5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */,
 			);
 			path = surveys;
@@ -348,6 +362,15 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		6C8645471AF3FD9500B46C49 /* Migration */ = {
+			isa = PBXGroup;
+			children = (
+				6C86453A1AF3FD9000B46C49 /* APHAppDelegate+APHMigration.h */,
+				6C86453B1AF3FD9000B46C49 /* APHAppDelegate+APHMigration.m */,
+			);
+			name = Migration;
+			sourceTree = "<group>";
+		};
 		743AD0C71ABE2DE40071C218 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,20 +380,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		743AD0D11ABE2DE40071C218 /* Products */ = {
+		744996A41AF0009000E0D7E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				743AD0D81ABE2DE40071C218 /* ResearchKit.framework */,
-				08F6D1B11AD6F94300DFF268 /* ResearchKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		745DB4311ADB09F70007C484 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				745DB4361ADB09F70007C484 /* libPDScores.a */,
-				745DB4381ADB09F70007C484 /* PDScoresTests.xctest */,
+				744996A91AF0009000E0D7E7 /* libPDScores.a */,
+				744996AB1AF0009000E0D7E7 /* PDScoresTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -380,6 +394,15 @@
 			children = (
 				74B713A41ABF04B900FE2553 /* BridgeSDK.framework */,
 				74B713A61ABF04B900FE2553 /* BridgeSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74ED55591B06AF3100163F2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74ED555F1B06AF3100163F2B /* ResearchKit.framework */,
+				74ED55611B06AF3100163F2B /* ResearchKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,12 +444,19 @@
 			path = 3x;
 			sourceTree = "<group>";
 		};
+		BA50EA3A1A37B1AA0049B835 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Certificates;
+			sourceTree = "<group>";
+		};
 		CFA2ABB419A7C1C1000DB961 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				745DB4301ADB09F70007C484 /* PDScores.xcodeproj */,
+				744996A31AF0009000E0D7E7 /* PDScores.xcodeproj */,
 				74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */,
-				747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */,
+				74ED55581B06AF3100163F2B /* ResearchKit.xcodeproj */,
 				747F5B671ABE2D3200197B68 /* APCAppCore.xcodeproj */,
 				5B18CEF61A2D3A56001A905E /* MapKit.framework */,
 				CFA2ABBF19A7C3EB000DB961 /* AVFoundation.framework */,
@@ -443,6 +473,7 @@
 			children = (
 				CFC2D2D919A5417D00170E69 /* Parkinson */,
 				CFC2D2E719A5417D00170E69 /* Images.xcassets */,
+				36EF84D11A951327008C255F /* Parkinson Tests */,
 				CFA2ABB419A7C1C1000DB961 /* Frameworks */,
 				CFC2D2D819A5417D00170E69 /* Products */,
 			);
@@ -527,7 +558,7 @@
 				F5C11A2E19DCBE95003278FF /* APCParameters.json */,
 				5BAC200F19D5FEC600451AAE /* StudyOverview.json */,
 				F5D14E4019CC991500650FBB /* APHTasksAndSchedules.json */,
-				21CBD9E41A9FE59900031635 /* APHTasksAndSchedules_NoM7.json */,
+				6CA576FC1B065DD90074FF16 /* APHTasksAndSchedules_NoM7.json */,
 			);
 			path = JSONs;
 			sourceTree = "<group>";
@@ -618,6 +649,7 @@
 				F5DCAD3D19D088330096DEC0 /* LaunchScreen.xib */,
 				F5D14F3719CC9C0000650FBB /* APHAppDelegate.h */,
 				F5D14F3819CC9C0000650FBB /* APHAppDelegate.m */,
+				6C8645471AF3FD9500B46C49 /* Migration */,
 				7B9898C81A926F36003B4181 /* APHProfileExtender.h */,
 				7B9898C91A926F36003B4181 /* APHProfileExtender.m */,
 			);
@@ -635,15 +667,15 @@
 				CFC2D2D419A5417D00170E69 /* Frameworks */,
 				CFC2D2D519A5417D00170E69 /* Resources */,
 				F5D1A91419D4C6FC00A03465 /* Embed Frameworks */,
+				F53F27B91A2D383E00A1D725 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				744996AF1AF000EF00E0D7E7 /* PBXTargetDependency */,
 				74B713AC1ABF04D400FE2553 /* PBXTargetDependency */,
 				743AD0E21ABE2E8E0071C218 /* PBXTargetDependency */,
-				743AD0E01ABE2E880071C218 /* PBXTargetDependency */,
 				74B713EE1AC0722E00FE2553 /* PBXTargetDependency */,
-				74B713F51AC0722E00FE2553 /* PBXTargetDependency */,
 				74B713FA1AC0722E00FE2553 /* PBXTargetDependency */,
 			);
 			name = Parkinson;
@@ -701,12 +733,12 @@
 					ProjectRef = 74B713981ABF04B900FE2553 /* BridgeSDK.xcodeproj */;
 				},
 				{
-					ProductGroup = 745DB4311ADB09F70007C484 /* Products */;
-					ProjectRef = 745DB4301ADB09F70007C484 /* PDScores.xcodeproj */;
+					ProductGroup = 744996A41AF0009000E0D7E7 /* Products */;
+					ProjectRef = 744996A31AF0009000E0D7E7 /* PDScores.xcodeproj */;
 				},
 				{
-					ProductGroup = 743AD0D11ABE2DE40071C218 /* Products */;
-					ProjectRef = 747F5B721ABE2D3E00197B68 /* ResearchKit.xcodeproj */;
+					ProductGroup = 74ED55591B06AF3100163F2B /* Products */;
+					ProjectRef = 74ED55581B06AF3100163F2B /* ResearchKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -717,13 +749,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		08F6D1B11AD6F94300DFF268 /* ResearchKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ResearchKitTests.xctest;
-			remoteRef = 08F6D1B01AD6F94300DFF268 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		743AD0CC1ABE2DE40071C218 /* APCAppCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -738,25 +763,18 @@
 			remoteRef = 743AD0CD1ABE2DE40071C218 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		743AD0D81ABE2DE40071C218 /* ResearchKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ResearchKit.framework;
-			remoteRef = 743AD0D71ABE2DE40071C218 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		745DB4361ADB09F70007C484 /* libPDScores.a */ = {
+		744996A91AF0009000E0D7E7 /* libPDScores.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libPDScores.a;
-			remoteRef = 745DB4351ADB09F70007C484 /* PBXContainerItemProxy */;
+			remoteRef = 744996A81AF0009000E0D7E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		745DB4381ADB09F70007C484 /* PDScoresTests.xctest */ = {
+		744996AB1AF0009000E0D7E7 /* PDScoresTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = PDScoresTests.xctest;
-			remoteRef = 745DB4371ADB09F70007C484 /* PBXContainerItemProxy */;
+			remoteRef = 744996AA1AF0009000E0D7E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		74B713A41ABF04B900FE2553 /* BridgeSDK.framework */ = {
@@ -773,6 +791,20 @@
 			remoteRef = 74B713A51ABF04B900FE2553 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		74ED555F1B06AF3100163F2B /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 74ED555E1B06AF3100163F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		74ED55611B06AF3100163F2B /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 74ED55601B06AF3100163F2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -787,19 +819,19 @@
 				A781167C1A96BC9400CEC822 /* 13_RiskToPrivacy@3x.m4v in Resources */,
 				743BFFFF1A90E12800438241 /* APHConsentSection.json in Resources */,
 				5BAC201019D5FEC600451AAE /* StudyOverview.json in Resources */,
+				6CA576FD1B065DD90074FF16 /* APHTasksAndSchedules_NoM7.json in Resources */,
+				5A0F99141AA4269C00A2A7EB /* PD_mythoughts.json in Resources */,
 				F5EFE0A019EC39B1008BAD56 /* APHOnboarding.storyboard in Resources */,
 				A78116701A96BC9400CEC822 /* 01_Activities_to_SensorData@2x.m4v in Resources */,
-				08F6D1B41AD6FA7200DFF268 /* PD_feedback.json in Resources */,
 				A78116721A96BC9400CEC822 /* 10_PotentialBenifits@2x.m4v in Resources */,
+				5A0F99131AA4269C00A2A7EB /* PD_feedback.json in Resources */,
 				A78116741A96BC9400CEC822 /* 12_IssuesToConside2@2x.m4v in Resources */,
 				A78116711A96BC9400CEC822 /* 02_SensorData_to_DataGathering@2x.m4v in Resources */,
 				F584909A19E892700091A640 /* Intro.mp4 in Resources */,
 				5B18CED01A2CF2E5001A905E /* TermsAndConditions.json in Resources */,
 				A781167B1A96BC9400CEC822 /* 12_IssuesToConside2@3x.m4v in Resources */,
 				A78116781A96BC9400CEC822 /* 02_SensorData_to_DataGathering@3x.m4v in Resources */,
-				21CBD9E51A9FE59900031635 /* APHTasksAndSchedules_NoM7.json in Resources */,
 				5B1095B91A9F9BD5006631F5 /* consent.pdf in Resources */,
-				08F6D1B51AD6FA7200DFF268 /* PD_mythoughts.json in Resources */,
 				A78116751A96BC9400CEC822 /* 13_RiskToPrivacy@2x.m4v in Resources */,
 				F536B93E19F5747B005A2D1C /* sample.task in Resources */,
 				5B975A161A112E2C00A34E42 /* Learn.json in Resources */,
@@ -820,6 +852,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F53F27B91A2D383E00A1D725 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/AppCore/APCAppCore/APCAppCore/Resources/get_debug_ip_address.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFC2D2D319A5417D00170E69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -838,6 +886,7 @@
 				CFF1A5101A81976500EAEE0E /* APHSpatialSpanMemoryGameViewController.m in Sources */,
 				7B9898CA1A926F36003B4181 /* APHProfileExtender.m in Sources */,
 				CFDA47A81A97BF8800B32C34 /* APHMedicationTrackerTaskViewController.m in Sources */,
+				6C86453C1AF3FD9000B46C49 /* APHAppDelegate+APHMigration.m in Sources */,
 				5A0F99021AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m in Sources */,
 				F5D14F3519CC9BC900650FBB /* APHWalkingTaskViewController.m in Sources */,
 				F5D14EDC19CC9BA700650FBB /* NSString+CustomMethods.m in Sources */,
@@ -848,15 +897,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		743AD0E01ABE2E880071C218 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OpenResearchKit;
-			targetProxy = 743AD0DF1ABE2E880071C218 /* PBXContainerItemProxy */;
-		};
 		743AD0E21ABE2E8E0071C218 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = APCAppCore;
 			targetProxy = 743AD0E11ABE2E8E0071C218 /* PBXContainerItemProxy */;
+		};
+		744996AF1AF000EF00E0D7E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PDScores;
+			targetProxy = 744996AE1AF000EF00E0D7E7 /* PBXContainerItemProxy */;
 		};
 		74B713AC1ABF04D400FE2553 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -867,11 +916,6 @@
 			isa = PBXTargetDependency;
 			name = BridgeSDK;
 			targetProxy = 74B713ED1AC0722E00FE2553 /* PBXContainerItemProxy */;
-		};
-		74B713F51AC0722E00FE2553 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OpenResearchKit;
-			targetProxy = 74B713F41AC0722E00FE2553 /* PBXContainerItemProxy */;
 		};
 		74B713FA1AC0722E00FE2553 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -918,7 +962,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
@@ -944,7 +988,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/PDScores/PDScores/**",
+					"$(PROJECT_DIR)/Parkinson/Library/PDScores/PDScores/**",
 				);
 				INFOPLIST_FILE = Parkinson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -992,7 +1036,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
@@ -1033,7 +1077,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = (
 					"-Wall",
@@ -1059,7 +1103,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/PDScores/PDScores/**",
+					"$(PROJECT_DIR)/Parkinson/Library/PDScores/PDScores/**",
 				);
 				INFOPLIST_FILE = Parkinson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1086,7 +1130,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/PDScores/PDScores/**",
+					"$(PROJECT_DIR)/Parkinson/Library/PDScores/PDScores/**",
 				);
 				INFOPLIST_FILE = Parkinson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1135,7 +1179,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
@@ -1161,7 +1205,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/PDScores/PDScores/**",
+					"$(PROJECT_DIR)/Parkinson/Library/PDScores/PDScores/**",
 				);
 				INFOPLIST_FILE = Parkinson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

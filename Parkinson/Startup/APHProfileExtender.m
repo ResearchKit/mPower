@@ -33,7 +33,8 @@
  
 #import "APHProfileExtender.h"
 
-static  NSInteger  kDefaultNumberOfExtraSections = 2;
+static  NSInteger  kDefaultNumberOfExtraSections =  2;
+static  CGFloat    kDefaultHeightForExtraRows    = 64.0;
 
 @interface APHProfileExtender ()
 @property BOOL isEditing;
@@ -102,7 +103,7 @@ static  NSInteger  kDefaultNumberOfExtraSections = 2;
     CGFloat height = tableView.rowHeight;
     
     if (indexPath.section == 0) {
-        height = 44.0;
+        height = kDefaultHeightForExtraRows;
     }
     
     return height;

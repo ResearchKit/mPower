@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		5A0F98FF1AA409FC00A2A7EB /* PDenrollment_survey.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */; };
 		5A0F99021AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */; };
-		5A0F99091AA41B1C00A2A7EB /* APHPDQ8ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99081AA41B1C00A2A7EB /* APHPDQ8ViewController.m */; };
-		5A0F990C1AA41EA500A2A7EB /* APHMDRUPDRS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F990B1AA41EA500A2A7EB /* APHMDRUPDRS.m */; };
 		5A0F99131AA4269C00A2A7EB /* PD_feedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F99111AA4269C00A2A7EB /* PD_feedback.json */; };
 		5A0F99141AA4269C00A2A7EB /* PD_mythoughts.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F99121AA4269C00A2A7EB /* PD_mythoughts.json */; };
 		5A0F99171AA426D900A2A7EB /* APHmythougths.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F99161AA426D900A2A7EB /* APHmythougths.m */; };
@@ -207,10 +205,6 @@
 		5A0F98FE1AA409FC00A2A7EB /* PDenrollment_survey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PDenrollment_survey.json; sourceTree = "<group>"; };
 		5A0F99001AA40E9100A2A7EB /* APHenrollmentsurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHenrollmentsurveyViewController.h; sourceTree = "<group>"; };
 		5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHenrollmentsurveyViewController.m; sourceTree = "<group>"; };
-		5A0F99071AA41B1C00A2A7EB /* APHPDQ8ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHPDQ8ViewController.h; sourceTree = "<group>"; };
-		5A0F99081AA41B1C00A2A7EB /* APHPDQ8ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHPDQ8ViewController.m; sourceTree = "<group>"; };
-		5A0F990A1AA41EA500A2A7EB /* APHMDRUPDRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHMDRUPDRS.h; sourceTree = "<group>"; };
-		5A0F990B1AA41EA500A2A7EB /* APHMDRUPDRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHMDRUPDRS.m; sourceTree = "<group>"; };
 		5A0F99111AA4269C00A2A7EB /* PD_feedback.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_feedback.json; sourceTree = "<group>"; };
 		5A0F99121AA4269C00A2A7EB /* PD_mythoughts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PD_mythoughts.json; sourceTree = "<group>"; };
 		5A0F99151AA426D900A2A7EB /* APHmythougths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHmythougths.h; sourceTree = "<group>"; };
@@ -359,10 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				5A0F99001AA40E9100A2A7EB /* APHenrollmentsurveyViewController.h */,
-				5A0F99071AA41B1C00A2A7EB /* APHPDQ8ViewController.h */,
-				5A0F990A1AA41EA500A2A7EB /* APHMDRUPDRS.h */,
-				5A0F990B1AA41EA500A2A7EB /* APHMDRUPDRS.m */,
-				5A0F99081AA41B1C00A2A7EB /* APHPDQ8ViewController.m */,
 				5A0F99011AA40E9100A2A7EB /* APHenrollmentsurveyViewController.m */,
 				5A0F99151AA426D900A2A7EB /* APHmythougths.h */,
 				5A0F99161AA426D900A2A7EB /* APHmythougths.m */,
@@ -910,12 +900,10 @@
 				CF2BF9931A76A3E300AC4ADD /* APHIntervalTappingRecorderDataKeys.m in Sources */,
 				F5D14F2719CC9BC900650FBB /* APHPhonationTaskViewController.m in Sources */,
 				5B1D9D461A1BCC6B000F4AD6 /* APHDashboardEditViewController.m in Sources */,
-				5A0F990C1AA41EA500A2A7EB /* APHMDRUPDRS.m in Sources */,
 				5B1D9D471A1BCC6B000F4AD6 /* APHDashboardViewController.m in Sources */,
 				F5D14F3919CC9C0000650FBB /* APHAppDelegate.m in Sources */,
 				A74615B31A98077D00323AD1 /* ConverterForPDScores.m in Sources */,
 				5B29CE5419D4C8FD00E2FD62 /* APHInclusionCriteriaViewController.m in Sources */,
-				5A0F99091AA41B1C00A2A7EB /* APHPDQ8ViewController.m in Sources */,
 				5A0F991A1AA426F300A2A7EB /* APHfeedback.m in Sources */,
 				5A0F99171AA426D900A2A7EB /* APHmythougths.m in Sources */,
 				F5D14F2319CC9BC900650FBB /* APHIntervalTappingTaskViewController.m in Sources */,

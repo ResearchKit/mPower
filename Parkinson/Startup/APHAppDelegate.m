@@ -3,32 +3,32 @@
 //  mPower 
 // 
 // Copyright (c) 2015, Sage Bionetworks. All rights reserved. 
-//
-// Redistribution and use in source and binary forms, with or without modification, 
+// 
+// Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-//
+// 
 // 1.  Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
-//
+// 
 // 2.  Redistributions in binary form must reproduce the above copyright notice, 
-// this list of conditions and the following disclaimer in the documentation and/or
-// other materials provided with the distribution.
-//
+// this list of conditions and the following disclaimer in the documentation and/or 
+// other materials provided with the distribution. 
+// 
 // 3.  Neither the name of the copyright holder(s) nor the names of any contributors 
 // may be used to endorse or promote products derived from this software without 
 // specific prior written permission. No license is granted to the trademarks of 
 // the copyright holders even if such marks are included in this software. 
-//
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
 // ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 // 
  
 @import APCAppCore;
@@ -40,8 +40,6 @@ static NSString *const kWalkingActivitySurveyIdentifier             = @"4-APHTim
 static NSString *const kVoiceActivitySurveyIdentifier               = @"3-APHPhonation-C614A231-A7B7-4173-BDC8-098309354292";
 static NSString *const kTappingActivitySurveyIdentifier             = @"2-APHIntervalTapping-7259AC18-D711-47A6-ADBD-6CFCECDED1DF";
 static NSString *const kMemoryActivitySurveyIdentifier              = @"7-APHSpatialSpanMemory-4A04F3D0-AC05-11E4-AB27-0800200C9A66";
-static NSString *const kPDSurveyIdentifier                          = @"6-PDQ8-20EF83D2-E461-4C20-9024-F43FCAAAF4C8";
-static NSString *const kWeeklySurveyIdentifier                      = @"5-MDSUPDRS-20EF82D1-E461-4C20-9024-F43FCAAAF4C8";
 static NSString *const kMyThoughtsSurveyIdentifier                  = @"8-MyThoughts-12ffde40-1551-4b48-aae2-8fef38d61b61";
 
 /*********************************************************************************/
@@ -59,11 +57,6 @@ static NSString *const kJsonTasksKey                    = @"tasks";
 static NSString *const kJsonScheduleTaskIDKey           = @"taskID";
 static NSString *const kJsonSchedulesKey                = @"schedules";
 
-
-static NSString *const kPDQ8TaskIdentifier              = @"6-PDQ8-20EF83D2-E461-4C20-9024-F43FCAAAF4C8";
-static NSInteger const kPDQ8TaskOffset                  = 2;
-static NSString *const kMDSUPDRS                        = @"5-MDSUPDRS-20EF82D1-E461-4C20-9024-F43FCAAAF4C8";
-static NSInteger const kMDSUPDRSOffset                  = 1;
 static NSInteger const kMonthOfDayObject                = 2;
 
 @interface APHAppDelegate ()
@@ -76,9 +69,9 @@ static NSInteger const kMonthOfDayObject                = 2;
 - (BOOL)application:(UIApplication*) __unused application willFinishLaunchingWithOptions:(NSDictionary*) __unused launchOptions
 {
     [super application:application willFinishLaunchingWithOptions:launchOptions];
-
+    
     [self enableBackgroundDeliveryForHealthKitTypes];
-
+    
     return YES;
 }
 
@@ -91,11 +84,11 @@ static NSInteger const kMonthOfDayObject                = 2;
         for (id dataType in dataTypesWithReadPermission)
         {
             HKObjectType*   sampleType  = nil;
-
+            
             if ([dataType isKindOfClass:[NSDictionary class]])
             {
                 NSDictionary* categoryType = (NSDictionary*) dataType;
-
+                
                 //Distinguish
                 if (categoryType[kHKWorkoutTypeKey])
                 {
@@ -110,7 +103,7 @@ static NSInteger const kMonthOfDayObject                = 2;
             {
                 sampleType = [HKObjectType quantityTypeForIdentifier:dataType];
             }
-
+            
             if (sampleType)
             {
                 [self.dataSubstrate.healthStore enableBackgroundDeliveryForType:sampleType
@@ -137,11 +130,11 @@ static NSInteger const kMonthOfDayObject                = 2;
 - (void) setUpInitializationOptions
 {
     NSDictionary *permissionsDescriptions = @{
-                                              @(kSignUpPermissionsTypeLocation) : NSLocalizedString(@"Using your GPS enables the app to accurately determine distances travelled. Your actual location will never be shared.", @""),
-                                              @(kSignUpPermissionsTypeCoremotion) : NSLocalizedString(@"Using the motion co-processor allows the app to determine your activity, helping the study better understand how activity level may influence disease.", @""),
-                                              @(kSignUpPermissionsTypeMicrophone) : NSLocalizedString(@"Access to microphone is required for your Voice Recording Activity.", @""),
-                                              @(kSignUpPermissionsTypeLocalNotifications) : NSLocalizedString(@"Allowing notifications enables the app to show you reminders.", @""),
-                                              @(kSignUpPermissionsTypeHealthKit) : NSLocalizedString(@"On the next screen, you will be prompted to grant mPower access to read and write some of your general and health information, such as height, weight and steps taken so you don't have to enter it again.", @""),
+                                              @(kAPCSignUpPermissionsTypeLocation) : NSLocalizedString(@"Using your GPS enables the app to accurately determine distances travelled. Your actual location will never be shared.", @""),
+                                              @(kAPCSignUpPermissionsTypeCoremotion) : NSLocalizedString(@"Using the motion co-processor allows the app to determine your activity, helping the study better understand how activity level may influence disease.", @""),
+                                              @(kAPCSignUpPermissionsTypeMicrophone) : NSLocalizedString(@"Access to microphone is required for your Voice Recording Activity.", @""),
+                                              @(kAPCSignUpPermissionsTypeLocalNotifications) : NSLocalizedString(@"Allowing notifications enables the app to show you reminders.", @""),
+                                              @(kAPCSignUpPermissionsTypeHealthKit) : NSLocalizedString(@"On the next screen, you will be prompted to grant mPower access to read and write some of your general and health information, such as height, weight and steps taken so you don't have to enter it again.", @""),
                                                   };
     
     NSMutableDictionary * dictionary = [super defaultInitializationOptions];
@@ -156,19 +149,23 @@ static NSInteger const kMonthOfDayObject                = 2;
                                            kStudyIdentifierKey                  : kStudyIdentifier,
                                            kAppPrefixKey                        : kAppPrefix,
                                            kBridgeEnvironmentKey                : @(self.environment),
-                                           kNewsFeedTabKey                      : @(YES),
                                            kHKReadPermissionsKey                : @[
                                                    HKQuantityTypeIdentifierBodyMass,
                                                    HKQuantityTypeIdentifierHeight,
-                                                   HKQuantityTypeIdentifierStepCount
+                                                   HKQuantityTypeIdentifierStepCount,
+                                                   HKQuantityTypeIdentifierDistanceCycling,
+                                                   HKQuantityTypeIdentifierDistanceWalkingRunning,
+                                                   HKQuantityTypeIdentifierFlightsClimbed,
+                                                   @{kHKWorkoutTypeKey  : HKWorkoutTypeIdentifier},
+                                                   @{kHKCategoryTypeKey : HKCategoryTypeIdentifierSleepAnalysis}
                                                    ],
                                            kHKWritePermissionsKey                : @[
                                                    ],
                                            kAppServicesListRequiredKey           : @[
-                                                   @(kSignUpPermissionsTypeLocation),
-                                                   @(kSignUpPermissionsTypeCoremotion),
-                                                   @(kSignUpPermissionsTypeMicrophone),
-                                                   @(kSignUpPermissionsTypeLocalNotifications)
+                                                   @(kAPCSignUpPermissionsTypeLocation),
+                                                   @(kAPCSignUpPermissionsTypeCoremotion),
+                                                   @(kAPCSignUpPermissionsTypeMicrophone),
+                                                   @(kAPCSignUpPermissionsTypeLocalNotifications)
                                                    ],
                                            kAppServicesDescriptionsKey : permissionsDescriptions,
                                            kAppProfileElementsListKey            : @[
@@ -188,23 +185,36 @@ static NSInteger const kMonthOfDayObject                = 2;
     self.profileExtender = [[APHProfileExtender alloc] init];
 }
 
+- (NSDictionary*)researcherSpecifiedUnits
+{
+    NSDictionary* hkUnits =
+  @{
+    HKQuantityTypeIdentifierStepCount               : [HKUnit countUnit],
+    HKQuantityTypeIdentifierBodyMass                : [HKUnit gramUnitWithMetricPrefix:HKMetricPrefixKilo],
+    HKQuantityTypeIdentifierHeight                  : [HKUnit meterUnit],
+    HKQuantityTypeIdentifierDistanceCycling         : [HKUnit meterUnit],
+    HKQuantityTypeIdentifierDistanceWalkingRunning  : [HKUnit meterUnit],
+    HKQuantityTypeIdentifierFlightsClimbed          : [HKUnit countUnit]
+    };
+    
+    return hkUnits;
+}
+
 -(void)setUpTasksReminder{
     
     APCTaskReminder *walkingActivityReminder = [[APCTaskReminder alloc]initWithTaskID:kWalkingActivitySurveyIdentifier reminderBody:NSLocalizedString(@"Walking Activity", nil)];
     APCTaskReminder *voiceActivityReminder = [[APCTaskReminder alloc]initWithTaskID:kVoiceActivitySurveyIdentifier reminderBody:NSLocalizedString(@"Voice Activity", nil)];
     APCTaskReminder *tappingActivityReminder = [[APCTaskReminder alloc]initWithTaskID:kTappingActivitySurveyIdentifier reminderBody:NSLocalizedString(@"Tapping Activity", nil)];
     APCTaskReminder *memoryActivityReminder = [[APCTaskReminder alloc]initWithTaskID:kMemoryActivitySurveyIdentifier reminderBody:NSLocalizedString(@"Memory Activity", nil)];
-    APCTaskReminder *pdSurveyReminder = [[APCTaskReminder alloc]initWithTaskID:kPDSurveyIdentifier reminderBody:NSLocalizedString(@"PD Survey", nil)];
-    APCTaskReminder *weeklySurveyReminder = [[APCTaskReminder alloc]initWithTaskID:kWeeklySurveyIdentifier reminderBody:NSLocalizedString(@"Weekly Survey", nil)];
+    APCTaskReminder *pdSurveyReminder = [[APCTaskReminder alloc]initWithTaskID:kStudyIdentifier reminderBody:NSLocalizedString(@"PD Survey", nil)];
     APCTaskReminder *myThoughtsSurveyReminder = [[APCTaskReminder alloc]initWithTaskID:kMyThoughtsSurveyIdentifier reminderBody:NSLocalizedString(@"My Thoughts", nil)];
-    
+
     [self.tasksReminder.reminders removeAllObjects];
     [self.tasksReminder manageTaskReminder:walkingActivityReminder];
     [self.tasksReminder manageTaskReminder:voiceActivityReminder];
     [self.tasksReminder manageTaskReminder:tappingActivityReminder];
     [self.tasksReminder manageTaskReminder:memoryActivityReminder];
     [self.tasksReminder manageTaskReminder:pdSurveyReminder];
-    [self.tasksReminder manageTaskReminder:weeklySurveyReminder];
     [self.tasksReminder manageTaskReminder:myThoughtsSurveyReminder];
     
     if ([self doesPersisteStoreExist] == NO)
@@ -236,7 +246,7 @@ static NSInteger const kMonthOfDayObject                = 2;
     if (self.doesPersisteStoreExist == NO)
     {
         APCLogEvent(@"This application is being launched for the first time. We know this because there is no persistent store.");
-}
+    }
     else if ([[defaults objectForKey:@"previousVersion"] isEqual: @3] || ![defaults objectForKey:@"previousVersion"] )
     {
         APCLogEvent(@"The entire data model version %d", kTheEntireDataModelOfTheApp);
@@ -265,8 +275,6 @@ static NSInteger const kMonthOfDayObject                = 2;
                                                  @"3-APHPhonation-C614A231-A7B7-4173-BDC8-098309354292" : [UIColor appTertiaryBlueColor],
                                                  @"4-APHTimedWalking-80F09109-265A-49C6-9C5D-765E49AAF5D9" : [UIColor appTertiaryYellowColor],
                                                  @"1-EnrollmentSurvey-20EF83D2-E461-4C20-9024-F43FCAAAF4C3": [UIColor lightGrayColor],
-                                                 @"6-PDQ8-20EF83D2-E461-4C20-9024-F43FCAAAF4C8": [UIColor lightGrayColor],
-                                                 @"5-MDSUPDRS-20EF82D1-E461-4C20-9024-F43FCAAAF4C8": [UIColor lightGrayColor],
                                                  @"8-MyThoughts-12ffde40-1551-4b48-aae2-8fef38d61b61": [UIColor lightGrayColor],
                                                  @"9-Feedback-394348ce-ca4f-4abe-b97e-fedbfd7ffb8e": [UIColor lightGrayColor],
                                                  @"a-APHMedicationTracker-20EF8ED2-E461-4C20-9024-F43FCAAAF4C3": [UIColor colorWithRed:0.933
@@ -280,7 +288,9 @@ static NSInteger const kMonthOfDayObject                = 2;
                                                             NSFontAttributeName : [UIFont appNavBarTitleFont]
                                                             }];
     [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
-    self.dataSubstrate.parameters.hideExampleConsent = YES;
+    
+    self.dataSubstrate.parameters.bypassServer = YES;
+    self.dataSubstrate.parameters.hideExampleConsent = NO;
 }
 
 - (id <APCProfileViewControllerDelegate>) profileExtenderDelegate {
@@ -399,7 +409,8 @@ static NSInteger const kMonthOfDayObject                = 2;
     APCPassiveDataSink* receiver            = [[APCPassiveDataSink alloc] initWithIdentifier:@"motionActivityCollector"
                                                                                  columnNames:motionColumnNames
                                                                           operationQueueName:@"APCCoreMotion Activity Collector"
-                                                                            andDataProcessor:CoreMotionDataSerializer];
+                                                                               dataProcessor:CoreMotionDataSerializer
+                                                                           fileProtectionKey:NSFileProtectionCompleteUntilFirstUserAuthentication];
     
     [motionCollector setReceiver:receiver];
     [motionCollector setDelegate:receiver];
@@ -430,7 +441,8 @@ static NSInteger const kMonthOfDayObject                = 2;
                                                                        initWithIdentifier:@"locationTracker"
                                                                        columnNames:locationColumns
                                                                        operationQueueName:@"APCDisplacement Tracker Sink"
-                                                                       andDataProcessor:nil];
+                                                                       dataProcessor:nil
+                                                                       fileProtectionKey:NSFileProtectionCompleteUntilFirstUserAuthentication];
     [locationCollector setReceiver:displacementSinker];
     [locationCollector setDelegate:displacementSinker];
     [locationCollector start];
@@ -474,22 +486,14 @@ static NSInteger const kMonthOfDayObject                = 2;
         return consentDate;
     };
     
-    NSString*(^QuantityDataSerializer)(id) = ^NSString*(id dataSample)
+    NSString*(^QuantityDataSerializer)(id, HKUnit*) = ^NSString*(id dataSample, HKUnit* unit)
     {
         HKQuantitySample*   qtySample           = (HKQuantitySample *)dataSample;
         NSString*           startDateTimeStamp  = [qtySample.startDate toStringInISO8601Format];
         NSString*           endDateTimeStamp    = [qtySample.endDate toStringInISO8601Format];
         NSString*           healthKitType       = qtySample.quantityType.identifier;
-        NSString*           quantityValueRep    = [NSString stringWithFormat:@"%@", qtySample.quantity];
-        NSArray*            valueSplit          = [quantityValueRep componentsSeparatedByString:@" "];
-        NSString*           quantityValue       = [valueSplit objectAtIndex:0];
-        NSString*           quantityUnit        = @"";
-        
-        for (int i = 1; i < (int)[valueSplit count]; i++)
-        {
-            quantityUnit = [quantityUnit stringByAppendingString:valueSplit[i]];
-        }
-        
+        NSNumber*           quantityValue       = @([qtySample.quantity doubleValueForUnit:unit]);
+        NSString*           quantityUnit        = unit.unitString;
         NSString*           sourceIdentifier    = qtySample.source.bundleIdentifier;
         NSString*           quantitySource      = qtySample.source.name;
         
@@ -528,7 +532,7 @@ static NSInteger const kMonthOfDayObject                = 2;
         NSString*   startDateTimeStamp          = [sample.startDate toStringInISO8601Format];
         NSString*   endDateTimeStamp            = [sample.endDate toStringInISO8601Format];
         NSString*   healthKitType               = sample.sampleType.identifier;
-        NSString*   activityType                = [HKWorkout workoutActivityTypeStringRepresentation:(int)sample.workoutActivityType];
+        NSString*   activityType                = [HKWorkout apc_workoutActivityTypeStringRepresentation:(int)sample.workoutActivityType];
         double      energyConsumedValue         = [sample.totalEnergyBurned doubleValueForUnit:[HKUnit kilocalorieUnit]];
         NSString*   energyConsumed              = [NSString stringWithFormat:@"%f", energyConsumedValue];
         NSString*   energyUnit                  = [HKUnit kilocalorieUnit].description;
@@ -556,7 +560,18 @@ static NSInteger const kMonthOfDayObject                = 2;
         }
         
         NSError*    error                       = nil;
-        NSString*   metaData                    = [NSDictionary convertDictionary:sample.metadata ToStringWithReturningError:&error];
+        NSString*   metaData                    = [NSDictionary apc_stringFromDictionary:sample.metadata error:&error];
+        
+        if (!metaData)
+        {
+            if (error)
+            {
+                APCLogError2(error);
+            }
+            
+            metaData = @"";
+        }
+        
         NSString*   metaDataStringified         = [NSString stringWithFormat:@"\"%@\"", metaData];
         NSString*   stringToWrite               = [NSString stringWithFormat:@"%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@\n",
                                                    startDateTimeStamp,
@@ -645,21 +660,23 @@ static NSInteger const kMonthOfDayObject                = 2;
     
     // Just a note here that we are using n collectors to 1 data sink for quantity sample type data.
     NSArray*                    quantityColumnNames = @[@"startTime,endTime,type,value,unit,source,sourceIdentifier"];
-    APCPassiveDataSink*         quantityreceiver    = [[APCPassiveDataSink alloc] initWithIdentifier:@"HealthKitDataCollector"
-                                                                                         columnNames:quantityColumnNames
-                                                                                  operationQueueName:@"APCHealthKitQuantity Activity Collector"
-                                                                                    andDataProcessor:QuantityDataSerializer];
-    
+    APCPassiveDataSink*         quantityreceiver    =[[APCPassiveDataSink alloc] initWithQuantityIdentifier:@"HealthKitDataCollector"
+                                                                                                columnNames:quantityColumnNames
+                                                                                         operationQueueName:@"APCHealthKitQuantity Activity Collector"
+                                                                                              dataProcessor:QuantityDataSerializer
+                                                                                          fileProtectionKey:NSFileProtectionCompleteUnlessOpen];
     NSArray*                    workoutColumnNames  = @[@"startTime,endTime,type,workoutType,total distance,unit,energy consumed,unit,source,sourceIdentifier,metadata"];
     APCPassiveDataSink*         workoutReceiver     = [[APCPassiveDataSink alloc] initWithIdentifier:@"HealthKitWorkoutCollector"
                                                                                          columnNames:workoutColumnNames
                                                                                   operationQueueName:@"APCHealthKitWorkout Activity Collector"
-                                                                                    andDataProcessor:WorkoutDataSerializer];
+                                                                                       dataProcessor:WorkoutDataSerializer
+                                                                                   fileProtectionKey:NSFileProtectionCompleteUnlessOpen];
     NSArray*                    categoryColumnNames = @[@"startTime,type,category value,value,unit,source,sourceIdentifier"];
     APCPassiveDataSink*         sleepReceiver       = [[APCPassiveDataSink alloc] initWithIdentifier:@"HealthKitSleepCollector"
                                                                                          columnNames:categoryColumnNames
                                                                                   operationQueueName:@"APCHealthKitSleep Activity Collector"
-                                                                                    andDataProcessor:CategoryDataSerializer];
+                                                                                       dataProcessor:CategoryDataSerializer
+                                                                                   fileProtectionKey:NSFileProtectionCompleteUnlessOpen];
     
     if (dataTypesWithReadPermission)
     {
@@ -687,26 +704,39 @@ static NSInteger const kMonthOfDayObject                = 2;
             }
             
             if (sampleType)
-{
+            {
                 // This is really important to remember that we are creating as many user defaults as there are healthkit permissions here.
                 NSString*                               uniqueAnchorDateName    = [NSString stringWithFormat:@"APCHealthKit%@AnchorDate", dataType];
-                APCHealthKitBackgroundDataCollector*    collector               = [[APCHealthKitBackgroundDataCollector alloc] initWithIdentifier:sampleType.identifier
-                                                                                                                                       sampleType:sampleType anchorName:uniqueAnchorDateName
-                                                                                                                                 launchDateAnchor:LaunchDate];
-    
+                APCHealthKitBackgroundDataCollector*    collector               = nil;
+                
                 //If the HKObjectType is a HKWorkoutType then set a different receiver/data sink.
                 if ([sampleType isKindOfClass:[HKWorkoutType class]])
                 {
+                    collector = [[APCHealthKitBackgroundDataCollector alloc] initWithIdentifier:sampleType.identifier
+                                                                                     sampleType:sampleType anchorName:uniqueAnchorDateName
+                                                                               launchDateAnchor:LaunchDate
+                                                                                    healthStore:self.dataSubstrate.healthStore];
                     [collector setReceiver:workoutReceiver];
                     [collector setDelegate:workoutReceiver];
                 }
                 else if ([sampleType isKindOfClass:[HKCategoryType class]])
                 {
+                    collector = [[APCHealthKitBackgroundDataCollector alloc] initWithIdentifier:sampleType.identifier
+                                                                                     sampleType:sampleType anchorName:uniqueAnchorDateName
+                                                                               launchDateAnchor:LaunchDate
+                                                                                    healthStore:self.dataSubstrate.healthStore];
                     [collector setReceiver:sleepReceiver];
                     [collector setDelegate:sleepReceiver];
                 }
                 else
-    {
+                {
+                    NSDictionary* hkUnitKeysAndValues = [self researcherSpecifiedUnits];
+                    
+                    collector = [[APCHealthKitBackgroundDataCollector alloc] initWithQuantityTypeIdentifier:sampleType.identifier
+                                                                                                 sampleType:sampleType anchorName:uniqueAnchorDateName
+                                                                                           launchDateAnchor:LaunchDate
+                                                                                                healthStore:self.dataSubstrate.healthStore
+                                                                                                       unit:[hkUnitKeysAndValues objectForKey:sampleType.identifier]];
                     [collector setReceiver:quantityreceiver];
                     [collector setDelegate:quantityreceiver];
                 }
@@ -766,63 +796,7 @@ static NSInteger const kMonthOfDayObject                = 2;
     NSMutableArray              *newSchedulesArray = [NSMutableArray new];
     
     for (NSDictionary *schedule in schedules) {
-        
-        NSString *taskIdentifier = [schedule objectForKey:kJsonScheduleTaskIDKey];
-        
-        if ( [taskIdentifier isEqualToString: kPDQ8TaskIdentifier] || [taskIdentifier isEqualToString: kMDSUPDRS])
-        {
-            NSDate              *date = [NSDate date];
-            NSDateComponents    *dateComponent = [[NSDateComponents alloc] init];
-            
-
-            
-            NSDate              *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponent
-                                                                                         toDate:date
-                                                                                        options:0];
-            
-            NSCalendar          *cal = [NSCalendar currentCalendar];
-            
-            NSDateComponents    *components = [cal components:(NSCalendarUnitDay | NSCalendarUnitMonth)
-                                                     fromDate:newDate];
-            
-            if ( [taskIdentifier isEqualToString: kPDQ8TaskIdentifier])
-            {
-                [components setDay:kPDQ8TaskOffset];
-                
-                newDate = [[NSCalendar currentCalendar] dateByAddingComponents:components
-                                                                        toDate:[NSDate date]
-                                                                       options:0];
-                
-                components = [cal components:(NSCalendarUnitDay | NSCalendarUnitMonth)
-                                    fromDate:newDate];
-            } else if ([taskIdentifier isEqualToString: kMDSUPDRS]) {
-                [components setDay:kMDSUPDRSOffset];
-                
-                newDate = [[NSCalendar currentCalendar] dateByAddingComponents:components
-                                                                        toDate:[NSDate date]
-                                                                       options:0];
-                
-                components = [cal components:(NSCalendarUnitDay | NSCalendarUnitMonth)
-                                    fromDate:newDate];
-            }
-            
-            NSString            *scheduleString = [schedule objectForKey:kJsonScheduleStringKey];
-            NSMutableArray      *scheduleObjects = [[scheduleString componentsSeparatedByString:@" "] mutableCopy];
-            
-            
-            [scheduleObjects replaceObjectAtIndex:kMonthOfDayObject withObject:@([components day])];
-
-            
-            NSString            *newScheduleString = [scheduleObjects componentsJoinedByString:@" "];
-            
-            [schedule setValue:newScheduleString
-                        forKey:kJsonScheduleStringKey];
-            
-            [newSchedulesArray addObject:schedule];
-        }
-        else {
-            [newSchedulesArray addObject:schedule];
-        }
+        [newSchedulesArray addObject:schedule];
     }
     
     [newDictionary setValue:[dictionary objectForKey:kJsonTasksKey]

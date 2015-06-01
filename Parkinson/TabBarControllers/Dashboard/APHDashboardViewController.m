@@ -1,36 +1,36 @@
-// 
-//  APHDashboardViewController.m 
-//  mPower 
-// 
-// Copyright (c) 2015, Sage Bionetworks. All rights reserved. 
-// 
+//
+//  APHDashboardViewController.m
+//  mPower
+//
+// Copyright (c) 2015, Sage Bionetworks. All rights reserved.
+//
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-// 
+//
 // 1.  Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
-// 
-// 2.  Redistributions in binary form must reproduce the above copyright notice, 
-// this list of conditions and the following disclaimer in the documentation and/or 
-// other materials provided with the distribution. 
-// 
-// 3.  Neither the name of the copyright holder(s) nor the names of any contributors 
-// may be used to endorse or promote products derived from this software without 
-// specific prior written permission. No license is granted to the trademarks of 
-// the copyright holders even if such marks are included in this software. 
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
-// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
-// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
-// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
-// 
- 
+//
+// 2.  Redistributions in binary form must reproduce the above copyright notice,
+// this list of conditions and the following disclaimer in the documentation and/or
+// other materials provided with the distribution.
+//
+// 3.  Neither the name of the copyright holder(s) nor the names of any contributors
+// may be used to endorse or promote products derived from this software without
+// specific prior written permission. No license is granted to the trademarks of
+// the copyright holders even if such marks are included in this software.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+
 /* Controllers */
 #import "APHDashboardViewController.h"
 #import "APHDashboardEditViewController.h"
@@ -70,7 +70,7 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
                                                                      @(kAPHDashboardItemTypeSteps),
                                                                      @(kAPHDashboardItemTypeIntervalTapping),
                                                                      @(kAPHDashboardItemTypeSpatialMemory),@(kAPHDashboardItemTypePhonation),]];
-                              
+            
             if ([APCDeviceHardware isiPhone5SOrNewer]) {
                 [_rowItemsOrder addObject:@(kAPHDashboardItemTypeGait)];
             }
@@ -91,7 +91,7 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
 {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareCorrelatedScoring) name:APCSchedulerUpdatedScheduledTasksNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareCorrelatedScoring) name:APCScheduleUpdatedNotification object:nil];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self prepareScoringObjects];
@@ -138,14 +138,14 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
     self.gaitScoring.caption = NSLocalizedString(@"Gait", @"");
     
     self.memoryScoring = [[APCScoring alloc] initWithTask:@"7-APHSpatialSpanMemory-4A04F3D0-AC05-11E4-AB27-0800200C9A66"
-                                           numberOfDays:-kNumberOfDaysToDisplay
-                                               valueKey:kSpatialMemoryScoreSummaryKey
+                                             numberOfDays:-kNumberOfDaysToDisplay
+                                                 valueKey:kSpatialMemoryScoreSummaryKey
                                                latestOnly:NO];
     self.memoryScoring.caption = NSLocalizedString(@"Memory", @"");
     
     self.phonationScoring = [[APCScoring alloc] initWithTask:@"3-APHPhonation-C614A231-A7B7-4173-BDC8-098309354292"
-                                             numberOfDays:-kNumberOfDaysToDisplay
-                                                 valueKey:kScoreSummaryOfRecordsKey];
+                                                numberOfDays:-kNumberOfDaysToDisplay
+                                                    valueKey:kScoreSummaryOfRecordsKey];
     self.phonationScoring.caption = NSLocalizedString(@"Voice", @"");
     
     HKQuantityType *hkQuantity = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
@@ -248,14 +248,14 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
                     item.identifier =  kAPCDashboardGraphTableViewCellIdentifier;
                     item.editable = YES;
                     item.tintColor = [UIColor colorForTaskId:item.taskId];
-                
+                    
                     item.info = NSLocalizedString(@"This plot shows your finger tapping speed each day as measured by the Tapping Interval Activity. The length and position of each vertical bar represents the range in the number of taps you made in 20 seconds for a given day. Any differences in length or position over time reflect variations and trends in your tapping speed, which may reflect variations and trends in your symptoms.", @"Dashboard tooltip item info text for Tapping in Parkinson");
                     
                     APCTableViewRow *row = [APCTableViewRow new];
                     row.item = item;
                     row.itemType = rowType;
                     [rowItems addObject:row];
-
+                    
                 }
                     break;
                 case kAPHDashboardItemTypeGait:

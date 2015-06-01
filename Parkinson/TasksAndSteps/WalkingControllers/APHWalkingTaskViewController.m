@@ -35,7 +35,7 @@
 #import <HealthKit/HealthKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "ConverterForPDScores.h"
-#import "PDScores.h"
+#import <PDScores/PDScores.h>
 #import "APHAppDelegate.h"
 
     //

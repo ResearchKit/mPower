@@ -33,7 +33,7 @@
  
 #import "APHIntervalTappingTaskViewController.h"
 #import "APHIntervalTappingRecorderDataKeys.h"
-#import "PDScores.h"
+#import <PDScores/PDScores.h>
 #import "ConverterForPDScores.h"
 #import <AVFoundation/AVFoundation.h>
 #import "APHAppDelegate.h"

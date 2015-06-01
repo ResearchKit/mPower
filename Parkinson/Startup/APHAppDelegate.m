@@ -45,8 +45,8 @@ static NSString *const kMyThoughtsSurveyIdentifier                  = @"8-MyThou
 /*********************************************************************************/
 #pragma mark - Initializations Options
 /*********************************************************************************/
-static NSString *const kStudyIdentifier             = @"Parkinson's";
-static NSString *const kAppPrefix                   = @"parkinson";
+static NSString *const kStudyIdentifier             = @"studyname";
+static NSString *const kAppPrefix                   = @"studyname";
 static NSString* const  kConsentPropertiesFileName  = @"APHConsentSection";
 
 static NSString *const kVideoShownKey = @"VideoShown";

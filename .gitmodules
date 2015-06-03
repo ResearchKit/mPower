@@ -10,4 +10,4 @@
 	url = https://github.com/ResearchKit/AppCore.git
 [submodule "ResearchKit"]
 	path = ResearchKit
-	url = https://github.com/peculiar/ResearchKit.git
+	url = https://github.com/ResearchKit/ResearchKit.git

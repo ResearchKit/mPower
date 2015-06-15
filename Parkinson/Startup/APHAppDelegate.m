@@ -335,7 +335,7 @@ static NSInteger const kMonthOfDayObject                = 2;
 #pragma mark - Helper Method for Datasubstrate Delegate Methods
 /*********************************************************************************/
 
-static NSDate *(^DetermineConsentDate)(id) = ^(id object)
+static NSDate *DetermineConsentDate(id object)
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString      *filePath    = [[object applicationDocumentsDirectory] stringByAppendingPathComponent:@"db.sqlite"];
@@ -353,7 +353,7 @@ static NSDate *(^DetermineConsentDate)(id) = ^(id object)
         }
     }
     return consentDate;
-};
+}
 
 /*********************************************************************************/
 #pragma mark - Datasubstrate Delegate Methods

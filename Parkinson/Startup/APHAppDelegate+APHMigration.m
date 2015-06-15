@@ -36,7 +36,7 @@
 @implementation APHAppDelegate (APHMigration)
 
 
--(BOOL) performMigrationFromThreeToFourWithError:(NSError * __autoreleasing *)__unused error
+- (BOOL)performMigrationFromThreeToFourWithError:(NSError * __autoreleasing *)__unused error
 {
         return [self turnOnAllTaskReminders];
 }
@@ -47,8 +47,8 @@
     [self setUpTasksReminder];
     
     for (APCTaskReminder *reminder in self.tasksReminder.reminders) {
-        if (![[NSUserDefaults standardUserDefaults]objectForKey:reminder.reminderIdentifier]) {
-            [[NSUserDefaults standardUserDefaults]setObject:reminder.reminderBody forKey:reminder.reminderIdentifier];
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:reminder.reminderIdentifier]) {
+            [[NSUserDefaults standardUserDefaults] setObject:reminder.reminderBody forKey:reminder.reminderIdentifier];
         }
     }
     
@@ -57,9 +57,9 @@
         [self.tasksReminder setReminderOn:@YES];
     }
     
-    [[NSUserDefaults standardUserDefaults]synchronize];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     return self.tasksReminder.reminders.count;
-    
 }
+
 @end

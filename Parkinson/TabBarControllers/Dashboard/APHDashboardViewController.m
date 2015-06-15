@@ -119,8 +119,9 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
     [super didReceiveMemoryWarning];
 }
 
--(void)dealloc{
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Data
@@ -159,7 +160,8 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
     }
 }
 
-- (void)prepareCorrelatedScoring{
+- (void)prepareCorrelatedScoring
+{
     self.correlatedScoring = [[APCScoring alloc] initWithTask:@"4-APHTimedWalking-80F09109-265A-49C6-9C5D-765E49AAF5D9"
                                                  numberOfDays:-kNumberOfDaysToDisplay
                                                      valueKey:kGaitScoreKey];
@@ -384,7 +386,8 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
 }
 
 #pragma mark - CorrelationsSelector Delegate
-- (void)dashboardTableViewCellDidTapLegendTitle:(APCDashboardTableViewCell *)__unused cell{
+- (void)dashboardTableViewCellDidTapLegendTitle:(APCDashboardTableViewCell *)__unused cell
+{
     
     APCCorrelationsSelectorViewController *correlationSelector = [[APCCorrelationsSelectorViewController alloc]initWithScoringObjects:[NSArray arrayWithObjects:self.tapScoring, self.gaitScoring, self.stepScoring, self.memoryScoring, self.phonationScoring, nil]];
     correlationSelector.delegate = self;
@@ -392,7 +395,8 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
     
 }
 
--(void)viewController:(APCCorrelationsSelectorViewController *)__unused viewController didChangeCorrelatedScoringDataSource:(APCScoring *)scoring{
+- (void)viewController:(APCCorrelationsSelectorViewController *)__unused viewController didChangeCorrelatedScoringDataSource:(APCScoring *)scoring
+{
     self.correlatedScoring = scoring;
     [self prepareData];
     

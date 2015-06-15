@@ -224,13 +224,11 @@ static NSInteger const kMonthOfDayObject                = 2;
             [[NSUserDefaults standardUserDefaults]setObject:reminder.reminderBody forKey:reminder.reminderIdentifier];
         }
         
-        if ([[UIApplication sharedApplication] currentUserNotificationSettings].types != UIUserNotificationTypeNone){
+        if ([[UIApplication sharedApplication] currentUserNotificationSettings].types != UIUserNotificationTypeNone) {
             [self.tasksReminder setReminderOn:@YES];
         }
-        
-        [[NSUserDefaults standardUserDefaults]synchronize];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    
 }
 
 - (void)performMigrationAfterDataSubstrateFrom:(NSInteger) __unused previousVersion currentVersion:(NSInteger) __unused currentVersion
@@ -334,6 +332,30 @@ static NSInteger const kMonthOfDayObject                = 2;
 }
 
 /*********************************************************************************/
+#pragma mark - Helper Method for Datasubstrate Delegate Methods
+/*********************************************************************************/
+
+static NSDate *(^DetermineConsentDate)(id) = ^(id object)
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString      *filePath    = [[object applicationDocumentsDirectory] stringByAppendingPathComponent:@"db.sqlite"];
+    NSDate        *consentDate = nil;
+
+    if ([fileManager fileExistsAtPath:filePath]) {
+        NSError      *error      = nil;
+        NSDictionary *attributes = [fileManager attributesOfItemAtPath:filePath error:&error];
+        
+        if (error != nil) {
+            APCLogError2(error);
+            consentDate = [[NSDate date] startOfDay];
+        } else {
+            consentDate = [attributes fileCreationDate];
+        }
+    }
+    return consentDate;
+};
+
+/*********************************************************************************/
 #pragma mark - Datasubstrate Delegate Methods
 /*********************************************************************************/
 - (void) setUpCollectors
@@ -377,27 +399,8 @@ static NSInteger const kMonthOfDayObject                = 2;
         }
         else
         {
-            NSFileManager*  fileManager = [NSFileManager defaultManager];
-            NSString*       filePath    = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"db.sqlite"];
-            
-            if ([fileManager fileExistsAtPath:filePath])
-            {
-                NSError*        error       = nil;
-                NSDictionary*   attributes  = [fileManager attributesOfItemAtPath:filePath error:&error];
-                
-                if (error)
-                {
-                    APCLogError2(error);
-                    
-                    consentDate = [[NSDate date] startOfDay];
-                }
-                else
-                {
-                    consentDate = [attributes fileCreationDate];
-                }
-            }
+            consentDate = DetermineConsentDate(self);
         }
-        
         return consentDate;
     };
     
@@ -462,27 +465,8 @@ static NSInteger const kMonthOfDayObject                = 2;
         }
         else
         {
-            NSFileManager*  fileManager = [NSFileManager defaultManager];
-            NSString*       filePath    = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"db.sqlite"];
-            
-            if ([fileManager fileExistsAtPath:filePath])
-            {
-                NSError*        error       = nil;
-                NSDictionary*   attributes  = [fileManager attributesOfItemAtPath:filePath error:&error];
-                
-                if (error)
-                {
-                    APCLogError2(error);
-                    
-                    consentDate = [[NSDate date] startOfDay];
-                }
-                else
-                {
-                    consentDate = [attributes fileCreationDate];
-                }
-            }
+            consentDate = DetermineConsentDate(self);
         }
-        
         return consentDate;
     };
     

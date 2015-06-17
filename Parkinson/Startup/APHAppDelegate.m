@@ -661,25 +661,17 @@ static NSDate *DetermineConsentDate(id object)
                 // This is really important to remember that we are creating as many user defaults as there are healthkit permissions here.
                 NSString*                               uniqueAnchorDateName    = [NSString stringWithFormat:@"APCHealthKit%@AnchorDate", dataType];
                 APCHealthKitBackgroundDataCollector*    collector               = nil;
+                APCPassiveDataSink*                     receiver                = nil;
                 
                 //If the HKObjectType is a HKWorkoutType then set a different receiver/data sink.
-                if ([sampleType isKindOfClass:[HKWorkoutType class]])
+                if (([sampleType isKindOfClass:[HKWorkoutType class]]) || ([sampleType isKindOfClass:[HKCategoryType class]]))
                 {
                     collector = [[APCHealthKitBackgroundDataCollector alloc] initWithIdentifier:sampleType.identifier
                                                                                      sampleType:sampleType anchorName:uniqueAnchorDateName
                                                                                launchDateAnchor:LaunchDate
                                                                                     healthStore:self.dataSubstrate.healthStore];
-                    [collector setReceiver:workoutReceiver];
-                    [collector setDelegate:workoutReceiver];
-                }
-                else if ([sampleType isKindOfClass:[HKCategoryType class]])
-                {
-                    collector = [[APCHealthKitBackgroundDataCollector alloc] initWithIdentifier:sampleType.identifier
-                                                                                     sampleType:sampleType anchorName:uniqueAnchorDateName
-                                                                               launchDateAnchor:LaunchDate
-                                                                                    healthStore:self.dataSubstrate.healthStore];
-                    [collector setReceiver:sleepReceiver];
-                    [collector setDelegate:sleepReceiver];
+                    
+                    receiver = [sampleType isKindOfClass:[HKWorkoutType class]] ? workoutReceiver : sleepReceiver;
                 }
                 else
                 {
@@ -690,9 +682,10 @@ static NSDate *DetermineConsentDate(id object)
                                                                                            launchDateAnchor:LaunchDate
                                                                                                 healthStore:self.dataSubstrate.healthStore
                                                                                                        unit:[hkUnitKeysAndValues objectForKey:sampleType.identifier]];
-                    [collector setReceiver:quantityreceiver];
-                    [collector setDelegate:quantityreceiver];
+                    receiver = quantityreceiver;
                 }
+                [collector setReceiver:receiver];
+                [collector setDelegate:receiver];
                 
                 [collector start];
                 [self.passiveDataCollector addDataSink:collector];

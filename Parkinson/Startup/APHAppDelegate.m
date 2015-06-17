@@ -585,11 +585,8 @@ static NSDate *DetermineConsentDate(id object)
             quantitySource = determineQuantitySource(quantitySource);
             
             // Get the difference in seconds between the start and end date for the sample
-            NSDateComponents* secondsSpentInBedOrAsleep = [[NSCalendar currentCalendar] components:NSCalendarUnitSecond
-                                                                                          fromDate:catSample.startDate
-                                                                                            toDate:catSample.endDate
-                                                                                           options:NSCalendarWrapComponents];
-            NSString*           quantityValue   = [NSString stringWithFormat:@"%ld", (long)secondsSpentInBedOrAsleep.second];
+            NSTimeInterval secondsSpentInBedOrAsleep = [catSample.endDate timeIntervalSinceDate:catSample.startDate];
+            NSString*           quantityValue   = [NSString stringWithFormat:@"%ld", (long)secondsSpentInBedOrAsleep];
             
             stringToWrite = [NSString stringWithFormat:@"%@,%@,%@,%@,%@,%@,%@\n",
                              startDateTime,

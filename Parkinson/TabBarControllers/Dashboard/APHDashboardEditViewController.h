@@ -41,6 +41,7 @@ typedef NS_ENUM(APCTableViewItemType, APHDashboardItemType) {
     kAPHDashboardItemTypeSteps,
     kAPHDashboardItemTypeAlerts,
     kAPHDashboardItemTypeInsights,
+    kAPHDashboardItemTypeCorrelation
 };
 
 @interface APHDashboardEditViewController : APCDashboardEditViewController

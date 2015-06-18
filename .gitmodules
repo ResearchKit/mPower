@@ -1,10 +1,6 @@
 [submodule "PDScores"]
 	path = PDScores
 	url = https://github.com/Sage-Bionetworks/PDScores.git
-[submodule "ResearchKit"]
-	path = ResearchKit
-	url = https://github.com/ResearchKit/ResearchKit.git
-	branch = stable
 [submodule "BridgeSDK"]
 	path = BridgeSDK
 	url = https://github.com/Sage-Bionetworks/Bridge-iOS-SDK.git
@@ -12,3 +8,6 @@
 [submodule "AppCore"]
 	path = AppCore
 	url = https://github.com/ResearchKit/AppCore.git
+[submodule "ResearchKit"]
+	path = ResearchKit
+	url = https://github.com/ResearchKit/ResearchKit.git

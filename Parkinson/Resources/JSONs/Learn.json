@@ -30,7 +30,12 @@
                           "icon_image":"stethescope_icon",
                           "tint_color" : "yellow"
                           },
-                          
+                          {
+                          "title":"Spread the Word",
+                          "details":"share",
+                          "icon_image":"share_icon",
+                          "tint_color" : "yellow"
+                          },
                         {
                             "title": "Life with Parkinson Disease",
                             "details": "lifewithPD",

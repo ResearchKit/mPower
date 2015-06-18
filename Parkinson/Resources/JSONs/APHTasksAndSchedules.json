@@ -85,7 +85,6 @@
                       "scheduleString": "0 5 * * *",
                       "taskID": "1-EnrollmentSurvey-20EF83D2-E461-4C20-9024-F43FCAAAF4C3"
                   },
-              
                   {
                       "scheduleType": "recurring",
                       "scheduleString": "0 5 * * *",

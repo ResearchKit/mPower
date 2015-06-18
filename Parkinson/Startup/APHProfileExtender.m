@@ -33,7 +33,8 @@
  
 #import "APHProfileExtender.h"
 
-static  NSInteger  kDefaultNumberOfExtraSections = 2;
+static  NSInteger  kDefaultNumberOfExtraSections =  2;
+static  CGFloat    kDefaultHeightForExtraRows    = 64.0;
 
 @interface APHProfileExtender ()
 @property BOOL isEditing;
@@ -86,19 +87,13 @@ static  NSInteger  kDefaultNumberOfExtraSections = 2;
     return count;
 }
 
-    //
-    //    return a default style Table View Cell unless you have special requirements
-    //
-- (UITableViewCell *)cellForRowAtAdjustedIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)decorateCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)__unused indexPath
 {
-    UITableViewCell *cell = nil;
-    if (indexPath.section == 0) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: @"Medication Tracker Setup"];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.text = @"Medication Tracker Setup";
-        cell.selectionStyle = self.isEditing ? UITableViewCellSelectionStyleGray : UITableViewCellSelectionStyleNone;
-    }
-
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text = NSLocalizedString(@"Medication Tracker Setup", nil);
+    cell.detailTextLabel.text = @"";
+    cell.selectionStyle = self.isEditing ? UITableViewCellSelectionStyleGray : UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
 
@@ -108,7 +103,7 @@ static  NSInteger  kDefaultNumberOfExtraSections = 2;
     CGFloat height = tableView.rowHeight;
     
     if (indexPath.section == 0) {
-        height = 44.0;
+        height = kDefaultHeightForExtraRows;
     }
     
     return height;

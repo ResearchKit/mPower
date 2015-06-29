@@ -38,41 +38,20 @@
 #import <AVFoundation/AVFoundation.h>
 #import "APHAppDelegate.h"
 
-static NSString *const kMomentInDay                             = @"momentInDay";
-static NSString *const kInstruction1                            = @"instruction1";
-static NSString *const kMomentInDayFormat                       = @"momentInDayFormat";
-static NSString *const kMomentInDayFormatTitle                  = @"We would like to understand how your performance on"
-                                                                " this activity could be affected by the timing of your medication.";
-static NSString *const kMomentInDayFormatItemText               = @"When are you performing this Activity?";
-static NSString *const kMomentInDayFormatChoiceJustWokeUp       = @"Immediately before Parkinson medication";
-static NSString *const kMomentInDayFormatChoiceTookMyMedicine   = @"Just after Parkinson medication (at your best)";
-static NSString *const kMomentInDayFormatChoiceEvening          = @"Another time";
-static NSString *const kMomentInDayFormatChoiceNone             = @"I don't take Parkinson medications";
-
-static NSString *const kConclusionStep                          = @"conclusion";
-
-static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
-
-typedef  enum  _TappingStepOrdinals
-{
-    TappingStepOrdinalsIntroductionStep = 0,
-    TappingStepOrdinalsTookMedicationsStep,
-    TappingStepOrdinalsInstructionStep,
-    TappingStepOrdinalsTappingStep,
-    TappingStepOrdinalsConclusionStep,
-}  TappingStepOrdinals;
+    //
+    //        Step Identifiers
+    //
+static NSString *const kIntroductionStepIdentifier    = @"instruction";
+static NSString *const kInstruction1StepIdentifier    = @"instruction1";
+static NSString *const kTapTappingStepIdentifier      = @"tapping";
+static NSString *const kConclusionStepIdentifier      = @"conclusion";
 
 static  NSString       *kTaskViewControllerTitle      = @"Tapping Activity";
-
 static  NSString       *kIntervalTappingTitle         = @"Tapping Activity";
 
 static  NSTimeInterval  kTappingStepCountdownInterval = 20.0;
 
-static NSString        *kConclusionStepIdentifier     = @"conclusion";
-
 @interface APHIntervalTappingTaskViewController  ( ) <NSObject>
-
-@property  (nonatomic, assign)  TappingStepOrdinals  tappingStepOrdinal;
 
 @property  (nonatomic, assign)  BOOL                 preferStatusBarShouldBeHidden;
 
@@ -89,62 +68,18 @@ static NSString        *kConclusionStepIdentifier     = @"conclusion";
                                                                               duration:kTappingStepCountdownInterval
                                                                                 options:0];
     
-    [task.steps[0] setText:NSLocalizedString(@"Speed of finger tapping can reflect severity of motor symptoms in Parkinson disease. This activity measures your tapping speed. Your medical provider may measure this differently.", nil)];
+    [task.steps[0] setText:NSLocalizedString(@"Speed of finger tapping can reflect severity of motor symptoms in Parkinson disease. "
+                                             @"This activity measures your tapping speed. Your medical provider may measure this differently.", nil)];
     [task.steps[0] setDetailText:@""];
     
-    [task.steps[3] setTitle:NSLocalizedString(@"Thank You!", nil)];
-    [task.steps[3] setText:NSLocalizedString(@"The results of this activity can be viewed on the dashboard", nil)];
+    [task.steps[3] setTitle:NSLocalizedString(kConclusionStepThankYouTitle, nil)];
+    [task.steps[3] setText:NSLocalizedString(kConclusionStepViewDashboard, nil)];
     
-    APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
-    NSDate *lastCompletionDate = appDelegate.dataSubstrate.currentUser.taskCompletion;
-    NSTimeInterval numberOfSecondsSinceTaskCompletion = [[NSDate date] timeIntervalSinceDate: lastCompletionDate];
-    
-    if (numberOfSecondsSinceTaskCompletion > kMinimumAmountOfTimeToShowSurvey || lastCompletionDate == nil) {
-        
-        
-        NSMutableArray *stepQuestions = [NSMutableArray array];
-        
-        
-        ORKFormStep *step = [[ORKFormStep alloc] initWithIdentifier:kMomentInDay title:nil text:NSLocalizedString(kMomentInDayFormatTitle, nil)];
-        
-        step.optional = NO;
-        
-        
-        {
-            NSArray *choices = @[
-                                 NSLocalizedString(kMomentInDayFormatChoiceJustWokeUp,
-                                                   kMomentInDayFormatChoiceJustWokeUp),
-                                 NSLocalizedString(kMomentInDayFormatChoiceTookMyMedicine,
-                                                   kMomentInDayFormatChoiceTookMyMedicine),
-                                 NSLocalizedString(kMomentInDayFormatChoiceEvening,
-                                                   kMomentInDayFormatChoiceEvening),
-                                 NSLocalizedString(kMomentInDayFormatChoiceNone,
-                                                   kMomentInDayFormatChoiceNone)
-                                 ];
-            
-            ORKAnswerFormat *format = [ORKTextChoiceAnswerFormat choiceAnswerFormatWithStyle:ORKChoiceAnswerStyleSingleChoice
-                                                                                 textChoices:choices];
-            
-            ORKFormItem *item = [[ORKFormItem alloc] initWithIdentifier:kMomentInDayFormat
-                                                                   text:NSLocalizedString(kMomentInDayFormatItemText, kMomentInDayFormatItemText)
-                                                           answerFormat:format];
-            [stepQuestions addObject:item];
-        }
-        
-        [step setFormItems:stepQuestions];
-        
-        NSMutableArray *twoFingerSteps = [task.steps mutableCopy];
-        
-        [twoFingerSteps insertObject:step
-                             atIndex:1];
-        
-        task = [[ORKOrderedTask alloc] initWithIdentifier:kIntervalTappingTitle
-                                                                       steps:twoFingerSteps];
-    }
-    
+    ORKOrderedTask  *replacementTask = [self modifyTaskWithPreSurveyStepIfRequired:task andTitle:(NSString *)kIntervalTappingTitle];
+
     [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
     
-    return  task;
+    return  replacementTask;
 }
 
 
@@ -155,17 +90,17 @@ static NSString        *kConclusionStepIdentifier     = @"conclusion";
     ORKTaskResult  *taskResults = self.result;
     self.createResultSummaryBlock = ^(NSManagedObjectContext * context) {
         ORKTappingIntervalResult  *tapsterResults = nil;
-        BOOL  found = NO;
+        BOOL  foundIntervalResult = NO;
         for (ORKStepResult  *stepResult  in  taskResults.results) {
             if (stepResult.results.count > 0) {
                 for (id  object  in  stepResult.results) {
                     if ([object isKindOfClass:[ORKTappingIntervalResult class]] == YES) {
-                        found = YES;
+                        foundIntervalResult = YES;
                         tapsterResults = object;
                         break;
                     }
                 }
-                if (found == YES) {
+                if (foundIntervalResult == YES) {
                     break;
                 }
             }
@@ -179,7 +114,6 @@ static NSString        *kConclusionStepIdentifier     = @"conclusion";
         double scoreSummary = [PDScores scoreFromTappingTest:totalScore];
         
         scoreSummary = isnan(scoreSummary) ? 0 : scoreSummary;
-        
         
         NSUInteger  numberOfSamples = 0;
         NSDictionary  *summary = nil;
@@ -210,31 +144,34 @@ static NSString        *kConclusionStepIdentifier     = @"conclusion";
 
 - (void)taskViewController:(ORKTaskViewController *) __unused taskViewController stepViewControllerWillAppear:(ORKStepViewController *)stepViewController
 {
-    if (self.tappingStepOrdinal == TappingStepOrdinalsTappingStep) {
+    if ([stepViewController.step.identifier isEqualToString:kInstruction1StepIdentifier] == YES) {
+        UILabel *label = ((UILabel *)((UIView *)((UIView *)((UIView *) ((UIScrollView *)stepViewController.view.subviews[0]).subviews[0]).subviews[0]).subviews[0]).subviews[2]);
+        label.text = NSLocalizedString(@"Rest your phone on a flat surface. "
+                                       @"Then use two fingers on the same hand to alternately tap the buttons that appear. "
+                                       @"Keep tapping for 20 seconds and time your taps to be as consistent as possible.\n\n"
+                                       @"Tap Next to begin the test.",
+                                       @"Instruction text for tapping activity in Parkinson");
+    }
+    
+    if ([stepViewController.step.identifier isEqualToString:kTapTappingStepIdentifier] == YES) {
         self.preferStatusBarShouldBeHidden = YES;
         [[UIApplication sharedApplication] setStatusBarHidden: YES];
     }
-    if ([stepViewController.step.identifier isEqualToString:kConclusionStep]) {
+    
+    if ([stepViewController.step.identifier isEqualToString:kConclusionStepIdentifier] == YES) {
         self.preferStatusBarShouldBeHidden = NO;
         [[UIApplication sharedApplication] setStatusBarHidden: NO];
         [[UIView appearance] setTintColor:[UIColor appTertiaryColor1]];
     }
-    
-    if ([stepViewController.step.identifier isEqualToString:kInstruction1]) {
-        UILabel *label = ((UILabel *)((UIView *)((UIView *)((UIView *) ((UIScrollView *)stepViewController.view.subviews[0]).subviews[0]).subviews[0]).subviews[0]).subviews[2]);
-        label.text = NSLocalizedString(@"Rest your phone on a flat surface. Then use two fingers on the same hand to alternately tap the buttons that appear. Keep tapping for 20 seconds and time your taps to be as consistent as possible.\n\nTap Next to begin the test.", @"Instruction text for tapping activity in Parkinson");
-    }
-    self.tappingStepOrdinal = self.tappingStepOrdinal + 1;
 }
 
 - (void)taskViewController:(ORKTaskViewController *)taskViewController didFinishWithReason:(ORKTaskViewControllerFinishReason)reason error:(nullable NSError *)error
 {
-    if (reason == ORKTaskViewControllerFinishReasonCompleted) {
-        APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
-        appDelegate.dataSubstrate.currentUser.taskCompletion = [NSDate date];
-        [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
+    if (reason == ORKTaskViewControllerFinishReasonFailed) {
+        if (error != nil) {
+            APCLogError2 (error);
+        }
     }
-    
     [super taskViewController:taskViewController didFinishWithReason:reason error:error];
 }
 
@@ -251,7 +188,6 @@ static NSString        *kConclusionStepIdentifier     = @"conclusion";
     
     self.navigationBar.topItem.title = NSLocalizedString(kTaskViewControllerTitle, nil);
     
-    self.tappingStepOrdinal = TappingStepOrdinalsIntroductionStep;
     self.preferStatusBarShouldBeHidden = NO;
 }
 

@@ -35,6 +35,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface APHPhonationTaskViewController : APCBaseTaskViewController
+#import "APHParkinsonActivityViewController.h"
+
+@interface APHPhonationTaskViewController : APHParkinsonActivityViewController
 
 @end

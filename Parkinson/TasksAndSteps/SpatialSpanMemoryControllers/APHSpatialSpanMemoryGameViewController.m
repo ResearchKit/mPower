@@ -35,12 +35,15 @@
 #import "APHAppDelegate.h"
 
 static  NSString       *kTaskViewControllerTitle      = @"Memory Activity";
-
 static  NSString       *kMemorySpanTitle              = @"Memory Activity";
 
+    //
+    //        Step Identifiers
+    //
+static  NSString *const kInstructionStepIdentifier    = @"instruction1";
 static  NSString       *kConclusionStepIdentifier     = @"conclusion";
 
-NSString * const kSpatialMemoryScoreSummaryKey = @"spatialMemoryScoreSummaryKey";
+        NSString *const kSpatialMemoryScoreSummaryKey = @"spatialMemoryScoreSummaryKey";
 
 static  NSInteger       kInitialSpan                  =  3;
 static  NSInteger       kMinimumSpan                  =  2;
@@ -50,22 +53,6 @@ static  NSInteger       kMaximumTests                 = 5;
 static  NSInteger       kMaxConsecutiveFailures       = 3;
 static  NSString       *kCustomTargetPluralName       = nil;
 static  BOOL            kRequiresReversal             = NO;
-
-static NSString *const kMomentInDay                             = @"momentInDay";
-
-static NSString *const kMomentInDayFormat                       = @"momentInDayFormat";
-
-static NSString *const kMomentInDayFormatTitle                  = @"We would like to understand how your performance on"
-                                                                " this activity could be affected by the timing of your medication.";
-
-static NSString *const kInstruction1                            = @"instruction1";
-static NSString *const kMomentInDayFormatItemText               = @"When are you performing this Activity?";
-static NSString *const kMomentInDayFormatChoiceJustWokeUp       = @"Immediately before Parkinson medication";
-static NSString *const kMomentInDayFormatChoiceTookMyMedicine   = @"Just after Parkinson medication (at your best)";
-static NSString *const kMomentInDayFormatChoiceEvening          = @"Another time";
-static NSString *const kMomentInDayFormatChoiceNone             = @"I don't take Parkinson medications";
-
-static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
 
 @interface APHSpatialSpanMemoryGameViewController ()
 
@@ -90,56 +77,13 @@ static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
             requireReversal:kRequiresReversal
             options:ORKPredefinedTaskOptionNone];
     
-    [task.steps[3] setTitle:NSLocalizedString(@"Thank You!", nil)];
-    [task.steps[3] setText:NSLocalizedString(@"The results of this activity can be viewed on the dashboard", nil)];
+    [task.steps[3] setTitle:NSLocalizedString(kConclusionStepThankYouTitle, nil)];
+    [task.steps[3] setText:NSLocalizedString(kConclusionStepViewDashboard, nil)];
 
     [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
     
-    APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
-    NSDate *lastCompletionDate = appDelegate.dataSubstrate.currentUser.taskCompletion;
-    NSTimeInterval numberOfSecondsSinceTaskCompletion = [[NSDate date] timeIntervalSinceDate: lastCompletionDate];
-    
-    if (numberOfSecondsSinceTaskCompletion > kMinimumAmountOfTimeToShowSurvey || lastCompletionDate == nil) {
-        
-        NSMutableArray *stepQuestions = [NSMutableArray array];
-        
-        
-        ORKFormStep *step = [[ORKFormStep alloc] initWithIdentifier:kMomentInDay title:nil text:NSLocalizedString(kMomentInDayFormatTitle, nil)];
-        
-        step.optional = NO;
-        
-        
-        {
-            NSArray *choices = @[
-                                 NSLocalizedString(kMomentInDayFormatChoiceJustWokeUp,
-                                                   kMomentInDayFormatChoiceJustWokeUp),
-                                 NSLocalizedString(kMomentInDayFormatChoiceTookMyMedicine,
-                                                   kMomentInDayFormatChoiceTookMyMedicine),
-                                 NSLocalizedString(kMomentInDayFormatChoiceEvening,
-                                                   kMomentInDayFormatChoiceEvening),
-                                 NSLocalizedString(kMomentInDayFormatChoiceNone,
-                                                   kMomentInDayFormatChoiceNone)
-                                 ];
-            
-            ORKAnswerFormat *format = [ORKTextChoiceAnswerFormat choiceAnswerFormatWithStyle:ORKChoiceAnswerStyleSingleChoice
-                                                                                 textChoices:choices];
-            
-            ORKFormItem *item = [[ORKFormItem alloc] initWithIdentifier:kMomentInDayFormat
-                                                                   text:NSLocalizedString(kMomentInDayFormatItemText, kMomentInDayFormatItemText)
-                                                           answerFormat:format];
-            [stepQuestions addObject:item];
-        }
-        
-        [step setFormItems:stepQuestions];
-
-        NSMutableArray *spatialSteps = [task.steps mutableCopy];
-        
-        [spatialSteps insertObject:step
-                             atIndex:1];
-        task = [[ORKOrderedTask alloc] initWithIdentifier:kTaskViewControllerTitle
-                                                    steps:spatialSteps];
-    }
-    return  task;
+    ORKOrderedTask  *replacementTask = [self modifyTaskWithPreSurveyStepIfRequired:task andTitle:(NSString *)kTaskViewControllerTitle];
+    return  replacementTask;
 }
 
 #pragma  mark  -  Task View Controller Delegate Methods
@@ -152,30 +96,25 @@ static double kMinimumAmountOfTimeToShowSurvey = 20.0 * 60.0;
     }
     [stepViewController.step setTitle:@"Good Job!"];
   
-    if ([stepViewController.step.identifier isEqualToString:kInstruction1]) {
+    if ([stepViewController.step.identifier isEqualToString:kInstructionStepIdentifier]) {
         UILabel *label = ((UILabel *)((UIView *)((UIView *)((UIView *) ((UIScrollView *)stepViewController.view.subviews[0]).subviews[0]).subviews[0]).subviews[0]).subviews[2]);
-        label.text = NSLocalizedString(@"Some of the flowers will light up one at a time. Tap those flowers in the same order they lit up.\n\nTo begin, tap Next, then watch closely.", @"Instruction text for memory activity in Parkinson");
+        label.text = NSLocalizedString(@"Some of the flowers will light up one at a time. "
+                                       @"Tap those flowers in the same order they lit up.\n\n"
+                                       @"To begin, tap Next, then watch closely.",
+                                       @"Instruction text for memory activity in Parkinson");
     }
 }
 
-- (void) taskViewController: (ORKTaskViewController *) taskViewController
-        didFinishWithReason: (ORKTaskViewControllerFinishReason)reason
-                      error: (NSError *) error
+- (void) taskViewController: (ORKTaskViewController *) taskViewController didFinishWithReason: (ORKTaskViewControllerFinishReason)reason error: (NSError *) error
 {
     [[UIView appearance] setTintColor: [UIColor appPrimaryColor]];
 
-    if (reason == ORKTaskViewControllerFinishReasonFailed && error != nil)
-    {
-        APCLogError2 (error);
-    } else if (reason == ORKTaskViewControllerFinishReasonCompleted) {
-        APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
-        appDelegate.dataSubstrate.currentUser.taskCompletion = [NSDate date];
-        [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
+    if (reason == ORKTaskViewControllerFinishReasonFailed) {
+        if (error != nil) {
+            APCLogError2 (error);
+        }
     }
-    
-    [super taskViewController: taskViewController
-          didFinishWithReason: reason
-                        error: error];
+    [super taskViewController: taskViewController didFinishWithReason: reason error: error];
 }
 
 #pragma mark - Results for Dashboard

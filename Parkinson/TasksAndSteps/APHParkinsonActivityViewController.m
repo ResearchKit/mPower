@@ -187,21 +187,15 @@ static  double  kMinimumAmountOfTimeToShowSurvey         = 20.0 * 60.0;
     }
 }
 
-#pragma  mark  -  Step View Controller Delegate Methods
+#pragma  mark  -  Task View Controller Delegate Methods
 
 - (void)taskViewController:(ORKTaskViewController *)taskViewController didFinishWithReason:(ORKTaskViewControllerFinishReason)reason error:(nullable NSError *)error
 {
     if (reason == ORKTaskViewControllerFinishReasonCompleted) {
-        BOOL  foundSurveyStep = NO;
         
-        for (ORKStepResult *stepResult in self.result.results) {
-            if ([stepResult.identifier isEqualToString:kMomentInDayStepIdentifier] == YES) {
-                foundSurveyStep = YES;
-                break;
-            }
-        }
+        ORKResult  *stepResult = [[taskViewController result] resultForIdentifier:kMomentInDayStepIdentifier];
         
-        if (foundSurveyStep == NO) {
+        if (stepResult == nil) {
             
             NSDictionary  *stashedSurvey = [[NSUserDefaults standardUserDefaults] objectForKey:kMomentInDayUserDefaultsKey];
             
@@ -230,16 +224,6 @@ static  double  kMinimumAmountOfTimeToShowSurvey         = 20.0 * 60.0;
 }
 
 #pragma  mark  -  View Controller Methods
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
 -(ORKTaskResult * __nonnull)result
 {

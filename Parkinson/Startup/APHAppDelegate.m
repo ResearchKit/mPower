@@ -681,33 +681,4 @@ static NSDate *DetermineConsentDate(id object)
     return consentVC;
 }
 
-- (NSDictionary *)tasksAndSchedulesWillBeLoaded
-{
-    NSString      *resource = [[NSBundle mainBundle] pathForResource:self.initializationOptions[kTasksAndSchedulesJSONFileNameKey]
-                                                                            ofType:@"json"];
-
-    NSData        *jsonData = [NSData dataWithContentsOfFile:resource];
-    NSError       *error;
-    NSDictionary  *dictionary = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                              options:NSJSONReadingMutableContainers
-                                                                                error:&error];
-    if (dictionary == nil) {
-        APCLogError2 (error);
-    }
-
-    NSArray              *schedules = [dictionary objectForKey:kJsonSchedulesKey];
-    NSMutableDictionary  *newDictionary = [dictionary mutableCopy];
-    NSMutableArray       *newSchedulesArray = [NSMutableArray new];
-
-    for (NSDictionary *schedule in schedules) {
-        [newSchedulesArray addObject:schedule];
-    }
-
-    [newDictionary setValue:[dictionary objectForKey:kJsonTasksKey] forKey:kJsonTasksKey];
-
-    [newDictionary setValue:newSchedulesArray forKey:kJsonSchedulesKey];
-
-    return newDictionary;
-}
-
 @end

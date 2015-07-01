@@ -75,6 +75,7 @@ static  NSString  *kTaskViewControllerTitle = @"Medication Tracker";
 {
     [super viewDidLoad];
     self.showsProgressInNavigationBar = NO;
+    self.canGenerateResult = NO;
     self.navigationBar.topItem.title = NSLocalizedString(kTaskViewControllerTitle, nil);
 }
 

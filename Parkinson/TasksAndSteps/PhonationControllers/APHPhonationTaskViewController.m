@@ -49,22 +49,7 @@ static  NSString *const kCountdownStepIdentifier              = @"countdown";
 static  NSString *const kAudioStepIdentifier                  = @"audio";
 static  NSString *const kConclusionStepIdentifier             = @"conclusion";
 
-static NSString *const kMomentInDayStepIdentifier             = @"momentInDay";
-
-static NSString *const kMomentInDayFormat                     = @"momentInDayFormat";
-
-static NSString *const kMomentInDayFormatTitle                = @"We would like to understand how your performance on"
-                                                                 " this activity could be affected by the timing of your medication.";
-
-static NSString *const kMomentInDayFormatItemText             = @"When are you performing this Activity?";
-static NSString *const kMomentInDayFormatChoiceJustWokeUp     = @"Immediately before Parkinson medication";
-static NSString *const kMomentInDayFormatChoiceTookMyMedicine = @"Just after Parkinson medication (at your best)";
-static NSString *const kMomentInDayFormatChoiceEvening        = @"Another time";
-static NSString *const kMomentInDayFormatChoiceNone           = @"I don't take Parkinson medications";
-
-static NSString *      kEnableMicrophoneMessage               = @"You need to enable access to microphone.";
-
-static double kMinimumAmountOfTimeToShowSurvey                = 20.0 * 60.0;
+static  NSString       *kEnableMicrophoneMessage              = @"You need to enable access to microphone.";
 
 static  NSString       *kTaskViewControllerTitle              = @"Voice Activity";
 
@@ -83,7 +68,7 @@ static  NSTimeInterval  kGetSoundingAaahhhInterval            = 10.0;
     NSDictionary  *audioSettings = @{ AVFormatIDKey         : @(kAudioFormatAppleLossless),
                                       AVNumberOfChannelsKey : @(1),
                                       AVSampleRateKey       : @(44100.0)
-                                      };
+                                    };
     
     ORKOrderedTask  *task = [ORKOrderedTask audioTaskWithIdentifier:kTaskViewControllerTitle
                                              intendedUseDescription:nil
@@ -103,52 +88,15 @@ static  NSTimeInterval  kGetSoundingAaahhhInterval            = 10.0;
     [task.steps[0] setTitle:NSLocalizedString(kTaskName, nil)];
 
     [task.steps[1] setTitle:NSLocalizedString(kTaskName, nil)];
-    [task.steps[1] setText:NSLocalizedString(@"Take a deep breath and say “Aaaaah” into the microphone for as long as you can. Keep a steady volume so the audio bars remain blue.", nil)];
+    [task.steps[1] setText:NSLocalizedString(@"Take a deep breath and say “Aaaaah” into the microphone for as long as you can. "
+                                             @"Keep a steady volume so the audio bars remain blue.", nil)];
     [task.steps[1] setDetailText:NSLocalizedString(@"Tap Next to begin the test.", nil)];
 
-    [task.steps[4] setTitle:NSLocalizedString(@"Thank You!", nil)];
-    [task.steps[4] setText:NSLocalizedString(@"The results of this activity can be viewed on the dashboard", nil)];
+    [task.steps[4] setTitle:NSLocalizedString(kConclusionStepThankYouTitle, nil)];
+    [task.steps[4] setText:NSLocalizedString(kConclusionStepViewDashboard, nil)];
 
-    APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
-    NSDate *lastCompletionDate = appDelegate.dataSubstrate.currentUser.taskCompletion;
-    NSTimeInterval numberOfSecondsSinceTaskCompletion = [[NSDate date] timeIntervalSinceDate: lastCompletionDate];
-    
-    if (numberOfSecondsSinceTaskCompletion > kMinimumAmountOfTimeToShowSurvey || lastCompletionDate == nil) {
-        
-        NSMutableArray *stepQuestions = [NSMutableArray array];
-        
-        ORKFormStep *step = [[ORKFormStep alloc] initWithIdentifier:kMomentInDayStepIdentifier title:nil text:NSLocalizedString(kMomentInDayFormatTitle, nil)];
-        step.optional = NO;
-        {
-            NSArray *choices = @[
-                                 NSLocalizedString(kMomentInDayFormatChoiceJustWokeUp,
-                                                   kMomentInDayFormatChoiceJustWokeUp),
-                                 NSLocalizedString(kMomentInDayFormatChoiceTookMyMedicine,
-                                                   kMomentInDayFormatChoiceTookMyMedicine),
-                                 NSLocalizedString(kMomentInDayFormatChoiceEvening,
-                                                   kMomentInDayFormatChoiceEvening),
-                                 NSLocalizedString(kMomentInDayFormatChoiceNone,
-                                                   kMomentInDayFormatChoiceNone)
-                                 ];
-            
-            ORKAnswerFormat *format = [ORKTextChoiceAnswerFormat choiceAnswerFormatWithStyle:ORKChoiceAnswerStyleSingleChoice
-                                                                                 textChoices:choices];
-            
-            ORKFormItem *item = [[ORKFormItem alloc] initWithIdentifier:kMomentInDayFormat
-                                                                   text:NSLocalizedString(kMomentInDayFormatItemText, kMomentInDayFormatItemText)
-                                                           answerFormat:format];
-            [stepQuestions addObject:item];
-        }
-        [step setFormItems:stepQuestions];
-        
-        NSMutableArray  *phonationSteps = [task.steps mutableCopy];
-        if ([phonationSteps count] >= 1) {
-            [phonationSteps insertObject:step atIndex:1];
-        }
-        
-        task = [[ORKOrderedTask alloc] initWithIdentifier:kTaskViewControllerTitle steps:phonationSteps];
-    }
-    return  task;
+    ORKOrderedTask  *replacementTask = [self modifyTaskWithPreSurveyStepIfRequired:task andTitle:(NSString *)kTaskViewControllerTitle];
+    return  replacementTask;
 }
 
 #pragma  mark  -  Task View Controller Delegate Methods
@@ -157,36 +105,25 @@ static  NSTimeInterval  kGetSoundingAaahhhInterval            = 10.0;
 {
     ORKStep  *step = stepViewController.step;
     
-    if ([step.identifier isEqualToString: kAudioStepIdentifier])
-    {
+    if ([step.identifier isEqualToString: kAudioStepIdentifier]) {
         [[UIView appearance] setTintColor:[UIColor appTertiaryBlueColor]];
-    }
-    else if ([step.identifier isEqualToString: kConclusionStepIdentifier]) {
+    } else if ([step.identifier isEqualToString: kConclusionStepIdentifier]) {
         [[UIView appearance] setTintColor:[UIColor appTertiaryColor1]];
     } else {
         [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
     }
 }
 
-- (void) taskViewController: (ORKTaskViewController *) taskViewController
-        didFinishWithReason: (ORKTaskViewControllerFinishReason)reason
-                      error: (NSError *) error
+- (void)taskViewController: (ORKTaskViewController *) taskViewController didFinishWithReason: (ORKTaskViewControllerFinishReason)reason error: (NSError *) error
 {
     [[UIView appearance] setTintColor: [UIColor appPrimaryColor]];
     
-    if (reason  == ORKTaskViewControllerFinishReasonFailed && error != nil)
-    {
-        APCLogError2 (error);
-    } else if (reason  == ORKTaskViewControllerFinishReasonDiscarded) {
-    } else if (reason  == ORKTaskViewControllerFinishReasonCompleted) {
-        APHAppDelegate *appDelegate = (APHAppDelegate *) [UIApplication sharedApplication].delegate;
-        appDelegate.dataSubstrate.currentUser.taskCompletion = [NSDate date];
-        [[UIView appearance] setTintColor:[UIColor appPrimaryColor]];
+    if (reason  == ORKTaskViewControllerFinishReasonFailed) {
+        if (error != nil) {
+            APCLogError2 (error);
+        }
     }
-    
-    [super taskViewController: taskViewController
-          didFinishWithReason: reason
-                        error: error];
+    [super taskViewController: taskViewController didFinishWithReason: reason error: error];
 }
 
 #pragma  mark  -  Results For Dashboard
@@ -237,16 +174,6 @@ static  NSTimeInterval  kGetSoundingAaahhhInterval            = 10.0;
 
 #pragma  mark  - View Controller methods
 
-- (void)willResignActiveNotificationWasReceived:(NSNotification *) __unused notification
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    if ([self.delegate respondsToSelector:@selector(taskViewController:didFinishWithReason:error:)] == YES) {
-        [self.delegate taskViewController:self didFinishWithReason:ORKTaskViewControllerFinishReasonDiscarded error:NULL];
-    }
-}
-
-#pragma  mark  - View Controller methods
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -257,22 +184,18 @@ static  NSTimeInterval  kGetSoundingAaahhhInterval            = 10.0;
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         if (granted) {
             // Microphone enabled
-        }
-        else {
+        } else {
             // Microphone disabled
             //Inform the user that they will to enable the Microphone
             UIAlertController * alert = [UIAlertController simpleAlertWithTitle:NSLocalizedString(kEnableMicrophoneMessage, nil) message:nil];
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
-   
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSNotificationCenter  *centre = [NSNotificationCenter defaultCenter];
-    [centre addObserver:self selector:@selector(willResignActiveNotificationWasReceived:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -2,13 +2,13 @@
     "identifier": "EnrollmentSurvey",
     "type": "Survey",
     "name": "Enrollment Survey",
-    "questions": [
+    "elements": [
          {  
            
          "guid":"538d9b7e-6548-4bf8-8a4d-fb111411e684",
          "identifier":"age",
          "type":"SurveyQuestion",
-         "detail":"How old are you?",
+         "prompt":"How old are you?",
          "constraints":{  
             "dataType":"integer",
             "rules":[  
@@ -24,7 +24,7 @@
          "guid":"06f5bce0-0380-4f3d-a044-853950292ac9",
          "identifier":"gender",
          "type":"SurveyQuestion",
-         "detail":"What is your sex?",
+         "prompt":"What is your sex?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -58,7 +58,7 @@
          "guid":"e3e89592-2ef0-44e4-8433-186c872f161b",
          "identifier":"race",
          "type":"SurveyQuestion",
-         "detail":"Which race do you identify with?",
+         "prompt":"Which race do you identify with?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -127,7 +127,7 @@
       {
       "guid":"12fee175-6213-4c0b-89b5-5cac34f7783f",
       "identifier":"Enter_State",
-      "detail":"In which state do you reside? (Enter your state's 2 letter code).",
+      "prompt":"In which state do you reside? (Enter your state's 2 letter code).",
       "constraints":{
       "rules":[
       
@@ -146,7 +146,7 @@
          "guid":"84dbf77d-dfa4-4c52-ae4b-bdae40007926",
          "identifier":"education",
          "type":"SurveyQuestion",
-         "detail":"What is the highest level of education that you have completed?",
+         "prompt":"What is the highest level of education that you have completed?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -205,7 +205,7 @@
          "guid":"3cb3483c-682d-4289-b001-2b3e8a84fc1f",
          "identifier":"employment",
          "type":"SurveyQuestion",
-         "detail":"What is your current employment status?",
+         "prompt":"What is your current employment status?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -269,7 +269,7 @@
          "guid":"bdca343f-6931-4268-9307-02297689aa37",
          "identifier":"maritalStatus",
          "type":"SurveyQuestion",
-         "detail":"What is your current marital status?",
+         "prompt":"What is your current marital status?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -313,7 +313,7 @@
          "guid":"0bd41ad0-ffd5-4875-ad15-ffc21680b812",
          "identifier":"are-caretaker",
          "type":"SurveyQuestion",
-         "detail":"Are you a spouse, partner or care-partner of someone who has Parkinson disease?",
+         "prompt":"Are you a spouse, partner or care-partner of someone who has Parkinson disease?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -342,7 +342,7 @@
          "guid":"c7a5a13d-a8ba-4b0a-9acd-7abbb12fbd9e",
          "identifier":"past-participation",
          "type":"SurveyQuestion",
-         "detail":"Have you ever participated in a research study or clinical trial on Parkinson disease before?",
+         "prompt":"Have you ever participated in a research study or clinical trial on Parkinson disease before?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -371,7 +371,7 @@
          "guid":"d24a61ea-e41a-4c3d-8874-791e55aac2e4",
          "identifier":"smartphone",
          "type":"SurveyQuestion",
-         "detail":"How easy is it for you to use your smartphone?",
+         "prompt":"How easy is it for you to use your smartphone?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -415,7 +415,7 @@
          "guid":"1f5a3faa-25fe-44c1-819b-c94cb2afca0d",
          "identifier":"phone-usage",
          "type":"SurveyQuestion",
-         "detail":"Do you ever use your smartphone to look for health or medical information online?",
+         "prompt":"Do you ever use your smartphone to look for health or medical information online?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -449,7 +449,7 @@
          "guid":"8c610ffd-f533-4d11-9396-43611ab7b9ce",
          "identifier":"home-usage",
          "type":"SurveyQuestion",
-         "detail":"Do you use the Internet or email at home?",
+         "prompt":"Do you use the Internet or email at home?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -478,7 +478,7 @@
          "guid":"5dff3238-18f0-4eb6-b024-7b70c1334698",
          "identifier":"medical-usage",
          "type":"SurveyQuestion",
-         "detail":"Do you ever use the Internet to look for health or medical information online?",
+         "prompt":"Do you ever use the Internet to look for health or medical information online?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -523,7 +523,7 @@
          "guid":"e57cbdd9-8432-497c-9877-d67a91fd7d38",
          "identifier":"medical-usage-yesterday",
          "type":"SurveyQuestion",
-         "detail":"Did you happen to do this yesterday, or not?",
+         "prompt":"Did you happen to do this yesterday, or not?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -557,7 +557,7 @@
          "guid":"3c087d38-a7d3-4d36-a8d5-0426035945e5",
          "identifier":"video-usage",
          "type":"SurveyQuestion",
-         "detail":"Do you ever use your smartphone to participate in a video call or video chat?",
+         "prompt":"Do you ever use your smartphone to participate in a video call or video chat?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -586,7 +586,7 @@
          "guid":"97540e59-0e30-4870-b3b4-9dbb4f596258",
          "identifier":"professional-diagnosis",
          "type":"SurveyQuestion",
-         "detail":"Have you been diagnosed by a medical professional with Parkinson disease?",
+         "prompt":"Have you been diagnosed by a medical professional with Parkinson disease?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -615,7 +615,7 @@
          "guid":"4c6325b9-f3d5-4752-bac9-d2dca90d70f9",
          "identifier":"onset-year",
          "type":"SurveyQuestion",
-         "detail":"In what year did your movement symptoms begin?",
+         "prompt":"In what year did your movement symptoms begin?",
          "constraints":{  
             "dataType":"integer",
             "rules":[  
@@ -632,7 +632,7 @@
          "guid":"32293df8-1d1b-4f39-9b22-aff2175aebc5",
          "identifier":"diagnosis-year",
          "type":"SurveyQuestion",
-         "detail":"In what year were you diagnosed with Parkinson disease?",
+         "prompt":"In what year were you diagnosed with Parkinson disease?",
          "constraints":{  
             "dataType":"integer",
             "rules":[  
@@ -649,7 +649,7 @@
          "guid":"55bc5412-5b44-45af-a982-ba2147a2f435",
          "identifier":"medication-start-year",
          "type":"SurveyQuestion",
-         "detail":"In what year did you begin taking Parkinson disease medication? Type in 0 if you have not started to take Parkinson medication.",
+         "prompt":"In what year did you begin taking Parkinson disease medication? Type in 0 if you have not started to take Parkinson medication.",
          "constraints":{  
             "dataType":"integer",
             "rules":[  
@@ -666,7 +666,7 @@
          "guid":"6bf5a57a-9e59-4a33-b424-e67454bd5a83",
          "identifier":"healthcare-provider",
          "type":"SurveyQuestion",
-         "detail":"What kind of health care provider currently cares for your Parkinson disease?",
+         "prompt":"What kind of health care provider currently cares for your Parkinson disease?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -710,7 +710,7 @@
          "guid":"2019a3ec-300a-4be9-95c6-7bdcca387a15",
          "identifier":"deep-brain-stimulation",
          "type":"SurveyQuestion",
-         "detail":"Have you ever had Deep Brain Stimulation?",
+         "prompt":"Have you ever had Deep Brain Stimulation?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -755,7 +755,7 @@
          "guid":"d5e550c1-a819-4620-a872-b78366d1f28b",
          "identifier":"when-dbs",
          "type":"SurveyQuestion",
-         "detail":"When did you last have DBS?",
+         "prompt":"When did you last have DBS?",
          "constraints":{  
             "dataType":"date",
             "rules":[  
@@ -771,7 +771,7 @@
          "guid":"68634d64-86f8-4f3a-bd8c-3576ddd5c115",
          "identifier":"surgery",
          "type":"SurveyQuestion",
-         "detail":"Have you ever had any surgery for Parkinson disease, other than DBS?",
+         "prompt":"Have you ever had any surgery for Parkinson disease, other than DBS?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -800,7 +800,7 @@
          "guid":"631344ee-18ab-40b6-9760-1cca637d6baf",
          "identifier":"smoked",
          "type":"SurveyQuestion",
-         "detail":"Have you ever smoked?",
+         "prompt":"Have you ever smoked?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -845,7 +845,7 @@
           "guid":"a450199e-e422-4bbb-aeaa-aabbd354d22d",
           "identifier":"years-smoking",
           "type":"SurveyQuestion",
-          "detail":"How many years have you smoked?",
+          "prompt":"How many years have you smoked?",
           "constraints":{
           "dataType":"integer",
           "rules":[
@@ -864,7 +864,7 @@
          "guid":"80d1eff9-701f-4f6a-931c-9318db252b72",
          "identifier":"packs-per-day",
          "type":"SurveyQuestion",
-         "detail":"On average, how many packs did you smoke each day?",
+         "prompt":"On average, how many packs did you smoke each day?",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  
@@ -908,7 +908,7 @@
          "guid":"a81120a5-715c-441f-9300-4b22379d1b00",
          "identifier":"last-smoked",
          "type":"SurveyQuestion",
-         "detail":"When is the last time you smoked (put todays date if you are still smoking)?",
+         "prompt":"When is the last time you smoked (put todays date if you are still smoking)?",
          "constraints":{  
             "dataType":"date",
             "rules":[  
@@ -924,7 +924,7 @@
          "guid":"1777e9e8-aaa1-44db-a818-4d6d06697fdb",
          "identifier":"health-history",
          "type":"SurveyQuestion",
-         "detail":"Has a doctor ever told you that you have, or have you ever taken medication for any of the following conditions? Please check all that apply.",
+         "prompt":"Has a doctor ever told you that you have, or have you ever taken medication for any of the following conditions? Please check all that apply.",
          "constraints":{  
             "dataType":"multivalue",
             "rules":[  

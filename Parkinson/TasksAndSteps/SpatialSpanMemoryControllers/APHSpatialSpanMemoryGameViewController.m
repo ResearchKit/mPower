@@ -32,7 +32,6 @@
 // 
  
 #import "APHSpatialSpanMemoryGameViewController.h"
-#import "APHAppDelegate.h"
 
 static  NSString       *kTaskViewControllerTitle      = @"Memory Activity";
 static  NSString       *kMemorySpanTitle              = @"Memory Activity";
@@ -53,6 +52,45 @@ static  NSInteger       kMaximumTests                 = 5;
 static  NSInteger       kMaxConsecutiveFailures       = 3;
 static  NSString       *kCustomTargetPluralName       = nil;
 static  BOOL            kRequiresReversal             = NO;
+
+static NSString * const kIdentifierKey              = @"identifier";
+static NSString * const kStartDateKey               = @"startDate";
+static NSString * const kEndDateKey                 = @"endDate";
+static NSString * const kUserInfoKey                = @"userInfo";
+static NSString * const kItemKey                    = @"item";
+
+//
+//    Spatial Span Memory Dictionary Keys — Summary
+//
+static  NSString  *const  kSpatialSpanMemorySummaryNumberOfGamesKey     = @"MemoryGameNumberOfGames";
+static  NSString  *const  kSpatialSpanMemorySummaryNumberOfFailuresKey  = @"MemoryGameNumberOfFailures";
+static  NSString  *const  kSpatialSpanMemorySummaryOverallScoreKey      = @"MemoryGameOverallScore";
+static  NSString  *const  kSpatialSpanMemorySummaryGameRecordsKey       = @"MemoryGameGameRecords";
+static  NSString  *const  kSpatialSpanMemorySummaryFilenameKey          = @"MemoryGameResults.json";
+//
+//    Spatial Span Memory Dictionary Keys — Touch Samples
+//
+static  NSString  *const  kSpatialSpanMemoryTouchSampleTimeStampKey     = @"MemoryGameTouchSampleTimestamp";
+static  NSString  *const  kSpatialSpanMemoryTouchSampleTargetIndexKey   = @"MemoryGameTouchSampleTargetIndex";
+static  NSString  *const  kSpatialSpanMemoryTouchSampleLocationKey      = @"MemoryGameTouchSampleLocation";
+static  NSString  *const  kSpatialSpanMemoryTouchSampleIsCorrectKey     = @"MemoryGameTouchSampleIsCorrect";
+//
+//    Spatial Span Memory Dictionary Keys — Game Status
+//
+static  NSString   *const  kSpatialSpanMemoryGameStatusKey              = @"MemoryGameStatus";
+static  NSString   *const  kSpatialSpanMemoryGameStatusUnknownKey       = @"MemoryGameStatusUnknown";
+static  NSString   *const  kSpatialSpanMemoryGameStatusSuccessKey       = @"MemoryGameStatusSuccess";
+static  NSString   *const  kSpatialSpanMemoryGameStatusFailureKey       = @"MemoryGameStatusFailure";
+static  NSString   *const  kSpatialSpanMemoryGameStatusTimeoutKey       = @"MemoryGameStatusTimeout";
+//
+//    Spatial Span Memory Dictionary Keys — Game Records
+//
+static  NSString   *const  kSpatialSpanMemoryGameRecordSeedKey          = @"MemoryGameRecordSeed";
+static  NSString   *const  kSpatialSpanMemoryGameRecordSequenceKey      = @"MemoryGameRecordSequence";
+static  NSString   *const  kSpatialSpanMemoryGameRecordGameSizeKey      = @"MemoryGameRecordGameSize";
+static  NSString   *const  kSpatialSpanMemoryGameRecordTargetRectsKey   = @"MemoryGameRecordTargetRects";
+static  NSString   *const  kSpatialSpanMemoryGameRecordTouchSamplesKey  = @"MemoryGameRecordTouchSamples";
+static  NSString   *const  kSpatialSpanMemoryGameRecordGameScoreKey     = @"MemoryGameRecordGameScore";
 
 @interface APHSpatialSpanMemoryGameViewController ()
 
@@ -173,5 +211,91 @@ static  BOOL            kRequiresReversal             = NO;
 {
     [super didReceiveMemoryWarning];
 }
+
+/*********************************************************************************/
+#pragma mark - Add Task-Specific Results — Spatial Span Memory
+/*********************************************************************************/
+
+- (NSArray *)makeTouchSampleRecords:(NSArray *)touchSamples
+{
+    NSMutableArray  *samples = [NSMutableArray array];
+    
+    for (ORKSpatialSpanMemoryGameTouchSample  *sample  in  touchSamples) {
+        
+        NSMutableDictionary  *aTouchSample = [NSMutableDictionary dictionary];
+        
+        aTouchSample[kSpatialSpanMemoryTouchSampleTimeStampKey]   = @(sample.timestamp);
+        aTouchSample[kSpatialSpanMemoryTouchSampleTargetIndexKey] = @(sample.targetIndex);
+        aTouchSample[kSpatialSpanMemoryTouchSampleLocationKey]    = NSStringFromCGPoint(sample.location);
+        aTouchSample[kSpatialSpanMemoryTouchSampleIsCorrectKey]   = @(sample.isCorrect);
+        
+        [samples addObject:aTouchSample];
+    }
+    return  samples;
+}
+
+- (NSArray *)makeTargetRectangleRecords:(NSArray *)targetRectangles
+{
+    NSMutableArray  *rectangles = [NSMutableArray array];
+    
+    for (NSValue  *value  in  targetRectangles) {
+        CGRect  rectangle = [value CGRectValue];
+        NSString  *stringified = NSStringFromCGRect(rectangle);
+        [rectangles addObject:stringified];
+    }
+    return  rectangles;
+}
+
+- (void)addSpatialSpanMemoryResultsToArchive:(ORKSpatialSpanMemoryResult *)result
+{
+    
+    NSString  *gameStatusKeys[] = { kSpatialSpanMemoryGameStatusUnknownKey, kSpatialSpanMemoryGameStatusSuccessKey, kSpatialSpanMemoryGameStatusFailureKey, kSpatialSpanMemoryGameStatusTimeoutKey };
+    
+    NSMutableDictionary  *memoryGameResults = [NSMutableDictionary dictionary];
+    
+    //
+    //    ORK Result
+    //
+    memoryGameResults[kIdentifierKey] = result.identifier;
+    memoryGameResults[kStartDateKey]  = result.startDate;
+    memoryGameResults[kEndDateKey]    = result.endDate;
+    //
+    //    ORK ORKSpatialSpanMemoryResult
+    //
+    memoryGameResults[kSpatialSpanMemorySummaryNumberOfGamesKey]    = @(result.numberOfGames);
+    memoryGameResults[kSpatialSpanMemorySummaryNumberOfFailuresKey] = @(result.numberOfFailures);
+    memoryGameResults[kSpatialSpanMemorySummaryOverallScoreKey]     = @(result.score);
+    
+    memoryGameResults[kItemKey] = kSpatialSpanMemorySummaryFilenameKey;
+    
+    //
+    //    Memory Game Records
+    //
+    NSMutableArray   *gameRecords = [NSMutableArray arrayWithCapacity:[result.gameRecords count]];
+    
+    for (ORKSpatialSpanMemoryGameRecord  *aRecord  in  result.gameRecords) {
+        
+        NSMutableDictionary  *aGameRecord = [NSMutableDictionary dictionary];
+        
+        aGameRecord[kSpatialSpanMemoryGameRecordSeedKey]      = @(aRecord.seed);
+        aGameRecord[kSpatialSpanMemoryGameRecordGameSizeKey]  = @(aRecord.gameSize);
+        aGameRecord[kSpatialSpanMemoryGameRecordGameScoreKey] = @(aRecord.score);
+        aGameRecord[kSpatialSpanMemoryGameRecordSequenceKey]  = aRecord.sequence;
+        aGameRecord[kSpatialSpanMemoryGameStatusKey]          = gameStatusKeys[aRecord.gameStatus];
+        
+        NSArray  *touchSamples = [self makeTouchSampleRecords:aRecord.touchSamples];
+        aGameRecord[kSpatialSpanMemoryGameRecordTouchSamplesKey] = touchSamples;
+        
+        NSArray  *rectangles = [self makeTargetRectangleRecords:aRecord.targetRects];
+        aGameRecord[kSpatialSpanMemoryGameRecordTargetRectsKey] = rectangles;
+        
+        [gameRecords addObject:aGameRecord];
+    }
+    memoryGameResults[kSpatialSpanMemorySummaryGameRecordsKey] = gameRecords;
+    
+    NSDictionary  *serializableData = [APCJSONSerializer serializableDictionaryFromSourceDictionary: memoryGameResults];
+    [self.archive insertIntoArchive:serializableData filename:kSpatialSpanMemorySummaryFilenameKey];
+}
+
 
 @end

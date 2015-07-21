@@ -104,7 +104,8 @@
 
 - (APCOnboarding *)onboarding
 {
-    return ((APHAppDelegate *)[UIApplication sharedApplication].delegate).onboarding;
+    return ((id<APCOnboardingManagerProvider>)
+            [UIApplication sharedApplication].delegate).onboardingManager.onboarding;
 }
 
 /*********************************************************************************/

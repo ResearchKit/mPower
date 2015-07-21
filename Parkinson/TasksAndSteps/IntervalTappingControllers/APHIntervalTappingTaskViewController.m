@@ -36,7 +36,6 @@
 #import <PDScores/PDScores.h>
 #import "ConverterForPDScores.h"
 #import <AVFoundation/AVFoundation.h>
-#import "APHAppDelegate.h"
 
     //
     //        Step Identifiers
@@ -48,6 +47,27 @@ static NSString *const kConclusionStepIdentifier      = @"conclusion";
 
 static  NSString       *kTaskViewControllerTitle      = @"Tapping Activity";
 static  NSString       *kIntervalTappingTitle         = @"Tapping Activity";
+
+static NSString * const kItemKey                    = @"item";
+static NSString * const kIdentifierKey              = @"identifier";
+static NSString * const kStartDateKey               = @"startDate";
+static NSString * const kEndDateKey                 = @"endDate";
+static NSString * const kUserInfoKey                = @"userInfo";
+
+//
+//    Interval Tapping Dictionary Keys
+//
+static  NSString  *const  kTappingViewSizeKey                           = @"TappingViewSize";
+static  NSString  *const  kButtonRectLeftKey                            = @"ButtonRectLeft";
+static  NSString  *const  kButtonRectRightKey                           = @"ButtonRectRight";
+static  NSString  *const  kTappingSamplesKey                            = @"TappingSamples";
+static  NSString  *const  kTappedButtonIdKey                            = @"TappedButtonId";
+static  NSString  *const  kTappedButtonNoneKey                          = @"TappedButtonNone";
+static  NSString  *const  kTappedButtonLeftKey                          = @"TappedButtonLeft";
+static  NSString  *const  kTappedButtonRightKey                         = @"TappedButtonRight";
+static  NSString  *const  kTapTimeStampKey                              = @"TapTimeStamp";
+static  NSString  *const  kTapCoordinateKey                             = @"TapCoordinate";
+static  NSString  *const  kAPCTappingResultsFileName                    = @"tapping_results.json";
 
 static  NSTimeInterval  kTappingStepCountdownInterval = 20.0;
 
@@ -195,5 +215,53 @@ static  NSTimeInterval  kTappingStepCountdownInterval = 20.0;
 {
     [super viewWillAppear:animated];
 }
+
+/*********************************************************************************/
+#pragma mark - Add Task-Specific Results — Interval Tapping
+/*********************************************************************************/
+
+- (void)addTappingResultsToArchive:(ORKTappingIntervalResult *)result
+{
+    NSMutableDictionary  *rawTappingResults = [NSMutableDictionary dictionary];
+    
+    NSString  *tappingViewSize = NSStringFromCGSize(result.stepViewSize);
+    rawTappingResults[kTappingViewSizeKey] = tappingViewSize;
+    
+    rawTappingResults[kStartDateKey] = result.startDate;
+    rawTappingResults[kEndDateKey]   = result.endDate;
+    
+    NSString  *leftButtonRect = NSStringFromCGRect(result.buttonRect1);
+    rawTappingResults[kButtonRectLeftKey] = leftButtonRect;
+    
+    NSString  *rightButtonRect = NSStringFromCGRect(result.buttonRect2);
+    rawTappingResults[kButtonRectRightKey] = rightButtonRect;
+    
+    NSArray  *samples = result.samples;
+    NSMutableArray  *sampleResults = [NSMutableArray array];
+    for (ORKTappingSample *sample  in  samples) {
+        NSMutableDictionary  *aSampleDictionary = [NSMutableDictionary dictionary];
+        
+        aSampleDictionary[kTapTimeStampKey]     = @(sample.timestamp);
+        
+        aSampleDictionary[kTapCoordinateKey]   = NSStringFromCGPoint(sample.location);
+        
+        if (sample.buttonIdentifier == ORKTappingButtonIdentifierNone) {
+            aSampleDictionary[kTappedButtonIdKey] = kTappedButtonNoneKey;
+        } else if (sample.buttonIdentifier == ORKTappingButtonIdentifierLeft) {
+            aSampleDictionary[kTappedButtonIdKey] = kTappedButtonLeftKey;
+        } else if (sample.buttonIdentifier == ORKTappingButtonIdentifierRight) {
+            aSampleDictionary[kTappedButtonIdKey] = kTappedButtonRightKey;
+        }
+        [sampleResults addObject:aSampleDictionary];
+    }
+    rawTappingResults[kTappingSamplesKey] = sampleResults;
+    rawTappingResults[kItemKey] = kAPCTappingResultsFileName;
+    
+    NSDictionary *serializableData = [APCJSONSerializer serializableDictionaryFromSourceDictionary: rawTappingResults];
+    
+    [self.archive insertIntoArchive:serializableData filename:kAPCTappingResultsFileName];
+    
+}
+
 
 @end

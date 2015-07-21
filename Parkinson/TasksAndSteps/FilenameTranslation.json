@@ -1,0 +1,11 @@
+{
+    "audio_countdown" : "audio_countdown.m4a",
+    "audio_audio" : "audio_audio.m4a",
+    "accelerometer_tapping" : "accelerometer_tapping",
+    "pedometer_walking.outbound" : "pedometer_walking.outbound",
+    "accelerometer_walking.outbound" : "accel_walking_outbound.json",
+    "deviceMotion_walking.outbound" : "deviceMotion_walking_outbound.json",
+    "accelerometer_walking.rest" : "accelerometer_walking.rest",
+    "deviceMotion_walking.rest" : "deviceMotion_walking.rest",
+    "momentInDayFormat" : "momentInDayFormat.json"
+}

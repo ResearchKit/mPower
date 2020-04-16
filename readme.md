@@ -17,12 +17,12 @@ improve the quality of life for people with PD.
 Building the App
 ================
 
-###Requirements
+### Requirements
 
 * Xcode 6.3
 * iOS 8.3 SDK
 
-###Getting the source
+### Getting the source
 
 First, check out the source, including all the dependencies:
 
@@ -30,7 +30,7 @@ First, check out the source, including all the dependencies:
 git clone --recurse-submodules  https://github.com/ResearchKit/mPower.git
 ```
 
-###Building it
+### Building it
 
 Open the project, `Parkinson.xcodeproj`, and build and run.
 
